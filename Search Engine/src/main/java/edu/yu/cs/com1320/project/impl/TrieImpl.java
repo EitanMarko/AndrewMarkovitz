@@ -12,29 +12,19 @@ import java.util.*;
 public class TrieImpl<Value> implements Trie<Value> {
 
     private static final int alphabetSize = 256; // extended ASCII
-    private Node<Value> root; // root of trie //DOES THIS HAVE TO BE PRIVATE
-    //private MinHeapImpl<Document> minHeap;
+    private Node<Value> root;
 
-    private class Node<Value> //Value or DocumentImpl???????????????????????????????????????????????????????????????????????????/
+    private class Node<Value>
     {
-        //private Value val; //protected? (in abstract class)
-        //private? -not private in HashTableImpl
-        private Node<Value>[] links = new Node[alphabetSize]; //protected? (in abstract class)
-        //private? -not private in HashTableImpl
 
-        //**************************************************//public Node[] links;
+        private Node<Value>[] links = new Node[alphabetSize];
 
-        //need to use a collection to store documents
-        //lets use a Set- NO ORDER
-        private Set<Value> docSet= new HashSet<>(); //CHECK ON THIS
+        private Set<Value> docSet= new HashSet<>();
 
-        //**************************************************//public Set docSet;
         private Node(){
-            //this.val=val;
-            this.links= links;// = new Node[alphabetSize];
-            this.docSet= docSet;//= new HashSet();
 
-
+            this.links= links;
+            this.docSet= docSet;
 
         }
 
@@ -54,8 +44,6 @@ public class TrieImpl<Value> implements Trie<Value> {
     public TrieImpl(){
         this.root=new Node<Value>();
     }
-    //CONSTRUCTOR- MUST TAKE NO (0) ARGUMENTS
-
 
 
     private String stripPunctuation(String key){
@@ -75,15 +63,12 @@ public class TrieImpl<Value> implements Trie<Value> {
     public void put(String key, Value val) {
         //delete the value from this key
         if(val==null){
-            return; //do nothing @Piazza
+            return;
         }
         else{
-            //root will be returned from private put method ??????? ARE WE SURE- this is from slides...
             String properKeyToPut= stripPunctuation(key);
             this.root=put(this.root, properKeyToPut,val,0);
         }
-
-
 
     }
 
@@ -104,8 +89,6 @@ public class TrieImpl<Value> implements Trie<Value> {
         char c= key.charAt(d);
         x.links[c]=this.put(x.links[c],key, val, d+1);
         return x;
-
-
     }
 
     @Override
@@ -114,13 +97,13 @@ public class TrieImpl<Value> implements Trie<Value> {
         Set<Value> docsSet= get(key);
 
         if(docsSet.isEmpty()){
-            List<Value> emptyList= new ArrayList<>(); //even though it's empty, I specified only Value can go in it
+            List<Value> emptyList= new ArrayList<>();
             return emptyList;
         }
 
         List<Value> docsList= new ArrayList<>(docsSet);
-        //DESCENDING ORDER DEFINED BY COMPARATOR?????????
-        docsList.sort(comparator); //.reversed()??????????????????????????????
+
+        docsList.sort(comparator);
         return docsList;
     }
 
@@ -128,7 +111,6 @@ public class TrieImpl<Value> implements Trie<Value> {
     public Set<Value> get(String key) {
         Node x= this.get(this.root, key, 0);
         if(x==null){
-            //null node- return empty set-----------------------ASK ON PIAZZA
             Set<Value> emptySet= new HashSet<>();
             return emptySet;
         }
@@ -190,14 +172,7 @@ public class TrieImpl<Value> implements Trie<Value> {
 
         //vals.sort(comparator.reversed()); //sort the nodes in descending order of comparator specified
 
-
-        /*Collections.sort(vals,comparator.reversed());
-        return vals;*/
-
-
-        //DESCENDING ORDER DEFINED BY COMPARATOR?????????
-        //Ask specifics on piazza
-        vals.sort(comparator); //.reversed()??????????????????????????????????????????????????????????????????????
+        vals.sort(comparator);
         return vals;
     }
 
@@ -231,18 +206,6 @@ public class TrieImpl<Value> implements Trie<Value> {
         //doesn't return all Nodes
     }
 
-    /*private List<Node> getChildren(Node parent){
-        //return a collection of Node that can be iterated through- List (ordered)
-
-        //iterate through the links[] and add all Nodes with values to a list
-        List<Node> children= new ArrayList<>();
-        for(int i=0; i<alphabetSize; i++){
-            if(!parent.links[i].docSet.isEmpty()){ //something in the set of docs of Node under parent
-                children.add(parent.links[i]); //add Node to list of children
-            }
-        }
-        return children;
-    }*/
 
 
 
@@ -257,15 +220,6 @@ public class TrieImpl<Value> implements Trie<Value> {
 
         //POSTORDER traverse through the subtree, so you delete the leaves (leafs) before visiting inner nodes
         //Make this postorder traversal so that it deletes the Nodes with no values
-
-
-        //DO I EVEN NEED HELPER METHOD OR JUST IMPLEMENT ALL THE LOGIC HERE
-        //AND MAKE SIMILAR FOR getAllWithPrefixSorted() ??????
-
-
-        /*Node prefixRoot= this.get(this.root, prefix, 0);
-        List nodesDeleted=postorderTraversal(prefixRoot); //returns a List of all the Nodes in the tree
-        Set<Node> delNodesSet = new HashSet<>(nodesDeleted);*/
 
 
         //get the Node at the top of the subtree
@@ -297,44 +251,9 @@ public class TrieImpl<Value> implements Trie<Value> {
                 this.root.links[prefixStr]=null;
             }
 
-            //What if prefix is empty?
-                //Ask on piazza if error should be thrown
-
-
             //this.deleteAll(prefix); //delete the prefix and all its sub-Nodes
 
             return vals;
-
-
-
-
-
-    /*private Set<Value> postorderDelete(String prefix){
-        //LOGIC:
-
-        //Recursively? get to the node that ends that prefix
-            //ex: "o" in "hello"
-            //see how you did it in--> private get()
-        //then see slides 10, pg. 28 on calling getChildren()
-            //you go thru all subtrees recursively(?)
-                //call getChildren() on every Node recursively
-                    //getChildren() will return when there are no children
-                        //So like... or something like this...
-
-                            *//*while(n.getChildren){
-                                List<Node> x =n.getChildren();
-                                n = x;
-                            }*//*
-
-        //if the Node has the prefix, delete & ADD THE DELETED VALUE TO A SET OF VALUES
-
-        //After you identify the leaf, as you go up thru the tree,
-        //      if the Node has a Value, ADD THE DELETED VALUE TO A SET OF VALUES
-        //      & DELETE NODE
-                    //Deleting the Node will delete everything under it, which is why we're doing postorder
-
-    }*/
-
 
     }
     @Override
@@ -343,11 +262,6 @@ public class TrieImpl<Value> implements Trie<Value> {
         //you'll first find the Set in the Node that's to be deleted
         //then return that Set
 
-        /*Node y = deleteAll(this.root, key, 0);
-        Set<Value> x= y.docSet;
-        return x;*/
-
-
         Set<Value> y = deleteAll(this.root, key, 0);
         return y;
     }
@@ -355,7 +269,7 @@ public class TrieImpl<Value> implements Trie<Value> {
     private Set<Value> deleteAll(Node x, String key, int d)
     {
         Set<Value> holdDeletes= new HashSet<>();
-        //Set<Value> get= new HashSet<>(get(key));
+
         if (x == null)
         {
             return null;
@@ -376,9 +290,9 @@ public class TrieImpl<Value> implements Trie<Value> {
             //added docSet here!!!^
         }
         //this node has a val – do nothing, return the node
-        if (!x.docSet.isEmpty()) //WILL NEVER HIT THIS THOUGH?????????????????????????????
+        if (!x.docSet.isEmpty())
         {                      //Gets here after element is cleared of values
-            //RETURN THE DOCSET
+
 
             return holdDeletes;
         }
@@ -454,21 +368,6 @@ public class TrieImpl<Value> implements Trie<Value> {
             }
         }
         //empty - set this link to null in the parent
-
-        //FIND ANOTHER WAY TO DO THIS???? THIS IS A HELPER METHOD!!!!!!!!!!!!!
-        //return null;
-
-        //Node beforeNullX=x;
-        //x=null; //Node is now null
-        //return beforeNullX;
-
         return null;
-        //empty - set this link to null in the parent
     }
-
-
-
-
-
-
 }

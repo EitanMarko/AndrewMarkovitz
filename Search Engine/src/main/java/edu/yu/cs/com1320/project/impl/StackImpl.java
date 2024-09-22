@@ -45,10 +45,6 @@ public class StackImpl<T> implements Stack<T> {
         T topOfStack = data[top];
         data[top] = null;
         top--;
-       /* if(top==-1){ //if, after pop, the stack is empty
-            return null;
-        }*/
-        //return data[top]; //return new top element
         return topOfStack;
     }
 

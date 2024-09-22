@@ -128,45 +128,7 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
      * returns a list of all the entries in the Btree, ordered by key
      * @return
      */
-   /* public ArrayList<BTreeImpl.Entry> getOrderedEntries()
-    {
-        BTreeImpl.Node current = this.leftMostExternalNode;
-        ArrayList<BTreeImpl.Entry> entries = new ArrayList<>();
-        while(current != null)
-        {
-            for(BTreeImpl.Entry e : current.getEntries())
-            {
-                if(e.val != null)
-                {
-                    entries.add(e);
-                }
-            }
-            current = current.getNext();
-        }
-        return entries;
-    }*/
 
-    /*public BTreeImpl.Entry getMinEntry()
-    {
-        BTreeImpl.Node current = this.leftMostExternalNode;
-        while(current != null)
-        {
-            for(BTreeImpl.Entry e : current.getEntries())
-            {
-                if(e.val != null)
-                {
-                    return e;
-                }
-            }
-        }
-        return null;
-    }*/
-
-    /*public BTreeImpl.Entry getMaxEntry()
-    {
-        ArrayList<BTreeImpl.Entry> entries = this.getOrderedEntries();
-        return entries.get(entries.size()-1);
-    }*/
 
     /**
      * Returns the value associated with the given key.
@@ -454,11 +416,6 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
         //is managing memory.
 
 
-
-        //put(k,null);
-
-        //REMOVE FROM MINHEAP
-        //remember^^^
 
     }
 
