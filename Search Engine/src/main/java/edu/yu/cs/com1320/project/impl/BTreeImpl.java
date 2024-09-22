@@ -38,28 +38,6 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
             this.entryCount = k;
         }
 
-       /* private void setNext(BTreeImpl.Node next)
-        {
-            this.next = next;
-        }
-        private BTreeImpl.Node getNext()
-        {
-            return this.next;
-        }
-        private void setPrevious(BTreeImpl.Node previous)
-        {
-            this.previous = previous;
-        }
-        private BTreeImpl.Node getPrevious()
-        {
-            return this.previous;
-        }
-
-        private BTreeImpl.Entry[] getEntries()
-        {
-            return Arrays.copyOf(this.entries, this.entryCount);
-        }*/
-
     }
 
     //internal nodes: only use key and child
@@ -76,14 +54,7 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
             this.val = val;
             this.child = child;
         }
-       /* public Object getValue()
-        {
-            return this.val;
-        }
-        public Comparable getKey()
-        {
-            return this.key;
-        }*/
+
     }
 
     /**
@@ -93,8 +64,6 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
     {
         this.root = new BTreeImpl.Node(0);
         this.leftMostExternalNode = this.root;
-        //File dir = new File("C:\\Users\\marko\\Desktop\\CompSci\\PersonalRepo\\Markovitz_Andrew_800759408\\DataStructures\\project\\stage6");
-        //this.docPersManager = new DocumentPersistenceManager(dir);
     }
 
     /**
@@ -351,23 +320,10 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
             currentNode.entries[BTreeImpl.MAX/2+j] = null;
         }
 
-
-        /*//external node
-        //Leaf node
-        if (height == 0)        //EXTRA- DELETE????????????????
-        {
-            newNode.setNext(currentNode.getNext());  //METHOD NEEDED?????????????
-            newNode.setPrevious(currentNode);        //METHOD NEEDED?????????????
-            currentNode.setNext(newNode);
-        }*/
-
-        //divide currentNode.entryCount by 2 b/c of the split- MY ADD FROM SLIDES
         currentNode.entryCount = BTreeImpl.MAX/2;
 
         return newNode;
     }
-
-    // comparison functions - make Comparable instead of Key to avoid casts
     private static boolean less(Comparable k1, Comparable k2)
     {
         return k1.compareTo(k2) < 0;
@@ -395,27 +351,16 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
     public void moveToDisk(Key k) throws IOException {
 
 
-        //NEW PLAN: call DocumentPersistenceManager.serialize()
-
-
-
-        //k is URI
         Entry entry= getEntry(k);
         Value doc= get(k);
-        entry.val=null; //TEST THIS!!!!!!!!!!!!!!!!!!!
+        entry.val=null;
         docPersManager.serialize(k, doc);
-
-        //DELETE SPECIFIC DOC FROM HEAP IN checkOverLimit() where moveToDisk() is called
-
-
 
         //When a document is moved to disk, the entry in the BTree has null as its value instead of
         //a reference to the document in memory.
 
         // When a document is written out to disk, it is removed from the MinHeap which
         //is managing memory.
-
-
 
     }
 
@@ -425,29 +370,5 @@ public class BTreeImpl<Key extends Comparable<Key>, Value> implements BTree<Key,
         this.docPersManager = (DocumentPersistenceManager<Key, Value>) pm;
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
