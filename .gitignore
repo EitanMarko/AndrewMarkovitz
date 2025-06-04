@@ -1,20 +1,74 @@
-# Compiled class file
+# ====================================
+# Java / Maven / Spring Boot
+# ====================================
+
+# Build output
+target/
+build/
 *.class
-target
-
-# Log file
 *.log
-
-# google desktop files
-*.ini
-
-# Package Files #
 *.jar
 *.war
-*.nar
 *.ear
 *.zip
 *.tar.gz
 *.rar
-*.idea
+*.nar
 
+# Maven Wrapper (keep .jar if needed)
+# Comment out the following line if you're using ./mvnw in CI/CD like Render
+# .mvn/wrapper/maven-wrapper.jar
+
+# Local config and environment files
+*.ini
+.env
+
+# ====================================
+# IntelliJ IDEA
+# ====================================
+.idea/
+*.iws
+*.iml
+*.ipr
+shelf/
+workspace.xml
+httpRequests/
+dataSources/
+dataSources.local.xml
+
+# ====================================
+# Spring Tool Suite (STS) / Eclipse
+# ====================================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# ====================================
+# NetBeans
+# ====================================
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ====================================
+# VS Code
+# ====================================
+.vscode/
+
+# ====================================
+# OS-specific files
+# ====================================
+.DS_Store
+Thumbs.db
+
+# ====================================
+# Editor temp files
+# ====================================
+*.swp
+*.tmp
