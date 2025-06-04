@@ -1,0 +1,20 @@
+First I generated the project
+
+Made it a 'com' project in case i want to use it commercially later
+(Can still upload to github and display open-source)
+
+Added some dependencies
+-Spring Web
+-DevTools
+-Lombok
+-Actuator
+
+Tried running the auto-generated SpringDemoApplication class from the IDE
+Tomcat initialized with port 8080 (http)
+
+Made a REST Controller class
+(can be optionally added to a sub-package of com.example.springdemo, but I chose not to)
+
+Created a "service" class to handle background logic
+(MUST use @Service annotation on top of class declaration)
+
