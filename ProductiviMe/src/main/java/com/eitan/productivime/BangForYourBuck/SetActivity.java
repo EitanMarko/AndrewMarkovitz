@@ -12,7 +12,7 @@ public class SetActivity implements Activity{
     //Value (?/10)
     public String name;
     public Interval interval;
-    public int value;
+    private int value;
 
                                                                     //long? (duration)
     public SetActivity(String name, Interval interval, int value) {
@@ -21,11 +21,21 @@ public class SetActivity implements Activity{
         this.name = name;
         this.interval = interval;
 
-        if(value < 1 || value > 10){
+        if(value < 1 || value > 10){ // Value scaled 1-10
             throw new IllegalArgumentException("Activities are valued within priority 1-10");
         }
         this.value = value;
 
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }
