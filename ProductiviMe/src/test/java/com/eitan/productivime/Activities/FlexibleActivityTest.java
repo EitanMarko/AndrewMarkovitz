@@ -1,27 +1,24 @@
 package com.eitan.productivime.Activities;
 import com.eitan.productivime.BangForYourBuck.Activities.Activity;
 import com.eitan.productivime.BangForYourBuck.Activities.FlexibleActivity;
-import com.eitan.productivime.BangForYourBuck.Activities.SetActivity;
-import com.eitan.productivime.BangForYourBuck.Interval;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FlexibleActivityTest {
 
+    @Test
+    void simpleFlexActivity() {
 
-    /*@Test
-    void simpleSetActivity() {
+        Activity activity = new FlexibleActivity("flex", "10:30","17:00","2:00", 7);
 
-        Interval interval = new Interval("10:30","11:00");
-        Activity activity = new FlexibleActivity("set", interval);
+        assertEquals("flex",activity.getName());
+        assertEquals(7,activity.getValue());
 
-        assertEquals("set",activity.getName());
-        assertEquals(12,activity.getValue());
+        int duration = 2 * 60; // 2 hours == 120 mins
+        int end = 17 * 60; // 17:00 is (17 * 60) mins
+        assertEquals(end-duration,activity.getLatestStartTime());
 
-        int start = (10*60)+30; //10:00 is (10*60)+30 minutes
-        assertEquals(start,activity.getLatestStartTime());
-
-    }*/
+    }
 
 
 }

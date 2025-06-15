@@ -1,7 +1,7 @@
 package com.eitan.productivime.BangForYourBuck.Activities;
 import com.eitan.productivime.BangForYourBuck.*;
 
-public class FlexibleActivity implements Activity{
+public class FlexibleActivity implements Activity, Comparable<Activity>{
 
     public String name;
     public int startBy;
@@ -13,9 +13,9 @@ public class FlexibleActivity implements Activity{
 
         this.name = name;
         this.startBy = new Time(startByTime).time;
-       this.endBy = new Time(endByTime).time;
-       this.duration = new Time(durationTime).time;
-       this.latestStartTime = endBy - duration;
+        this.endBy = new Time(endByTime).time;
+        this.duration = new Time(durationTime).time;
+        this.latestStartTime = endBy - duration;
 
         if(startBy >= endBy){
             throw new IllegalArgumentException("dayEndTime must be later than dayStartTime (24-hr clock)");
@@ -45,5 +45,10 @@ public class FlexibleActivity implements Activity{
     @Override
     public int getLatestStartTime() {
         return latestStartTime;
+    }
+
+    @Override
+    public int compareTo(Activity other) {
+        return Integer.compare(this.value, other.getValue());
     }
 }

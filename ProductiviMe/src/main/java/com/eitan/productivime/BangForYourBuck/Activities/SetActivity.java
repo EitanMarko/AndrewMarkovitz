@@ -3,7 +3,7 @@ import com.eitan.productivime.BangForYourBuck.*;
 
 import java.util.Optional;
 
-public class SetActivity implements Activity {
+public class SetActivity implements Activity, Comparable<Activity> {
 
     //Each activity has fields:
     //Start by (optional)
@@ -37,5 +37,10 @@ public class SetActivity implements Activity {
     @Override
     public int getLatestStartTime() {
         return interval.start;
+    }
+
+    @Override
+    public int compareTo(Activity other) {
+        return Integer.compare(12, other.getValue());
     }
 }

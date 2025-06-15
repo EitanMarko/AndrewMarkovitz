@@ -2,7 +2,11 @@ package com.eitan.productivime.BangForYourBuck.Activities;
 
 import com.eitan.productivime.BangForYourBuck.Time;
 
-public class DoTodayFlexActivity implements Activity{
+// Like a FlexibleActivity, but MUST get done "today"
+// Differences:
+    // No "value" parameter in constructor
+    // Automatic value of 11
+public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
 
     public String name;
     public int startBy;
@@ -33,12 +37,17 @@ public class DoTodayFlexActivity implements Activity{
     }
 
     @Override
-    public int getValue() {
+    public int getValue() { //Always 11, so just return number for efficiency
         return 11;
     }
 
     @Override
     public int getLatestStartTime() {
         return latestStartTime;
+    }
+
+    @Override
+    public int compareTo(Activity other) {
+        return Integer.compare(11, other.getValue());
     }
 }
