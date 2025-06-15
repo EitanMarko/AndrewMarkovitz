@@ -1,4 +1,5 @@
-package com.eitan.productivime.BangForYourBuck;
+package com.eitan.productivime.BangForYourBuck.Activities;
+import com.eitan.productivime.BangForYourBuck.*;
 
 public class FlexibleActivity implements Activity{
 
@@ -6,12 +7,14 @@ public class FlexibleActivity implements Activity{
     public int startBy;
     public int endBy;
     public int duration;
+    private int latestStartTime;
     private int value;
     public FlexibleActivity(String name, String startByTime, String endByTime, String durationTime, int value) {
 
        this.startBy = new Time(startByTime).time;
        this.endBy = new Time(endByTime).time;
        this.duration = new Time(durationTime).time;
+       this.latestStartTime = endBy - duration;
 
         if(startBy >= endBy){
             throw new IllegalArgumentException("dayEndTime must be later than dayStartTime (24-hr clock)");
@@ -37,5 +40,10 @@ public class FlexibleActivity implements Activity{
     @Override
     public int getValue() {
         return value;
+    }
+
+    @Override
+    public int getLatestStartTime() {
+        return latestStartTime;
     }
 }

@@ -1,8 +1,8 @@
 package com.eitan.productivime;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.eitan.productivime.BangForYourBuck.*;
+import com.eitan.productivime.BangForYourBuck.Activities.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +15,13 @@ public class BangForYourBuckTest {
         // INVALID INTERVALS
 
         Interval interval1 = new Interval("8:45","17:15"); // Both start and end out of bounds
-        Activity act1 = new SetActivity("act1",interval1,10);
+        Activity act1 = new SetActivity("act1",interval1);
 
         Interval interval2 = new Interval("9:00","17:15");  // Only end out of bounds
-        Activity act2 = new SetActivity("act2",interval2,10);
+        Activity act2 = new SetActivity("act2",interval2);
 
         Interval interval3 = new Interval("8:45","17:00"); // Only start out of bounds
-        Activity act3 = new SetActivity("act3",interval3,10);
+        Activity act3 = new SetActivity("act3",interval3);
 
         BangForYourBuck bangForYourBuckEmpty = new BangForYourBuck("9:00","17:00");
         bangForYourBuckEmpty.addActivity(act1);
@@ -38,10 +38,10 @@ public class BangForYourBuckTest {
         // VALID INTERVALS
 
         Interval interval4 = new Interval("9:00","17:00"); // Only start out of bounds
-        Activity act4 = new SetActivity("act4",interval4,10);
+        Activity act4 = new SetActivity("act4",interval4);
 
         Interval interval5 = new Interval("11:30","14:15"); // Only start out of bounds
-        Activity act5 = new SetActivity("act5",interval5,10);
+        Activity act5 = new SetActivity("act5",interval5);
 
         BangForYourBuck bangForYourBuckFull = new BangForYourBuck("9:00","17:00");
         bangForYourBuckFull.addActivity(act4);
@@ -105,10 +105,13 @@ public class BangForYourBuckTest {
 
     @Test
     void repeatActivities() { // Two activities with the same name - only the first one is added
+
+        //Adding repeat activities together
+
         Activity act1 = new FlexibleActivity("activity","13:00","17:00","2:00", 10);
 
         Interval interval = new Interval("12:00","13:00");
-        Activity act2 = new SetActivity("activity", interval, 10);
+        Activity act2 = new SetActivity("activity", interval);
 
         BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00");
 
@@ -116,12 +119,16 @@ public class BangForYourBuckTest {
             bangForYourBuck.addMultipleActivities(act1,act2);});
 
 
+        //Adding activities separately
+
         BangForYourBuck bangForYourBuck2 = new BangForYourBuck("9:00","20:00");
+
         bangForYourBuck2.addActivity(act2);
         assertThrows(IllegalArgumentException.class, () -> {
-            bangForYourBuck2.addMultipleActivities(act1);});
+            bangForYourBuck2.addActivity(act1);});
 
 
+        //Repeat of activity already added
 
         Activity act3 = new FlexibleActivity("thing","13:00","17:00","2:00", 10);
         Activity act4 = new FlexibleActivity("thing","13:00","17:00","2:00", 10);
