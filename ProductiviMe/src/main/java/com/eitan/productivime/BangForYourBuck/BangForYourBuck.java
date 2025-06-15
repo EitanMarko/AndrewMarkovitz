@@ -18,6 +18,7 @@ public class BangForYourBuck {
 
     private List<Activity> setActivities;
     private List<Activity> flexActivities;
+    private List<Activity> doTodayActivities;
     private Set<String> activityNames;
 
     private int dayStart;
@@ -39,6 +40,7 @@ public class BangForYourBuck {
 
         setActivities = new ArrayList<>();
         flexActivities = new ArrayList<>();
+        doTodayActivities = new ArrayList<>();
         activityNames = new HashSet<>();
 
 
@@ -46,15 +48,6 @@ public class BangForYourBuck {
 
 
     }
-
-
-    //If an activity has an interval (even flexible) which falls outside the bounds of
-        // dayStart-dayEnd ("the day"), what do we do?
-
-    //For a set activity, the activity is thrown out
-    //For a flexible activity, only take into account the portion of the activity which falls within the day
-        //If there's not enough overlap between the interval and the day hours, throw out the activity
-
 
     public void addActivity(Activity activity){
 
@@ -70,24 +63,50 @@ public class BangForYourBuck {
             }
             setActivities.add(activity); // Valid interval - add to list
         }
-        else{ // FlexibleActivity
-            int begin = ((FlexibleActivity) activity).startBy;
-            if(begin < dayStart){
-                begin = dayStart; // Earliest start of activity at dayStart
+        else{ // FlexibleActivity or DoTodayFlexActivity
+
+            int begin;
+            int end;
+            boolean isFlexibleActivity = isFlexibleActivity(activity);
+
+            if(isFlexibleActivity){
+                begin = ((FlexibleActivity) activity).startBy;
+                end = ((FlexibleActivity) activity).endBy;
+            } else{ // DoTodayFlexActivity
+                begin = ((DoTodayFlexActivity) activity).startBy;
+                end = ((DoTodayFlexActivity) activity).endBy;
             }
 
-            int end = ((FlexibleActivity) activity).endBy;
+            if(begin < dayStart){
+                begin = dayStart; // Activity cannot begin before dayStart
+            }
+
             if(end>dayEnd){
-                end = dayEnd; // Latest finish of activity at dayEnd
+                end = dayEnd; // Activity cannot end after dayEnd
             }
 
             // Invalid interval - insufficient time in day to complete activity
-            if(end - begin < ((FlexibleActivity) activity).duration){
-                return;
+            if (isFlexibleActivity) {
+                if(end - begin < ((FlexibleActivity) activity).duration){
+                    return;
+                }
+                flexActivities.add(activity); // Valid interval - add to list
             }
-            flexActivities.add(activity); // Valid interval - add to list
+            else { // DoTodayFlexActivity
+                if(end - begin < ((DoTodayFlexActivity) activity).duration){
+                    return;
+                }
+                doTodayActivities.add(activity); // Valid interval - add to list
+            }
         }
         activityNames.add(activity.getName()); // Track activity names so no repeats
+    }
+
+    private boolean isFlexibleActivity(Activity activity){
+        if(activity instanceof FlexibleActivity){
+            return true;
+        }
+        return false;
     }
 
     public void addMultipleActivities(Activity... activities){
@@ -109,6 +128,10 @@ public class BangForYourBuck {
 
     public List<Activity> getFlexActivities() {
         return flexActivities;
+    }
+
+    public List<Activity> getDoTodayActivities() {
+        return doTodayActivities;
     }
 
     public List<Activity> getSetActivities() {

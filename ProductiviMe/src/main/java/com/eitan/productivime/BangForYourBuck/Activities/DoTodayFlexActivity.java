@@ -11,6 +11,7 @@ public class DoTodayFlexActivity implements Activity{
     private int latestStartTime;
     public DoTodayFlexActivity(String name, String startByTime, String endByTime, String durationTime) {
 
+        this.name = name;
         this.startBy = new Time(startByTime).time;
         this.endBy = new Time(endByTime).time;
         this.duration = new Time(durationTime).time;

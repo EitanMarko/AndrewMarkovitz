@@ -11,7 +11,8 @@ public class FlexibleActivity implements Activity{
     private int value;
     public FlexibleActivity(String name, String startByTime, String endByTime, String durationTime, int value) {
 
-       this.startBy = new Time(startByTime).time;
+        this.name = name;
+        this.startBy = new Time(startByTime).time;
        this.endBy = new Time(endByTime).time;
        this.duration = new Time(durationTime).time;
        this.latestStartTime = endBy - duration;
@@ -28,7 +29,6 @@ public class FlexibleActivity implements Activity{
         }
         this.value = value;
 
-       this.name = name;
 
     }
 

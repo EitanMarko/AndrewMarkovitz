@@ -104,6 +104,56 @@ public class BangForYourBuckTest {
     }
 
     @Test
+    void doTodayActivities() {
+
+
+        // INVALID INTERVALS
+
+
+        // DoTodayFlexActivity interval shortened to 9:00-15:00, which is < 7 hours to complete the activity
+        Activity act1 = new DoTodayFlexActivity("act1","5:00","15:00", "7:00");
+
+        // DoTodayFlexActivity interval shortened to 15:00-17:00, which is < 4 hours to complete the activity
+        Activity act2 = new DoTodayFlexActivity("act2","15:00","22:00", "4:00");
+
+        // DoTodayFlexActivity interval shortened to 9:00-17:00, which is < 10 hours to complete the activity
+        Activity act3 = new DoTodayFlexActivity("act3","5:00","22:00", "10:00");
+
+        BangForYourBuck bangForYourBuckEmpty = new BangForYourBuck("9:00","17:00"); // 8 hour day
+        bangForYourBuckEmpty.addMultipleActivities(act1, act2, act3);
+        List<Activity> emptyList= new ArrayList<>();
+        assertEquals(emptyList, bangForYourBuckEmpty.getDoTodayActivities()); //No activities were added
+
+
+
+        // VALID INTERVALS
+
+
+        // DoTodayFlexActivity interval shortened to 9:00-15:00, which is > 3 hours to complete the activity
+        Activity act4 = new DoTodayFlexActivity("act4","5:00","15:00", "3:00");
+
+        // DoTodayFlexActivity interval shortened to 15:00-17:00, which is > 1.5 hours to complete the activity
+        Activity act5 = new DoTodayFlexActivity("act5","15:00","22:00", "1:30");
+
+        // DoTodayFlexActivity interval shortened to 9:00-17:00, which is > 4.25 hours to complete the activity
+        Activity act6 = new DoTodayFlexActivity("act6","5:00","22:00", "4:15");
+
+        // DoTodayFlexActivity interval unshortened, 10:00-11:00 is > 0:30 to complete activity
+        Activity act7 = new DoTodayFlexActivity("act7","10:00","11:00", "0:30");
+
+
+        BangForYourBuck bangForYourBuckFull = new BangForYourBuck("9:00","17:00"); // 8 hour day
+        bangForYourBuckFull.addMultipleActivities(act4, act5, act6, act7);
+        List<Activity> nonEmptyList= new ArrayList<>();
+        nonEmptyList.add(act4);
+        nonEmptyList.add(act5);
+        nonEmptyList.add(act6);
+        nonEmptyList.add(act7);
+        assertEquals(nonEmptyList, bangForYourBuckFull.getDoTodayActivities());
+
+    }
+
+    @Test
     void repeatActivities() { // Two activities with the same name - only the first one is added
 
         //Adding repeat activities together
