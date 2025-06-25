@@ -65,13 +65,13 @@ public class BangForYourBuckTest {
         assertEquals(nonEmptyList,bangForYourBuckFull.getSetActivities());
 
 
-        Interval interval6 = new Interval("9:45","10:00");
+        Interval interval6 = new Interval("14:45","15:00");
         Activity act6 = new SetActivity("act6",interval6);
 
-        Interval interval7 = new Interval("10:15","10:30");
+        Interval interval7 = new Interval("15:15","15:30");
         Activity act7 = new SetActivity("act7",interval7);
 
-        Interval interval8 = new Interval("10:45","11:00");
+        Interval interval8 = new Interval("15:45","16:00");
         Activity act8 = new SetActivity("act8",interval8);
 
 
