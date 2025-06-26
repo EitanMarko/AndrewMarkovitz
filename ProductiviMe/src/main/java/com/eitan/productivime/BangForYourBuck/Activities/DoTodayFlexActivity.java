@@ -47,6 +47,11 @@ public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
     }
 
     @Override
+    public int getDuration() {
+        return duration;
+    }
+
+    @Override
     public int compareTo(Activity other) {
         return Integer.compare(11, other.getValue());
     }

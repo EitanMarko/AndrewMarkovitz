@@ -5,5 +5,6 @@ public interface Activity {
     String getName();
     int getValue();
     int getLatestStartTime();
+    int getDuration();
 
 }

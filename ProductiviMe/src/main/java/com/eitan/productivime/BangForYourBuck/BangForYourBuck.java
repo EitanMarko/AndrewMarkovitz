@@ -1,10 +1,7 @@
 package com.eitan.productivime.BangForYourBuck;
 import com.eitan.productivime.BangForYourBuck.Activities.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BangForYourBuck {
 
@@ -16,6 +13,7 @@ public class BangForYourBuck {
     // MUST CREATE SOMETHING WHICH CREATES THE ACTIVITIES FOR THEM TO BE INPUT TO THIS CONSTRUCTOR
         //The @Service will receive a boolean that tells what type of activity it is. Dependent on that, the object is created and sent to the constructor
 
+    private Map<Integer, Activity> setActivityTimes;
     private List<Activity> setActivities;
     private List<Activity> flexActivities;
     private List<Activity> doTodayActivities;
@@ -39,6 +37,7 @@ public class BangForYourBuck {
             throw new IllegalArgumentException("dayEndTime must be later than dayStartTime (24-hr clock)");
         }
 
+        setActivityTimes = new HashMap<>();
         setActivities = new ArrayList<>();
         flexActivities = new ArrayList<>();
         doTodayActivities = new ArrayList<>();
@@ -54,16 +53,20 @@ public class BangForYourBuck {
     private class Schedule {
 
         private int value;
-        private Double activitiesDone;
+        private int time;
+        private long activitiesDone;
         private int lastActivityIndex; //For backtracking - indicates the last activity done. Index is in the list of activities (whether actually or virtually contiguous)
+        private int thisActivityIndex;
 
-        public Schedule(int value, Double activitiesDone, int lastActivityIndex) {
+        public Schedule(int value, long activitiesDone, int lastActivityIndex, int thisActivityIndex, int time) {
             this.value = value;
+            this.time = time;
             this.activitiesDone = activitiesDone;
             this.lastActivityIndex = lastActivityIndex;
+            this.thisActivityIndex = thisActivityIndex;
         }
 
-        public Double getActivitiesDone() {
+        public long getActivitiesDone() {
             return activitiesDone;
         }
 
@@ -90,6 +93,7 @@ public class BangForYourBuck {
                 validIntervalCheck((SetActivity) activity); // Ensure activity's interval is within defined "day"
                 overlapCheck((SetActivity) activity); // Ensure new SetActivity doesn't overlap previously added SetActivities
             }
+            setActivityTimes.put(activity.getLatestStartTime(), activity); // Mark start time of setActivity for lookup later
             setActivities.add(activity); // Valid interval - add to list
             filledIntervals.add(((SetActivity) activity).interval);
         }
@@ -188,10 +192,74 @@ public class BangForYourBuck {
 
     public void generateSchedule(){
 
-        Schedule schedule = new Schedule(0,0.0, -1);
+        Schedule emptySchedule = new Schedule(0,0, -1, -1,0);
         int numOfActivities = setActivities.size() + doTodayActivities.size() + flexActivities.size();
         int intervalStartTimes = (dayEnd - dayStart) / 5; //Activities can only occur at times of factor 5 (e.g. 1:00, 1:05, 1:10, etc.)
         Schedule[][] dp = new Schedule[intervalStartTimes][numOfActivities];
+
+        for(int i = 0; i < numOfActivities; i++){
+            dp[0][i] = emptySchedule;
+        }
+
+
+        //BFS - look at all possibilities, beginning with the empty schedule
+
+        ArrayList<Schedule> pq = new ArrayList<>();
+        pq.add(emptySchedule);
+        while(!pq.isEmpty()){
+            // Create all possible new Schedules out of that Schedule
+
+            // We want to bit wise & 1 with all places of the Double
+                // 64 places
+            // num & 1
+            // num >> 1
+            // num & 1
+            // Bit shift 63 times
+
+            // FIRST CHECK FOR A SETACTIVITY AT THIS TIME
+                //Make a system that can efficiently search for whether or not there's a setActivity now
+                    // Map setActivities to times - then search for those times when you're looking for it
+
+            Schedule prevSchedule = pq.remove(0); // Get next schedule
+
+            if(setActivityTimes.get(prevSchedule.time) != null){
+                // TWO OPTIONS:
+
+                    // Change the impl so there's only a map holding the setActivities
+                    // Each schedule tracks how many setActivities have been done
+                    // The Schedule can have a method that tells you whether or not all setActivities have been done
+                        // An activity will never be double counted bc an activity only has one opportunity to get checked off
+                    // THIS REQUIRES CHANGING THE findActivity() method
+
+                    // Check the map for whether or not there is a setActivity to do now
+                    // If yes, choose it and then do O(n) search thru list to "check it off" bitwise
+                    // If no, don't choose it
+                    // (n^2)
+                        // Doing O(n) thru all activities for all n activities
+            }
+
+            long activitiesDone = prevSchedule.activitiesDone;
+            if((activitiesDone & 1) == 0){ // if first activity is available and not a setActivity
+                Activity activityZero = findActivity(0);
+                int newValue = prevSchedule.value + activityZero.getValue();
+                long updatedActivitiesDone = activitiesDone ^ 1;
+                pq.add(new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, prevSchedule.time + activityZero.getDuration()));
+            }
+            for(int i = 0; i < 63; i++){
+                long activityNumPlace = activitiesDone >> (i+1); // Bit-shift to place of activity we're attempting to add to schedule
+                if((activityNumPlace & 1) == 0) { // available activity
+                    Activity thisActivity = findActivity(i+1);
+                    int newValue = prevSchedule.value + thisActivity.getValue();
+                    long updatedActivitiesDone = activitiesDone ^ (1<<(i+1)); // Mark activity as completed
+                    int newTime = prevSchedule.time + thisActivity.getDuration();
+                    pq.add(new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime)); // Create new Schedule with activity added
+                }
+            }
+        }
+
+
+
+
 
 
         //Create a two dimensional array -> [time][activity]
@@ -204,7 +272,7 @@ public class BangForYourBuck {
         // PROGRAM CAN BE MADE MORE EFFICIENT WITH LONGER INTERVALS (e.g. 15 mins), BUT THEN USER LOSES FLEXIBILTY
             // More efficient because much smaller array
 
-        //In the array we store an object which holds two things:
+        //In the array slot we store an object which holds two things:
             // Current value
             // Double to indicate completed activities ("activitiesDone")
 
@@ -230,6 +298,7 @@ public class BangForYourBuck {
                 // Ex: Adding a setActivity "eat"
                     // Add "eat" to setActivities list
                     // Add "eat" to allActivities list
+
 
 
         //Generate possibilities by BFS
@@ -274,6 +343,24 @@ public class BangForYourBuck {
             // To backtrack traverse back to dp[lastActivityTime][lastActivityIndex]
                 //If lastActivityIndex == -1, this indicates first activity in schedule (end of backtracking)
 
+    }
+
+
+    private Activity findActivity(int index){
+
+        // Store values for efficient reuse
+        int setActivitiesSize = setActivities.size();
+        int todayActSize = doTodayActivities.size();
+
+        if(index<setActivitiesSize){ // SetActivity
+            return setActivities.get(index);
+        } else if(index < todayActSize + setActivitiesSize){ // DoTodayFlexActivity
+            int todayActIndex = index - setActivitiesSize;
+            return doTodayActivities.get(todayActIndex);
+        } else{ // FlexibleActivity
+            int flexActIndex = index - setActivitiesSize - todayActSize;
+            return flexActivities.get(flexActIndex);
+        }
     }
 
     public List<Activity> getFlexActivities() {

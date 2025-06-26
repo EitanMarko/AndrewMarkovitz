@@ -40,6 +40,11 @@ public class SetActivity implements Activity, Comparable<Activity> {
     }
 
     @Override
+    public int getDuration() {
+        return interval.duration;
+    }
+
+    @Override
     public int compareTo(Activity other) {
         return Integer.compare(12, other.getValue());
     }

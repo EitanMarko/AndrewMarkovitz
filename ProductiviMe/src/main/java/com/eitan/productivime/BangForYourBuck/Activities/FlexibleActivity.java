@@ -48,6 +48,11 @@ public class FlexibleActivity implements Activity, Comparable<Activity>{
     }
 
     @Override
+    public int getDuration() {
+        return duration;
+    }
+
+    @Override
     public int compareTo(Activity other) {
         return Integer.compare(this.value, other.getValue());
     }
