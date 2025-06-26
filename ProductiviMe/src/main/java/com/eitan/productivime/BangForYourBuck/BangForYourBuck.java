@@ -17,6 +17,7 @@ public class BangForYourBuck {
     private List<Activity> setActivities;
     private List<Activity> flexActivities;
     private List<Activity> doTodayActivities;
+    private int nonSetActivityCount;
     private Set<String> activityNames;
     private List<Interval> filledIntervals;
 
@@ -41,6 +42,7 @@ public class BangForYourBuck {
         setActivities = new ArrayList<>();
         flexActivities = new ArrayList<>();
         doTodayActivities = new ArrayList<>();
+        nonSetActivityCount = 0;
         activityNames = new HashSet<>();
         filledIntervals = new ArrayList<>();
 
@@ -57,6 +59,7 @@ public class BangForYourBuck {
         private long activitiesDone;
         private int lastActivityIndex; //For backtracking - indicates the last activity done. Index is in the list of activities (whether actually or virtually contiguous)
         private int thisActivityIndex;
+        private int setActivitiesDone;
 
         public Schedule(int value, long activitiesDone, int lastActivityIndex, int thisActivityIndex, int time) {
             this.value = value;
@@ -64,6 +67,7 @@ public class BangForYourBuck {
             this.activitiesDone = activitiesDone;
             this.lastActivityIndex = lastActivityIndex;
             this.thisActivityIndex = thisActivityIndex;
+            this.setActivitiesDone = 0;
         }
 
         public long getActivitiesDone() {
@@ -77,9 +81,17 @@ public class BangForYourBuck {
         public int getLastActivityIndex() {
             return lastActivityIndex;
         }
+
+        public void setSetActivitiesDone(int setActivitiesDone) {
+            this.setActivitiesDone = setActivitiesDone;
+        }
+
+        public int getSetActivitiesDone() {
+            return setActivitiesDone;
+        }
     }
 
-    public void addActivity(Activity activity, boolean addMultipleActivities){ // method can be called from user or addMultipleActivities()
+    public boolean addActivity(Activity activity, boolean addMultipleActivities){ // method can be called from user or addMultipleActivities()
 
         String name = activity.getName();
         if(activityNames.contains(name)){
@@ -98,6 +110,10 @@ public class BangForYourBuck {
             filledIntervals.add(((SetActivity) activity).interval);
         }
         else{ // FlexibleActivity or DoTodayFlexActivity
+
+            if(nonSetActivityCount == 64){
+                throw new IllegalArgumentException("Limit of 64 non-setActivities has been reached - cannot add more");
+            }
 
             int begin;
             int end;
@@ -122,18 +138,22 @@ public class BangForYourBuck {
             // Invalid interval - insufficient time in day to complete activity
             if (isFlexibleActivity) {
                 if(end - begin < ((FlexibleActivity) activity).duration){
-                    return;
+                    System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
+                    return false;
                 }
                 flexActivities.add(activity); // Valid interval - add to list
             }
             else { // DoTodayFlexActivity
                 if(end - begin < ((DoTodayFlexActivity) activity).duration){
-                    return;
+                    System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
+                    return false;
                 }
                 doTodayActivities.add(activity); // Valid interval - add to list
             }
+            nonSetActivityCount++; // An activity which is not a setActivity has been added
         }
         activityNames.add(activity.getName()); // Track activity names so no repeats
+        return true;
     }
 
     private void overlapCheck(SetActivity activity) {
@@ -158,29 +178,38 @@ public class BangForYourBuck {
     }
     
 
-    public void addMultipleActivities(Activity... activities){
+    public boolean addMultipleActivities(Activity... activities){
+
+        int nonSetActivities = 0;
 
         // Check if there are any repeat names among the activities being added
         Set<String> repeats = new HashSet<>();
-        for(int i = 0; i<activities.length; i++){
+        for(int i = 0; i < activities.length; i++){
             Activity activity = activities[i];
             String activityName = activity.getName();
             if(activityNames.contains(activityName) || repeats.contains(activityName)){
-                throw new IllegalArgumentException("Repeat activity name: "+activityName);
+                throw new IllegalArgumentException("Repeat activity name: " + activityName);
             }
             repeats.add(activityName); // Track new activities in case of repeat names
 
             if(activity instanceof SetActivity){
                 validIntervalCheck((SetActivity) activity); // Ensure activity's interval is within defined "day"
                 overlapCheck((SetActivity) activity); // Ensure new SetActivity doesn't overlap previously added SetActivities
+            }else{
+                nonSetActivities++;
             }
-
-
         }
 
+        if((nonSetActivityCount + nonSetActivities) > 64){
+            throw new IllegalArgumentException("You attempted to add " + nonSetActivities + " activities, but there are " + (64 - nonSetActivityCount) + " available to add before limit");
+        }
+        boolean allAdded = true;
         for(Activity activity : activities) {
-            addActivity(activity, true);
+            if(!addActivity(activity, true)){
+                allAdded = false;
+            }
         }
+        return allAdded;
     }
 
     private void validIntervalCheck(SetActivity activity) {
@@ -221,13 +250,15 @@ public class BangForYourBuck {
                     // Map setActivities to times - then search for those times when you're looking for it
 
             Schedule prevSchedule = pq.remove(0); // Get next schedule
+            long activitiesDone = prevSchedule.activitiesDone;
 
             if(setActivityTimes.get(prevSchedule.time) != null){
                 // TWO OPTIONS:
 
+                    // DOING THIS!!!!!!!!!!!!!
                     // Change the impl so there's only a map holding the setActivities
                     // Each schedule tracks how many setActivities have been done
-                    // The Schedule can have a method that tells you whether or not all setActivities have been done
+                    // You can check whether or not all setActivities have been done by comparing to setActivityTimes.size()
                         // An activity will never be double counted bc an activity only has one opportunity to get checked off
                     // THIS REQUIRES CHANGING THE findActivity() method
 
@@ -236,14 +267,30 @@ public class BangForYourBuck {
                     // If no, don't choose it
                     // (n^2)
                         // Doing O(n) thru all activities for all n activities
+
+                Activity thisSetActivity = setActivityTimes.get(prevSchedule.time);
+                int newValue = prevSchedule.value + thisSetActivity.getValue();
+                int newTime = prevSchedule.time + thisSetActivity.getDuration();
+
+                // Set lastActivityIndex and thisActivityIndex the same because there is no index for a setActivity, and so should backtrack to last flex of doToday activity
+                Schedule newSchedule = new Schedule(newValue, activitiesDone, prevSchedule.thisActivityIndex, prevSchedule.thisActivityIndex, newTime);
+                newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()+1); // Record how many setActivities have been done
+                pq.add(newSchedule);
+
+                continue; // Schedule with the setActivity is the only viable Schedule, so stop generating
             }
 
-            long activitiesDone = prevSchedule.activitiesDone;
+
+            // IF NO SETACTIVITY AT THIS TIME:
+
             if((activitiesDone & 1) == 0){ // if first activity is available and not a setActivity
                 Activity activityZero = findActivity(0);
                 int newValue = prevSchedule.value + activityZero.getValue();
                 long updatedActivitiesDone = activitiesDone ^ 1;
-                pq.add(new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, prevSchedule.time + activityZero.getDuration()));
+                int newTime = prevSchedule.time + activityZero.getDuration();
+                Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, newTime); // Create new Schedule with activity added
+                newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
+                pq.add(newSchedule);
             }
             for(int i = 0; i < 63; i++){
                 long activityNumPlace = activitiesDone >> (i+1); // Bit-shift to place of activity we're attempting to add to schedule
@@ -252,7 +299,9 @@ public class BangForYourBuck {
                     int newValue = prevSchedule.value + thisActivity.getValue();
                     long updatedActivitiesDone = activitiesDone ^ (1<<(i+1)); // Mark activity as completed
                     int newTime = prevSchedule.time + thisActivity.getDuration();
-                    pq.add(new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime)); // Create new Schedule with activity added
+                    Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime); // Create new Schedule with activity added
+                    newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
+                    pq.add(newSchedule);
                 }
             }
         }
@@ -282,7 +331,7 @@ public class BangForYourBuck {
             // Check - Is there is a setActivity slated for that time (e.g. we're at 12:00 and setActivity "lunch" set for 12:00)?
                 // IF YES - Do that setActivity
                 //If NO:
-                    // take the activitiesDone (Double) and bitwise '&' with position of activity (for all activities)
+                    // take the activitiesDone (long) and bitwise '&' with position of activity (for all activities)
                         // If bit is not set, activity has not yet been done, and you can move forward in adding this to a schedule
                 // Why: Because if we don't do a setActivity, the Schedule we're creating will be thrown out anyway (non-viable Schedule)
                     // Elminiates unnecessary work (efficient)
@@ -346,20 +395,13 @@ public class BangForYourBuck {
     }
 
 
-    private Activity findActivity(int index){
+    private Activity findActivity(int index){ // Finds activity in imaginary contiguous list of activities (excluding setActivities)
 
-        // Store values for efficient reuse
-        int setActivitiesSize = setActivities.size();
-        int todayActSize = doTodayActivities.size();
-
-        if(index<setActivitiesSize){ // SetActivity
-            return setActivities.get(index);
-        } else if(index < todayActSize + setActivitiesSize){ // DoTodayFlexActivity
-            int todayActIndex = index - setActivitiesSize;
-            return doTodayActivities.get(todayActIndex);
-        } else{ // FlexibleActivity
-            int flexActIndex = index - setActivitiesSize - todayActSize;
-            return flexActivities.get(flexActIndex);
+        if(index < doTodayActivities.size()){ // DoTodayFlexActivity
+            return doTodayActivities.get(index);
+        }
+        else{ // FlexibleActivity
+            return flexActivities.get(index - doTodayActivities.size());
         }
     }
 

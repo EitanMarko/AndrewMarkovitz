@@ -257,6 +257,19 @@ public class BangForYourBuckTest {
     }
 
     @Test
+    void noTimeInDay() { // Cases where there is insufficient time in the day to perform the activity, so it is not added
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00"); // 11 hours in the "day"
+
+        Activity activity = new FlexibleActivity("activity","1:00", "20:00", "18:00", 10); // Duration: 18 hours
+        assertFalse(bangForYourBuck.addActivity(activity, false));
+
+        Activity activity2 = new DoTodayFlexActivity("activity","1:00", "20:00", "18:00"); // Duration: 18 hours
+        assertFalse(bangForYourBuck.addActivity(activity2, false));
+
+    }
+
+    @Test
     void repeatActivities() { // Two activities with the same name - only the first one is added
 
         //Adding repeat activities together
@@ -296,5 +309,61 @@ public class BangForYourBuckTest {
 
 
 
+    }
+
+    @Test
+    void nonSetActivityLimit() {
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00");
+        Activity[] activities = new Activity[65];
+        String name = "nam";
+        for(int i = 0; i < 65; i++){
+            name += "e";
+            Activity newAct = new DoTodayFlexActivity(name,"10:00", "12:00", "0:30");
+            activities[i] = newAct;
+        }
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck.addMultipleActivities(activities);}); // Adding too many non-setActivities at once
+
+
+        BangForYourBuck bangForYourBuck2 = new BangForYourBuck("9:00","20:00");
+        Activity[] activities2 = new Activity[64];
+        String name2 = "nam";
+        for(int i = 0; i < 64; i++){
+            name2 += "e";
+            Activity newAct = new DoTodayFlexActivity(name2,"10:00", "12:00", "0:30");
+            activities2[i] = newAct;
+        }
+        bangForYourBuck2.addMultipleActivities(activities2); // Add up to the limit (64) of non-setActivities
+
+        name2 += "e";
+        Activity newAct = new FlexibleActivity(name2,"10:00", "12:00", "0:30", 10);
+
+        // Attempt to add another non-setActivity - Invalid (over the limit i.e. 64)
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck2.addMultipleActivities(newAct);});
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck2.addActivity(newAct, false);});
+
+    }
+
+    @Test
+    void failedActivityAdds() {
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00"); // 11 hours in the "day"
+
+        Activity activity = new FlexibleActivity("activity","1:00", "20:00", "18:00", 10); // Duration: 18 hours
+        assertFalse(bangForYourBuck.addActivity(activity, false));
+        System.out.print("\n"); // Separate print statements for separate asserts
+
+        Activity activity2 = new DoTodayFlexActivity("activity2","1:00", "20:00", "18:00"); // Duration: 18 hours
+        Activity activity3 = new FlexibleActivity("activity3","1:00", "20:00", "18:00", 10); // Duration: 18 hours
+
+        Activity validActivity = new FlexibleActivity("validActivity","11:00", "13:00", "1:00", 10); // Duration: 1 hour
+        Activity validActivity2 = new FlexibleActivity("validActivity2","11:00", "13:00", "1:00", 10); // Duration: 1 hour
+
+        assertTrue(bangForYourBuck.addActivity(validActivity, false)); // Test that an Activity with these parameter is valid (then use validActivity2 in next test)
+
+        bangForYourBuck.addMultipleActivities(activity2, activity3, validActivity2); // Only activity2 and activity3 should print as unadded activities
     }
 }
