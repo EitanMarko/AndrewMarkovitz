@@ -366,4 +366,18 @@ public class BangForYourBuckTest {
 
         bangForYourBuck.addMultipleActivities(activity2, activity3, validActivity2); // Only activity2 and activity3 should print as unadded activities
     }
+
+
+    // TO TEST:
+
+        // What happens when generateSchedule() comes across an activity which will create a schedule greater that goes beyond the bounds of the day?
+            // ctrl-F:  if(newTime <= dayEnd)
+
+        // What if there is a SetActivity that starts 15 mins into the day, but there are no activities that are shorter than 30 mins?
+            // Should we create a mechanism like this:
+                // Aside from generating schedules from all possible activities we can do, also just create a "break" until the next Set Activity
+            // "Break" from 0:00 to 0:15, then perform SetActivity
+            // BETTER: Just create one Schedule which automatically creates a "break" the length of the shortest interval
+                // If schedules can only occur on 5 min intervals (0:05, 0:10, 0:15 etc.), create a Schedule which incorporates a break of that length of time
+                // This is better than creating a data structure which orders the setActivities
 }

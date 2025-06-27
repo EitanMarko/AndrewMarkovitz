@@ -23,6 +23,8 @@ public class BangForYourBuck {
 
     private int dayStart;
     private int dayEnd;
+    private Schedule optimalSchedule;
+    private List<Schedule> tiedSchedules;
 
     //NEW IDEA:
         //Don't make the Activities something that are all added at once to the constructor
@@ -45,6 +47,9 @@ public class BangForYourBuck {
         nonSetActivityCount = 0;
         activityNames = new HashSet<>();
         filledIntervals = new ArrayList<>();
+        optimalSchedule = new Schedule(0,0,0,0, 0);
+        tiedSchedules = new ArrayList<>();
+        tiedSchedules.add(optimalSchedule); // tiedSchedules should never have 0 Schedules in it
 
 
         //Now that activities have been parsed, we can choose the optimal day
@@ -56,6 +61,7 @@ public class BangForYourBuck {
 
         private int value;
         private int time;
+        private int numOfActivities;
         private long activitiesDone;
         private int lastActivityIndex; //For backtracking - indicates the last activity done. Index is in the list of activities (whether actually or virtually contiguous)
         private int thisActivityIndex;
@@ -64,10 +70,19 @@ public class BangForYourBuck {
         public Schedule(int value, long activitiesDone, int lastActivityIndex, int thisActivityIndex, int time) {
             this.value = value;
             this.time = time;
+            this.numOfActivities = 0;
             this.activitiesDone = activitiesDone;
             this.lastActivityIndex = lastActivityIndex;
             this.thisActivityIndex = thisActivityIndex;
             this.setActivitiesDone = 0;
+        }
+
+        public void setNumOfActivities(int numOfActivities) {
+            this.numOfActivities = numOfActivities;
+        }
+
+        public int getNumOfActivities() {
+            return numOfActivities;
         }
 
         public long getActivitiesDone() {
@@ -219,7 +234,7 @@ public class BangForYourBuck {
         }
     }
 
-    public void generateSchedule(){
+    public List<Schedule> generateSchedule(){
 
         Schedule emptySchedule = new Schedule(0,0, -1, -1,0);
         int numOfActivities = setActivities.size() + doTodayActivities.size() + flexActivities.size();
@@ -275,36 +290,107 @@ public class BangForYourBuck {
                 // Set lastActivityIndex and thisActivityIndex the same because there is no index for a setActivity, and so should backtrack to last flex of doToday activity
                 Schedule newSchedule = new Schedule(newValue, activitiesDone, prevSchedule.thisActivityIndex, prevSchedule.thisActivityIndex, newTime);
                 newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()+1); // Record how many setActivities have been done
+                newSchedule.setNumOfActivities(prevSchedule.getNumOfActivities() + 1); // Record how many Activities were done overall
                 pq.add(newSchedule);
 
                 continue; // Schedule with the setActivity is the only viable Schedule, so stop generating
             }
 
+            boolean addedSchedule = false;
 
             // IF NO SETACTIVITY AT THIS TIME:
 
             if((activitiesDone & 1) == 0){ // if first activity is available and not a setActivity
+
                 Activity activityZero = findActivity(0);
-                int newValue = prevSchedule.value + activityZero.getValue();
-                long updatedActivitiesDone = activitiesDone ^ 1;
                 int newTime = prevSchedule.time + activityZero.getDuration();
-                Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, newTime); // Create new Schedule with activity added
-                newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
-                pq.add(newSchedule);
+
+                if(newTime <= dayEnd){ // Create new Schedule if new Schedule stays within bounds of the day
+                    int newValue = prevSchedule.value + activityZero.getValue();
+                    long updatedActivitiesDone = activitiesDone ^ 1;
+                    Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, newTime); // Create new Schedule with activity added
+                    newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
+                    newSchedule.setNumOfActivities(prevSchedule.getNumOfActivities() + 1); // Record how many Activities were done overall
+                    pq.add(newSchedule);
+                    addedSchedule = true; // At least one more Schedule generated
+                }
             }
             for(int i = 0; i < 63; i++){
                 long activityNumPlace = activitiesDone >> (i+1); // Bit-shift to place of activity we're attempting to add to schedule
                 if((activityNumPlace & 1) == 0) { // available activity
+
                     Activity thisActivity = findActivity(i+1);
-                    int newValue = prevSchedule.value + thisActivity.getValue();
-                    long updatedActivitiesDone = activitiesDone ^ (1<<(i+1)); // Mark activity as completed
                     int newTime = prevSchedule.time + thisActivity.getDuration();
-                    Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime); // Create new Schedule with activity added
-                    newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
-                    pq.add(newSchedule);
+
+                    if(newTime <= dayEnd){ // Create new Schedule if new Schedule stays within bounds of the day
+                        int newValue = prevSchedule.value + thisActivity.getValue();
+                        long updatedActivitiesDone = activitiesDone ^ (1L <<(i+1)); // Mark activity as completed
+                        Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime); // Create new Schedule with activity added
+                        newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
+                        newSchedule.setNumOfActivities(prevSchedule.getNumOfActivities() + 1); // Record how many Activities were done overall
+                        pq.add(newSchedule);
+                        addedSchedule = true; // At least one more Schedule generated
+                    }
                 }
             }
+            if(!addedSchedule){ // If no Schedules could be generated, see if this one is the most valuable
+
+                //What the check includes:
+                    // 1) Are all setActivities completed in this schedule?
+                if(prevSchedule.setActivitiesDone < setActivityTimes.size()){
+                    continue;
+                }
+                    // 2) Are all doTodayFlexActivities completed in this schedule?
+                        // To check #2, bitwise '&' Node.activitiesDone with positions of all setActivities and doTodayFlexActivities
+                int doTodayActsNum = doTodayActivities.size();
+                if(doTodayActsNum != 0){
+                    long flexBits = 1L << 63; // Move 1 into top bit position, so you can do a right arithmatic shift
+                    int shift = doTodayActsNum - 1; // Will right shift this many bits
+                    flexBits = flexBits >> shift; // Now 1s should cover every position of DoTodayFlexActivity bits (e.g. 11110000)
+                    flexBits = ~flexBits; // Flip the bits so now all FlexibleActivity-corresponding bits are 1s
+                    long isoTodayBits = activitiesDone ^ flexBits; // Now all FlexibleActivity bits are actually turned on
+                    long shouldBeZero = ~isoTodayBits; // Flip all bits. If all DoTodayFlexActivity bits were on, then all bits were 1, and are now 0
+                    if(shouldBeZero != 0){ // If not all bits are now 0, not all DoTodayFlexActivities were completed, and Schedule is invalid
+                        continue;
+                    }
+
+                }
+                // else- no doTodayActivities, no problem and no reason to check
+
+                    // 3) Is the value of the Node greater than "int greatestValue"?
+                        // greatestValue is instantiated at 0
+                        // If Schedule.value > greatestValue, it's a candidate
+                        // If Schedule.value == greatestValue, we will do a TIEBREAKER (COME BACK TO THIS) - What makes a schedule more valuable than another?
+
+                if(prevSchedule.value > optimalSchedule.value){
+                    optimalSchedule = prevSchedule;
+                    tiedSchedules = new ArrayList<>(); // Reset tiedSchedules
+                    tiedSchedules.add(prevSchedule);
+                }
+                if(prevSchedule.value == optimalSchedule.value){
+                    // TIEBREAKER:
+                        // Number of activities done
+                    // If tiebreaker is the same, add both schedules to tiedSchedules
+
+                    if(prevSchedule.getNumOfActivities() > optimalSchedule.getNumOfActivities()){
+                        optimalSchedule = prevSchedule;
+                        tiedSchedules = new ArrayList<>(); // Reset tiedSchedules
+                        tiedSchedules.add(prevSchedule);
+                    }
+                    else if (prevSchedule.getNumOfActivities() == optimalSchedule.getNumOfActivities()){
+                        tiedSchedules.add(prevSchedule);
+                    }
+                    //else - num of activities is less - optimalSchedule is still optimal so do nothing
+
+                }
+
+            }
         }
+
+        return tiedSchedules; // If >1 Schedule in List, program should give the user the options
+
+        // NEXT: FIND ACTUAL ORDER OF ACTIVITIES IN SCHEDULE
+        // ALSO: SHOULD THERE BE BREAKS IN A SCHEDULE?
 
 
 
@@ -349,6 +435,7 @@ public class BangForYourBuck {
                     // Add "eat" to allActivities list
 
 
+      //  ------------------------------------
 
         //Generate possibilities by BFS
 
@@ -369,6 +456,8 @@ public class BangForYourBuck {
         //IF THESE CONDITIONS PASS, SAVE THE NODE AS THE CURRENT BEST SCHEDULE
         //WHEN BFS ENDS, WHATEVER IS SAVED IS THE FINAL SCHEDULE
 
+
+        // --------------------------------------------
 
         // FOR LATER - Create a checks in addActivity() which don't allow:
         //      a setActivity to be added if it overlaps with another setActivity
