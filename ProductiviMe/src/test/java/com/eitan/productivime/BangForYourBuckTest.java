@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.eitan.productivime.BangForYourBuck.*;
 import com.eitan.productivime.BangForYourBuck.Activities.*;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -367,11 +368,10 @@ public class BangForYourBuckTest {
         bangForYourBuck.addMultipleActivities(activity2, activity3, validActivity2); // Only activity2 and activity3 should print as unadded activities
     }
 
+    @Test
+    void alSetActivities() {
 
-    // TO TEST:
 
-        // What happens when generateSchedule() comes across an activity which will create a schedule greater that goes beyond the bounds of the day?
-            // ctrl-F:  if(newTime <= dayEnd)
 
         // What if there is a SetActivity that starts 15 mins into the day, but there are no activities that are shorter than 30 mins?
             // Should we create a mechanism like this:
@@ -380,4 +380,31 @@ public class BangForYourBuckTest {
             // BETTER: Just create one Schedule which automatically creates a "break" the length of the shortest interval
                 // If schedules can only occur on 5 min intervals (0:05, 0:10, 0:15 etc.), create a Schedule which incorporates a break of that length of time
                 // This is better than creating a data structure which orders the setActivities
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00");
+
+        Interval prayInterval = new Interval("9:15","10:00");
+        SetActivity setActivity = new SetActivity("pray", prayInterval);
+        bangForYourBuck.addActivity(setActivity, false);
+        for (int i = 0; i < 6; i++){
+            String name = "act" + i;
+            FlexibleActivity flexibleActivity = new FlexibleActivity(name, "9:00", "20:00", "0:30", i+1);
+            bangForYourBuck.addActivity(flexibleActivity, false);
+        }
+
+        List<BangForYourBuck.Schedule> list = bangForYourBuck.generateSchedule();
+        assertTrue(list.isEmpty());
+
+        // Make a check in the method (after "if((activitiesDone & 1) == 0)") that the FlexibleActivity we're looking at can actually be done at this time
+            // The current time falls within the "bounds" of that activity
+            // Also do this in the bit shifted clause for FlexibleActivities
+
+
+    }
+
+
+    // TO TEST:
+
+        // What happens when generateSchedule() comes across an activity which will create a schedule greater that goes beyond the bounds of the day?
+            // ctrl-F:  if(newTime <= dayEnd)
 }

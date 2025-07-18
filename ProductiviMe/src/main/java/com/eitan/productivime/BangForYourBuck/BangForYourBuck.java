@@ -57,7 +57,7 @@ public class BangForYourBuck {
 
     }
 
-    private class Schedule {
+    public class Schedule {
 
         private int value;
         private int time;
@@ -250,7 +250,13 @@ public class BangForYourBuck {
 
         ArrayList<Schedule> pq = new ArrayList<>();
         pq.add(emptySchedule);
+        int runs = -1;
         while(!pq.isEmpty()){
+            runs++;
+            if(runs>10000){
+                int y = 9;
+            }
+
             // Create all possible new Schedules out of that Schedule
 
             // We want to bit wise & 1 with all places of the Double
@@ -315,10 +321,10 @@ public class BangForYourBuck {
                     addedSchedule = true; // At least one more Schedule generated
                 }
             }
-            for(int i = 0; i < 63; i++){
+            int restOfNonSetActs = flexActivities.size() + doTodayActivities.size() - 1;
+            for(int i = 0; i < restOfNonSetActs; i++){
                 long activityNumPlace = activitiesDone >> (i+1); // Bit-shift to place of activity we're attempting to add to schedule
                 if((activityNumPlace & 1) == 0) { // available activity
-
                     Activity thisActivity = findActivity(i+1);
                     int newTime = prevSchedule.time + thisActivity.getDuration();
 
@@ -385,8 +391,21 @@ public class BangForYourBuck {
                 }
 
             }
-        }
+            /*else{
+                Activity thisActivity = new FlexibleActivity("empty", "0:00","23:59", "0:05",10);
+                int newTime = prevSchedule.time + thisActivity.getDuration();
 
+                if(newTime <= dayEnd){ // Create new Schedule if new Schedule stays within bounds of the day
+                    int newValue = prevSchedule.value + thisActivity.getValue();
+                    //long updatedActivitiesDone = activitiesDone ^ (1L <<(i+1)); // Mark activity as completed
+                    Schedule newSchedule = new Schedule(newValue, prevSchedule.getActivitiesDone(), prevSchedule.thisActivityIndex, prevSchedule.thisActivityIndex, newTime);
+                    newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // No setActivities have been added
+                    newSchedule.setNumOfActivities(prevSchedule.getNumOfActivities()); // No activities at all really have been added (empty activity doesn't count)
+                    pq.add(newSchedule);
+                }
+            }*/
+        }
+        System.out.println("Runs: "+runs);
         return tiedSchedules; // If >1 Schedule in List, program should give the user the options
 
         // NEXT: FIND ACTUAL ORDER OF ACTIVITIES IN SCHEDULE
