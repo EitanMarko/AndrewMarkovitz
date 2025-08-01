@@ -4,7 +4,7 @@ public interface Activity {
 
     String getName();
     int getValue();
-    int getLatestStartTime();
+    //int getLatestStartTime();
     int getDuration();
 
 }

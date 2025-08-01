@@ -35,11 +35,6 @@ public class SetActivity implements Activity, Comparable<Activity> {
     }
 
     @Override
-    public int getLatestStartTime() {
-        return interval.start;
-    }
-
-    @Override
     public int getDuration() {
         return interval.duration;
     }
@@ -47,5 +42,9 @@ public class SetActivity implements Activity, Comparable<Activity> {
     @Override
     public int compareTo(Activity other) {
         return Integer.compare(12, other.getValue());
+    }
+
+    public int getStartTime(){
+        return interval.start;
     }
 }

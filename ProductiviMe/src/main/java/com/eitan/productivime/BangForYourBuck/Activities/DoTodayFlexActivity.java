@@ -42,11 +42,6 @@ public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
     }
 
     @Override
-    public int getLatestStartTime() {
-        return latestStartTime;
-    }
-
-    @Override
     public int getDuration() {
         return duration;
     }

@@ -13,10 +13,5 @@ public class DoTodayFlexActivityTest {
 
         assertEquals("doToday",activity.getName());
         assertEquals(11,activity.getValue());
-
-        int duration = 2 * 60; // 2 hours == 120 mins
-        int end = 17 * 60; // 17:00 is (17 * 60) mins
-        assertEquals(end-duration,activity.getLatestStartTime());
-
     }
 }

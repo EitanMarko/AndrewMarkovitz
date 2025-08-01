@@ -16,9 +16,5 @@ public class SetActivityTest {
 
         assertEquals("set",activity.getName());
         assertEquals(12,activity.getValue());
-
-        int start = (10 * 60) + 30; //10:00 is (10*60)+30 minutes
-        assertEquals(start,activity.getLatestStartTime());
-
     }
 }

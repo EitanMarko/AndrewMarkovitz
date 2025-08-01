@@ -17,7 +17,6 @@ public class BangForYourBuck {
     private List<Activity> setActivities;
     private List<Activity> flexActivities;
     private List<Activity> doTodayActivities;
-    private int nonSetActivityCount;
     private Set<String> activityNames;
     private List<Interval> filledIntervals;
 
@@ -42,7 +41,6 @@ public class BangForYourBuck {
         setActivities = new ArrayList<>();
         flexActivities = new ArrayList<>();
         doTodayActivities = new ArrayList<>();
-        nonSetActivityCount = 0;
         activityNames = new HashSet<>();
         filledIntervals = new ArrayList<>();
 
@@ -105,52 +103,18 @@ public class BangForYourBuck {
                 validIntervalCheck((SetActivity) activity); // Ensure activity's interval is within defined "day"
                 overlapCheck((SetActivity) activity); // Ensure new SetActivity doesn't overlap previously added SetActivities
             }
-            setActivityTimes.put(activity.getLatestStartTime(), activity); // Mark start time of setActivity for lookup later
+            setActivityTimes.put(((SetActivity) activity).getStartTime(), activity); // Mark start time of setActivity for lookup later
             setActivities.add(activity); // Valid interval - add to list
             filledIntervals.add(((SetActivity) activity).interval);
         }
-        else{ // FlexibleActivity or DoTodayFlexActivity
-
-            if(nonSetActivityCount == 64){
-                throw new IllegalArgumentException("Limit of 64 non-setActivities has been reached - cannot add more");
-            }
-
-            int begin;
-            int end;
-            boolean isFlexibleActivity = isFlexibleActivity(activity);
-
-            if(isFlexibleActivity){
-                begin = ((FlexibleActivity) activity).startBy;
-                end = ((FlexibleActivity) activity).endBy;
-            } else{ // DoTodayFlexActivity
-                begin = ((DoTodayFlexActivity) activity).startBy;
-                end = ((DoTodayFlexActivity) activity).endBy;
-            }
-
-            if(begin < dayStart){
-                begin = dayStart; // Activity cannot begin before dayStart
-            }
-
-            if(end>dayEnd){
-                end = dayEnd; // Activity cannot end after dayEnd
-            }
+        else{ // FlexibleActivity
 
             // Invalid interval - insufficient time in day to complete activity
-            if (isFlexibleActivity) {
-                if(end - begin < ((FlexibleActivity) activity).duration){
-                    System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
-                    return false;
-                }
-                flexActivities.add(activity); // Valid interval - add to list
+            if(dayEnd - dayStart < ((FlexibleActivity) activity).duration){
+                System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
+                return false;
             }
-            else { // DoTodayFlexActivity
-                if(end - begin < ((DoTodayFlexActivity) activity).duration){
-                    System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
-                    return false;
-                }
-                doTodayActivities.add(activity); // Valid interval - add to list
-            }
-            nonSetActivityCount++; // An activity which is not a setActivity has been added
+            flexActivities.add(activity); // Valid interval - add to list
         }
         activityNames.add(activity.getName()); // Track activity names so no repeats
         return true;
@@ -168,13 +132,6 @@ public class BangForYourBuck {
                 throw new IllegalArgumentException("Attempted to add setActivity which overlaps with previously added setActivity");
             }
         }
-    }
-
-    private boolean isFlexibleActivity(Activity activity){
-        if(activity instanceof FlexibleActivity){
-            return true;
-        }
-        return false;
     }
     
 
@@ -200,9 +157,6 @@ public class BangForYourBuck {
             }
         }
 
-        if((nonSetActivityCount + nonSetActivities) > 64){
-            throw new IllegalArgumentException("You attempted to add " + nonSetActivities + " activities, but there are " + (64 - nonSetActivityCount) + " available to add before limit");
-        }
         boolean allAdded = true;
         for(Activity activity : activities) {
             if(!addActivity(activity, true)){

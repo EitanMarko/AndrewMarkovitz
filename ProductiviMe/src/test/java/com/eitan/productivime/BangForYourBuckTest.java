@@ -160,17 +160,12 @@ public class BangForYourBuckTest {
     void flexibleActivities() {
 
 
-        // INVALID INTERVALS
+        // INVALID ACTIVITIES
 
-
-        // Flexible interval shortened to 9:00-15:00, which is < 7 hours to complete the activity
-        Activity act1 = new FlexibleActivity("act1","5:00","15:00", "7:00", 10);
-
-        // Flexible interval shortened to 15:00-17:00, which is < 4 hours to complete the activity
-        Activity act2 = new FlexibleActivity("act2","15:00","22:00", "4:00", 10);
-
-        // Flexible interval shortened to 9:00-17:00, which is < 10 hours to complete the activity
-        Activity act3 = new FlexibleActivity("act3","5:00","22:00", "10:00", 10);
+        // Duration of activities are all >8, and therefore cannot fit in this day (of 8 hours)
+        Activity act1 = new FlexibleActivity("act1", "9:00", 10); // 9 hours
+        Activity act2 = new FlexibleActivity("act2", "10:00", 10); // 10 hours
+        Activity act3 = new FlexibleActivity("act3","11:00", 10); // 11 hours
 
         BangForYourBuck bangForYourBuckEmpty = new BangForYourBuck("9:00","17:00"); // 8 hour day
         bangForYourBuckEmpty.addMultipleActivities(act1, act2, act3);
@@ -179,102 +174,30 @@ public class BangForYourBuckTest {
 
 
 
-        // VALID INTERVALS
+        // VALID ACTIVITIES
 
-
-        // Flexible interval shortened to 9:00-15:00, which is > 3 hours to complete the activity
-        Activity act4 = new FlexibleActivity("act4","5:00","15:00", "3:00", 10);
-
-        // Flexible interval shortened to 15:00-17:00, which is > 1.5 hours to complete the activity
-        Activity act5 = new FlexibleActivity("act5","15:00","22:00", "1:30", 10);
-
-        // Flexible interval shortened to 9:00-17:00, which is > 4.25 hours to complete the activity
-        Activity act6 = new FlexibleActivity("act6","5:00","22:00", "4:15", 10);
-
-        // Flexible interval unshortened, 10:00-11:00 is > 0:30 to complete activity
-        Activity act7 = new FlexibleActivity("act7","10:00","11:00", "0:30", 10);
-
+        // Duration of activities are all <8, and therefore fit in this day (of 8 hours)
+        Activity act4 = new FlexibleActivity("act4","3:00", 10);
+        Activity act5 = new FlexibleActivity("act5","1:30", 10);
+        Activity act6 = new FlexibleActivity("act6","4:15", 10);
 
         BangForYourBuck bangForYourBuckFull = new BangForYourBuck("9:00","17:00"); // 8 hour day
-        bangForYourBuckFull.addMultipleActivities(act4, act5, act6, act7);
+        bangForYourBuckFull.addMultipleActivities(act4, act5, act6);
         List<Activity> nonEmptyList= new ArrayList<>();
         nonEmptyList.add(act4);
         nonEmptyList.add(act5);
         nonEmptyList.add(act6);
-        nonEmptyList.add(act7);
         assertEquals(nonEmptyList, bangForYourBuckFull.getFlexActivities());
 
     }
 
-    @Test
-    void doTodayActivities() {
-
-
-        // INVALID INTERVALS
-
-
-        // DoTodayFlexActivity interval shortened to 9:00-15:00, which is < 7 hours to complete the activity
-        Activity act1 = new DoTodayFlexActivity("act1","5:00","15:00", "7:00");
-
-        // DoTodayFlexActivity interval shortened to 15:00-17:00, which is < 4 hours to complete the activity
-        Activity act2 = new DoTodayFlexActivity("act2","15:00","22:00", "4:00");
-
-        // DoTodayFlexActivity interval shortened to 9:00-17:00, which is < 10 hours to complete the activity
-        Activity act3 = new DoTodayFlexActivity("act3","5:00","22:00", "10:00");
-
-        BangForYourBuck bangForYourBuckEmpty = new BangForYourBuck("9:00","17:00"); // 8 hour day
-        bangForYourBuckEmpty.addMultipleActivities(act1, act2, act3);
-        List<Activity> emptyList= new ArrayList<>();
-        assertEquals(emptyList, bangForYourBuckEmpty.getDoTodayActivities()); //No activities were added
-
-
-
-        // VALID INTERVALS
-
-
-        // DoTodayFlexActivity interval shortened to 9:00-15:00, which is > 3 hours to complete the activity
-        Activity act4 = new DoTodayFlexActivity("act4","5:00","15:00", "3:00");
-
-        // DoTodayFlexActivity interval shortened to 15:00-17:00, which is > 1.5 hours to complete the activity
-        Activity act5 = new DoTodayFlexActivity("act5","15:00","22:00", "1:30");
-
-        // DoTodayFlexActivity interval shortened to 9:00-17:00, which is > 4.25 hours to complete the activity
-        Activity act6 = new DoTodayFlexActivity("act6","5:00","22:00", "4:15");
-
-        // DoTodayFlexActivity interval unshortened, 10:00-11:00 is > 0:30 to complete activity
-        Activity act7 = new DoTodayFlexActivity("act7","10:00","11:00", "0:30");
-
-
-        BangForYourBuck bangForYourBuckFull = new BangForYourBuck("9:00","17:00"); // 8 hour day
-        bangForYourBuckFull.addMultipleActivities(act4, act5, act6, act7);
-        List<Activity> nonEmptyList= new ArrayList<>();
-        nonEmptyList.add(act4);
-        nonEmptyList.add(act5);
-        nonEmptyList.add(act6);
-        nonEmptyList.add(act7);
-        assertEquals(nonEmptyList, bangForYourBuckFull.getDoTodayActivities());
-
-    }
-
-    @Test
-    void noTimeInDay() { // Cases where there is insufficient time in the day to perform the activity, so it is not added
-
-        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00"); // 11 hours in the "day"
-
-        Activity activity = new FlexibleActivity("activity","1:00", "20:00", "18:00", 10); // Duration: 18 hours
-        assertFalse(bangForYourBuck.addActivity(activity, false));
-
-        Activity activity2 = new DoTodayFlexActivity("activity","1:00", "20:00", "18:00"); // Duration: 18 hours
-        assertFalse(bangForYourBuck.addActivity(activity2, false));
-
-    }
 
     @Test
     void repeatActivities() { // Two activities with the same name - only the first one is added
 
         //Adding repeat activities together
 
-        Activity act1 = new FlexibleActivity("activity","13:00","17:00","2:00", 10);
+        Activity act1 = new FlexibleActivity("activity","2:00", 10);
 
         Interval interval = new Interval("12:00","13:00");
         Activity act2 = new SetActivity("activity", interval);
@@ -296,8 +219,8 @@ public class BangForYourBuckTest {
 
         //Repeat of activity already added
 
-        Activity act3 = new FlexibleActivity("thing","13:00","17:00","2:00", 10);
-        Activity act4 = new FlexibleActivity("thing","13:00","17:00","2:00", 10);
+        Activity act3 = new FlexibleActivity("thing","2:00", 10);
+        Activity act4 = new FlexibleActivity("thing","2:00", 10);
 
         BangForYourBuck bangForYourBuck3 = new BangForYourBuck("9:00","20:00");
         bangForYourBuck3.addActivity(act3, false);
@@ -312,55 +235,19 @@ public class BangForYourBuckTest {
     }
 
     @Test
-    void nonSetActivityLimit() {
-
-        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00");
-        Activity[] activities = new Activity[65];
-        String name = "nam";
-        for(int i = 0; i < 65; i++){
-            name += "e";
-            Activity newAct = new DoTodayFlexActivity(name,"10:00", "12:00", "0:30");
-            activities[i] = newAct;
-        }
-        assertThrows(IllegalArgumentException.class, () -> {
-            bangForYourBuck.addMultipleActivities(activities);}); // Adding too many non-setActivities at once
-
-
-        BangForYourBuck bangForYourBuck2 = new BangForYourBuck("9:00","20:00");
-        Activity[] activities2 = new Activity[64];
-        String name2 = "nam";
-        for(int i = 0; i < 64; i++){
-            name2 += "e";
-            Activity newAct = new DoTodayFlexActivity(name2,"10:00", "12:00", "0:30");
-            activities2[i] = newAct;
-        }
-        bangForYourBuck2.addMultipleActivities(activities2); // Add up to the limit (64) of non-setActivities
-
-        name2 += "e";
-        Activity newAct = new FlexibleActivity(name2,"10:00", "12:00", "0:30", 10);
-
-        // Attempt to add another non-setActivity - Invalid (over the limit i.e. 64)
-        assertThrows(IllegalArgumentException.class, () -> {
-            bangForYourBuck2.addMultipleActivities(newAct);});
-        assertThrows(IllegalArgumentException.class, () -> {
-            bangForYourBuck2.addActivity(newAct, false);});
-
-    }
-
-    @Test
     void failedActivityAdds() {
 
         BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00"); // 11 hours in the "day"
 
-        Activity activity = new FlexibleActivity("activity","1:00", "20:00", "18:00", 10); // Duration: 18 hours
+        Activity activity = new FlexibleActivity("activity","18:00", 10); // Duration: 18 hours
         assertFalse(bangForYourBuck.addActivity(activity, false));
         System.out.print("\n"); // Separate print statements for separate asserts
 
-        Activity activity2 = new DoTodayFlexActivity("activity2","1:00", "20:00", "18:00"); // Duration: 18 hours
-        Activity activity3 = new FlexibleActivity("activity3","1:00", "20:00", "18:00", 10); // Duration: 18 hours
+        Activity activity2 = new FlexibleActivity("activity2", "18:00", 10); // Duration: 18 hours
+        Activity activity3 = new FlexibleActivity("activity3","18:00", 10); // Duration: 18 hours
 
-        Activity validActivity = new FlexibleActivity("validActivity","11:00", "13:00", "1:00", 10); // Duration: 1 hour
-        Activity validActivity2 = new FlexibleActivity("validActivity2","11:00", "13:00", "1:00", 10); // Duration: 1 hour
+        Activity validActivity = new FlexibleActivity("validActivity","1:00", 10); // Duration: 1 hour
+        Activity validActivity2 = new FlexibleActivity("validActivity2","1:00", 10); // Duration: 1 hour
 
         assertTrue(bangForYourBuck.addActivity(validActivity, false)); // Test that an Activity with these parameter is valid (then use validActivity2 in next test)
 
