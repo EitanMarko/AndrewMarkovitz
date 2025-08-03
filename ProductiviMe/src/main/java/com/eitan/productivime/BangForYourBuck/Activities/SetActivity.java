@@ -1,27 +1,15 @@
 package com.eitan.productivime.BangForYourBuck.Activities;
 import com.eitan.productivime.BangForYourBuck.*;
 
-import java.util.Optional;
-
 public class SetActivity implements Activity, Comparable<Activity> {
 
-    //Each activity has fields:
-    //Start by (optional)
-    //End by (optional)
-    //Interval (optional)
-    //Duration
-    //Value (?/10)
     public String name;
     public Interval interval;
 
-                                                                    //long? (duration)
-    public SetActivity(String name, Interval interval) {
-        //Use the Time class to derive a value from the startBy & endBy strings
-        //Or just do this is in a private method?
+
+    public SetActivity(String name, String startTime, String endTime) {
         this.name = name;
-        this.interval = interval;
-
-
+        this.interval = new Interval(startTime, endTime);
     }
 
     @Override
@@ -47,4 +35,22 @@ public class SetActivity implements Activity, Comparable<Activity> {
     public int getStartTime(){
         return interval.start;
     }
+    public int getEndTime(){
+        return interval.end;
+    }
+
+    public void setStartTime(String start){
+        interval.setStart(start);
+    }
+
+    public void setEndTime(String end){
+        interval.setEnd(end);
+    }
+
+    public Interval getInterval(){
+        return this.interval;
+    }
+
+    //getInterval() method - to use when creating free blocks
+        // Every time a SetActivity is created, get its interval, and add it to an ordered list
 }

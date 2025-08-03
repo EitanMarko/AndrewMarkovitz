@@ -50,6 +50,20 @@ public class TimeTest {
 
     }
 
+    @Test
+    void nextDayMidnight() {
+
+        // Valid - denotes midnight of the next day
+        Time midnight = new Time("24:00");
+
+        // Invalid - any time past midnight of the next day
+        assertThrows(IllegalArgumentException.class, () -> {
+            Time pastMidnight1 = new Time("24:05");});
+        assertThrows(IllegalArgumentException.class, () -> {
+            Time pastMidnight2 = new Time("24:15");});
+        assertThrows(IllegalArgumentException.class, () -> {
+            Time pastMidnight3 = new Time("25:00");});
+    }
 
     @Test
     void invalidMinutes() {

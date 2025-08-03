@@ -33,8 +33,13 @@ public class Time {
         int hour = Integer.parseInt(hourStr);
         int mins = Integer.parseInt(minsStr);
 
+        if(hour == 24 && mins == 0){ // edge case - 24:00 (midnight of next day)
+            time = (hour*60) + mins;
+            return;
+        }
+
         if(hour<0 || hour>23){
-            throw new IllegalArgumentException("Hours must be between 0-23");
+            throw new IllegalArgumentException("Hours must be between 0-23, except for 24:00");
         }
         if(mins<0 || mins>59){
             throw new IllegalArgumentException("Minutes must be between 0-59");

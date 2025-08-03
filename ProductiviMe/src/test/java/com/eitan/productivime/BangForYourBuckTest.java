@@ -16,14 +16,14 @@ public class BangForYourBuckTest {
 
             // Add Activities individually
 
-        Interval interval1 = new Interval("8:45","17:15"); // Both start and end out of bounds
-        Activity act1 = new SetActivity("act1",interval1);
+        // Both start and end out of bounds
+        Activity act1 = new SetActivity("act1","8:45","17:15");
 
-        Interval interval2 = new Interval("9:00","17:15");  // Only end out of bounds
-        Activity act2 = new SetActivity("act2",interval2);
+        // Only end out of bounds
+        Activity act2 = new SetActivity("act2","9:00","17:15");
 
-        Interval interval3 = new Interval("8:45","17:00"); // Only start out of bounds
-        Activity act3 = new SetActivity("act3",interval3);
+        // Only start out of bounds
+        Activity act3 = new SetActivity("act3","8:45","17:00");
 
         BangForYourBuck bangForYourBuckEmpty = new BangForYourBuck("9:00","17:00");
 
@@ -49,11 +49,9 @@ public class BangForYourBuckTest {
 
             // Add Activities individually
 
-        Interval interval4 = new Interval("9:00","11:00"); // Interval in bounds
-        Activity act4 = new SetActivity("act4",interval4);
-
-        Interval interval5 = new Interval("11:30","14:15"); // Interval in bounds
-        Activity act5 = new SetActivity("act5",interval5);
+        // Interval in bounds
+        Activity act4 = new SetActivity("act4","9:00","11:00");
+        Activity act5 = new SetActivity("act5","11:30","14:15");
 
         BangForYourBuck bangForYourBuckFull = new BangForYourBuck("9:00","17:00");
         bangForYourBuckFull.addActivity(act4, false);
@@ -65,14 +63,9 @@ public class BangForYourBuckTest {
         assertEquals(nonEmptyList,bangForYourBuckFull.getSetActivities());
 
 
-        Interval interval6 = new Interval("14:45","15:00");
-        Activity act6 = new SetActivity("act6",interval6);
-
-        Interval interval7 = new Interval("15:15","15:30");
-        Activity act7 = new SetActivity("act7",interval7);
-
-        Interval interval8 = new Interval("15:45","16:00");
-        Activity act8 = new SetActivity("act8",interval8);
+        Activity act6 = new SetActivity("act6","14:45","15:00");
+        Activity act7 = new SetActivity("act7","15:15","15:30");
+        Activity act8 = new SetActivity("act8","15:45","16:00");
 
 
             // Add Activities all at once
@@ -91,11 +84,11 @@ public class BangForYourBuckTest {
 
         List<Activity> activityList= new ArrayList<>(); // List of viable activities
 
-        Interval interval1 = new Interval("10:00","12:00"); // Valid interval
-        Activity act1 = new SetActivity("act1",interval1);
+        // Valid interval
+        Activity act1 = new SetActivity("act1","10:00","12:00");
 
-        Interval interval2 = new Interval("11:00","11:30");  // Interval falls within (overlaps) interval1
-        Activity act2 = new SetActivity("act2",interval2);
+        // interval falls within (overlaps) act1's interval
+        Activity act2 = new SetActivity("act2","11:00","11:30");
 
         BangForYourBuck bangForYourBuck = new BangForYourBuck("6:00","22:00");
         bangForYourBuck.addActivity(act1, false);
@@ -108,11 +101,9 @@ public class BangForYourBuckTest {
 
         // Keep track of setActivity intervals, and for a given add, check whether there is overlap
 
-        Interval interval3 = new Interval("9:00","11:00"); // Interval overlaps interval1
-        Activity act3 = new SetActivity("act3",interval3);
-
-        Interval interval4 = new Interval("11:00","13:00"); // Interval overlaps interval1
-        Activity act4 = new SetActivity("act4",interval4);
+        // interval overlaps act1's interval
+        Activity act3 = new SetActivity("act3","9:00","11:00");
+        Activity act4 = new SetActivity("act4","11:00","13:00");
 
         assertThrows(IllegalArgumentException.class, () -> {
             bangForYourBuck.addActivity(act3, false);});
@@ -125,11 +116,9 @@ public class BangForYourBuckTest {
 
         // Add Activities individually
 
-        Interval interval5 = new Interval("9:00","10:00");
-        Activity act5 = new SetActivity("act5",interval5);
 
-        Interval interval6 = new Interval("12:00","13:00");
-        Activity act6 = new SetActivity("act6",interval6);
+        Activity act5 = new SetActivity("act5","9:00","10:00");
+        Activity act6 = new SetActivity("act6","12:00","13:00");
 
         bangForYourBuck.addActivity(act5, false);
         bangForYourBuck.addActivity(act6, false);
@@ -142,11 +131,8 @@ public class BangForYourBuckTest {
 
         // Add Activities all at once
 
-        Interval interval7 = new Interval("8:00","9:00");
-        Activity act7 = new SetActivity("act7",interval7);
-
-        Interval interval8 = new Interval("13:00","14:00");
-        Activity act8 = new SetActivity("act8",interval8);
+        Activity act7 = new SetActivity("act7","8:00","9:00");
+        Activity act8 = new SetActivity("act8","13:00","14:00");
 
         bangForYourBuck.addMultipleActivities(act7,act8);
         activityList.add(act7);
@@ -193,14 +179,28 @@ public class BangForYourBuckTest {
 
 
     @Test
+    void invalidDayTimes() {
+
+        // dayStart >= dayEnd
+        assertThrows(IllegalArgumentException.class, () -> {
+            BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","8:00");});
+        assertThrows(IllegalArgumentException.class, () -> {
+            BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","9:00");});
+
+        // Day's start and end times must on a 5-minute interval
+        assertThrows(IllegalArgumentException.class, () -> {
+            BangForYourBuck bangForYourBuck1 = new BangForYourBuck("9:01","10:00");});
+        assertThrows(IllegalArgumentException.class, () -> {
+            BangForYourBuck bangForYourBuck1 = new BangForYourBuck("9:00","10:01");});
+    }
+
+    @Test
     void repeatActivities() { // Two activities with the same name - only the first one is added
 
         //Adding repeat activities together
 
         Activity act1 = new FlexibleActivity("activity","2:00", 10);
-
-        Interval interval = new Interval("12:00","13:00");
-        Activity act2 = new SetActivity("activity", interval);
+        Activity act2 = new SetActivity("activity", "12:00","13:00");
 
         BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","20:00");
 
@@ -229,8 +229,73 @@ public class BangForYourBuckTest {
         assertThrows(IllegalArgumentException.class, () -> {
             bangForYourBuck3.addMultipleActivities(act1, act3);});
 
+    }
+
+    @Test
+    void FlexibleActivityLimit() {
+
+        // Add exactly the right number of FlexibleActivities individually
+        BangForYourBuck bangForYourBuck0 = new BangForYourBuck("9:00","20:00");
+        String name0 = "nam";
+        Time nine = new Time("9:00");
+        Time twenty = new Time("20:00");
+        for(int i = 0; i < (twenty.time - nine.time)/5 ; i++){
+            name0 += "e";
+            FlexibleActivity newAct = new FlexibleActivity(name0,"0:30",10);
+            if(i % 2 == 0){
+                newAct.doToday(); // This includes DoTodayActivities
+            }
+            bangForYourBuck0.addActivity(newAct,false);
+        }
+        FlexibleActivity extraAct = new FlexibleActivity(name0,"0:30",10);
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck0.addActivity(extraAct,false);}); // Adding one extra FlexibleActivity (over limit)
 
 
+        // Add one too many FlexibleActivities all at once
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("3:00","22:00");
+        Time three = new Time("3:00");
+        Time twentyTwo = new Time("22:00");
+        int numOfSlots = (twentyTwo.time - three.time)/5; // Number of allowed activities to be added
+        Activity[] activities = new Activity[numOfSlots+1];
+        String name = "nam";
+        for(int i = 0; i < numOfSlots+1; i++){
+            name += "e";
+            FlexibleActivity newAct = new FlexibleActivity(name,"0:30",10);
+            if(i % 2 == 0){
+                newAct.doToday(); // This includes DoTodayActivities
+            }
+            activities[i] = newAct;
+        }
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck.addMultipleActivities(activities);}); // Adding too many FlexibleActivities at once
+
+
+        // Add exactly the right number of FlexibleActivities individually (safe), then one more (over limit)
+        BangForYourBuck bangForYourBuck2 = new BangForYourBuck("7:00","18:00");
+        Time seven = new Time("7:00");
+        Time eighteen = new Time("18:00");
+        int numOfSlots2 = (eighteen.time - seven.time)/5; // Number of allowed activities to be added
+        Activity[] activities2 = new Activity[numOfSlots2];
+        String name2 = "nam";
+        for(int i = 0; i < numOfSlots2; i++){
+            name2 += "e";
+            FlexibleActivity newAct = new FlexibleActivity(name2,"0:30",10);
+            if(i % 2 == 0){
+                newAct.doToday(); // This includes DoTodayActivities
+            }
+            activities2[i] = newAct;
+        }
+        bangForYourBuck2.addMultipleActivities(activities2); // Add up to the limit of FlexibleActivities
+
+        name2 += "e";
+        Activity newAct = new FlexibleActivity(name2,"0:30", 10);
+
+        // Attempt to add another FlexibleActivity - Invalid
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck2.addMultipleActivities(newAct);});
+        assertThrows(IllegalArgumentException.class, () -> {
+            bangForYourBuck2.addActivity(newAct, false);});
 
     }
 

@@ -33,9 +33,15 @@ public class BangForYourBuck {
         dayStart = new Time(dayStartTime).time;
         dayEnd = new Time(dayEndTime).time;
 
+
         if(dayStart >= dayEnd){
             throw new IllegalArgumentException("dayEndTime must be later than dayStartTime (24-hr clock)");
         }
+
+        if(dayStart % 5 != 0 || dayEnd % 5 != 0){
+            throw new IllegalArgumentException("Day's start and end times must be on a 5-minute interval");
+        }
+        System.out.println("Day is "+ (dayEnd-dayStart)+" minutes long");
 
         setActivityTimes = new HashMap<>();
         setActivities = new ArrayList<>();
@@ -109,6 +115,10 @@ public class BangForYourBuck {
         }
         else{ // FlexibleActivity
 
+            if(flexActivities.size() == ((dayEnd - dayStart)/5) ){ // Limit on number of FlexibleActivities is dependent on length of day (5-minute intervals)
+                throw new IllegalArgumentException("Limit of "+((dayEnd - dayStart)/5) +" FlexibleActivities has been reached - cannot add more");
+            }
+
             // Invalid interval - insufficient time in day to complete activity
             if(dayEnd - dayStart < ((FlexibleActivity) activity).duration){
                 System.out.println("Could not add the activity: "+ activity.getName()); // No exception thrown because addMultipleActivities() may add more activities after this fails
@@ -155,6 +165,10 @@ public class BangForYourBuck {
             }else{
                 nonSetActivities++;
             }
+        }
+
+        if((flexActivities.size() + nonSetActivities) > 288){
+            throw new IllegalArgumentException("You attempted to add " + nonSetActivities + " activities, but there are only " + (288 - flexActivities.size()) + " available to add before limit");
         }
 
         boolean allAdded = true;
