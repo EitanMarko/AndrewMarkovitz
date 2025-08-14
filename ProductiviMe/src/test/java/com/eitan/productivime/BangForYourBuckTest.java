@@ -318,4 +318,44 @@ public class BangForYourBuckTest {
 
         bangForYourBuck.addMultipleActivities(activity2, activity3, validActivity2); // Only activity2 and activity3 should print as unadded activities
     }
+
+
+    @Test
+    void generator() {
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","17:00"); // 11 hours in the "day"
+        // Free Interval: 9:00-10:00
+        Activity act1 = new SetActivity("act1", "10:00", "11:00");
+        // Free Interval: 11:00-12:00
+        Activity act2 = new SetActivity("act2", "12:00", "13:00");
+        // Free Interval: 13:00-14:00
+        Activity act3 = new SetActivity("act3", "14:00", "15:00");
+        Activity act4 = new SetActivity("act4", "15:00", "16:00");
+        // Free Interval: 16:00-17:00 (end of day)
+
+        // Try generating before any setActivities are added
+        bangForYourBuck.generateSchedule();
+
+        bangForYourBuck.addMultipleActivities(act1,act2, act3,act4);
+        bangForYourBuck.generateSchedule();
+
+        System.out.println("--------------------------------------------------");
+
+        //SetActivity starts at beginning of day
+        BangForYourBuck bangForYourBuck2 = new BangForYourBuck("9:00","17:00"); // 11 hours in the "day"
+        Activity act5 = new SetActivity("act5", "9:00", "10:00");
+        bangForYourBuck2.addActivity(act5,false);
+        bangForYourBuck2.generateSchedule();
+
+        System.out.println("--------------------------------------------------");
+
+        //SetActivity ends at end of day
+        BangForYourBuck bangForYourBuck3 = new BangForYourBuck("9:00","17:00"); // 11 hours in the "day"
+        Activity act6 = new SetActivity("act6", "16:00", "17:00");
+        bangForYourBuck3.addActivity(act6,false);
+        bangForYourBuck3.generateSchedule();
+
+
+
+    }
 }

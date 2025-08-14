@@ -92,6 +92,6 @@ public class SetActivityTest {
         assertEquals(interval.start,activity.getInterval().start);
         assertEquals(interval.end,activity.getInterval().end);
 
-        
+
     }
 }

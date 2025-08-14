@@ -4,7 +4,7 @@ import com.eitan.productivime.BangForYourBuck.*;
 public class SetActivity implements Activity, Comparable<Activity> {
 
     public String name;
-    public Interval interval;
+    private Interval interval;
 
 
     public SetActivity(String name, String startTime, String endTime) {

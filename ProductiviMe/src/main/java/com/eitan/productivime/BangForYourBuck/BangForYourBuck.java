@@ -20,6 +20,8 @@ public class BangForYourBuck {
     private Set<String> activityNames;
     private List<Interval> filledIntervals;
 
+    private String dayStartStr;
+    private String dayEndStr;
     private int dayStart;
     private int dayEnd;
 
@@ -30,6 +32,8 @@ public class BangForYourBuck {
 
     public BangForYourBuck(String dayStartTime, String dayEndTime) {
 
+        dayStartStr = dayStartTime;
+        dayEndStr = dayEndTime;
         dayStart = new Time(dayStartTime).time;
         dayEnd = new Time(dayEndTime).time;
 
@@ -56,45 +60,6 @@ public class BangForYourBuck {
 
     }
 
-    private class Schedule {
-
-        private int value;
-        private int time;
-        private long activitiesDone;
-        private int lastActivityIndex; //For backtracking - indicates the last activity done. Index is in the list of activities (whether actually or virtually contiguous)
-        private int thisActivityIndex;
-        private int setActivitiesDone;
-
-        public Schedule(int value, long activitiesDone, int lastActivityIndex, int thisActivityIndex, int time) {
-            this.value = value;
-            this.time = time;
-            this.activitiesDone = activitiesDone;
-            this.lastActivityIndex = lastActivityIndex;
-            this.thisActivityIndex = thisActivityIndex;
-            this.setActivitiesDone = 0;
-        }
-
-        public long getActivitiesDone() {
-            return activitiesDone;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public int getLastActivityIndex() {
-            return lastActivityIndex;
-        }
-
-        public void setSetActivitiesDone(int setActivitiesDone) {
-            this.setActivitiesDone = setActivitiesDone;
-        }
-
-        public int getSetActivitiesDone() {
-            return setActivitiesDone;
-        }
-    }
-
     public boolean addActivity(Activity activity, boolean addMultipleActivities){ // method can be called from user or addMultipleActivities()
 
         String name = activity.getName();
@@ -111,7 +76,7 @@ public class BangForYourBuck {
             }
             setActivityTimes.put(((SetActivity) activity).getStartTime(), activity); // Mark start time of setActivity for lookup later
             setActivities.add(activity); // Valid interval - add to list
-            filledIntervals.add(((SetActivity) activity).interval);
+            filledIntervals.add(((SetActivity) activity).getInterval());
         }
         else{ // FlexibleActivity
 
@@ -134,11 +99,11 @@ public class BangForYourBuck {
         for(Interval interval : filledIntervals){
 
             //If the start time is between the start and end time of the interval
-            if(activity.interval.start >= interval.start && activity.interval.start < interval.end){
+            if(activity.getInterval().start >= interval.start && activity.getInterval().start < interval.end){
                 throw new IllegalArgumentException("Attempted to add setActivity which overlaps with previously added setActivity");
             }
             //If the end   time is between the start and end time of the interval
-            if(activity.interval.end > interval.start && activity.interval.end <= interval.end){
+            if(activity.getInterval().end > interval.start && activity.getInterval().end <= interval.end){
                 throw new IllegalArgumentException("Attempted to add setActivity which overlaps with previously added setActivity");
             }
         }
@@ -182,97 +147,53 @@ public class BangForYourBuck {
 
     private void validIntervalCheck(SetActivity activity) {
         // Invalid interval - starts before day begins || finishes after day ends
-        if( activity.interval.start < dayStart || activity.interval.end > dayEnd){
+        if( activity.getInterval().start < dayStart || activity.getInterval().end > dayEnd){
             throw new IllegalArgumentException("SetActivity must be set within daytime hours");
         }
     }
 
     public void generateSchedule(){
 
-        Schedule emptySchedule = new Schedule(0,0, -1, -1,0);
-        int numOfActivities = setActivities.size() + doTodayActivities.size() + flexActivities.size();
-        int intervalStartTimes = (dayEnd - dayStart) / 5; //Activities can only occur at times of factor 5 (e.g. 1:00, 1:05, 1:10, etc.)
-        Schedule[][] dp = new Schedule[intervalStartTimes][numOfActivities];
+        // STEP 1: GET ALL FREE INTERVALS
 
-        for(int i = 0; i < numOfActivities; i++){
-            dp[0][i] = emptySchedule;
-        }
+        // SORT filledIntervals HERE????????????????????????????
 
-
-        //BFS - look at all possibilities, beginning with the empty schedule
-
-        ArrayList<Schedule> pq = new ArrayList<>();
-        pq.add(emptySchedule);
-        while(!pq.isEmpty()){
-            // Create all possible new Schedules out of that Schedule
-
-            // We want to bit wise & 1 with all places of the Double
-                // 64 places
-            // num & 1
-            // num >> 1
-            // num & 1
-            // Bit shift 63 times
-
-            // FIRST CHECK FOR A SETACTIVITY AT THIS TIME
-                //Make a system that can efficiently search for whether or not there's a setActivity now
-                    // Map setActivities to times - then search for those times when you're looking for it
-
-            Schedule prevSchedule = pq.remove(0); // Get next schedule
-            long activitiesDone = prevSchedule.activitiesDone;
-
-            if(setActivityTimes.get(prevSchedule.time) != null){
-                // TWO OPTIONS:
-
-                    // DOING THIS!!!!!!!!!!!!!
-                    // Change the impl so there's only a map holding the setActivities
-                    // Each schedule tracks how many setActivities have been done
-                    // You can check whether or not all setActivities have been done by comparing to setActivityTimes.size()
-                        // An activity will never be double counted bc an activity only has one opportunity to get checked off
-                    // THIS REQUIRES CHANGING THE findActivity() method
-
-                    // Check the map for whether or not there is a setActivity to do now
-                    // If yes, choose it and then do O(n) search thru list to "check it off" bitwise
-                    // If no, don't choose it
-                    // (n^2)
-                        // Doing O(n) thru all activities for all n activities
-
-                Activity thisSetActivity = setActivityTimes.get(prevSchedule.time);
-                int newValue = prevSchedule.value + thisSetActivity.getValue();
-                int newTime = prevSchedule.time + thisSetActivity.getDuration();
-
-                // Set lastActivityIndex and thisActivityIndex the same because there is no index for a setActivity, and so should backtrack to last flex of doToday activity
-                Schedule newSchedule = new Schedule(newValue, activitiesDone, prevSchedule.thisActivityIndex, prevSchedule.thisActivityIndex, newTime);
-                newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()+1); // Record how many setActivities have been done
-                pq.add(newSchedule);
-
-                continue; // Schedule with the setActivity is the only viable Schedule, so stop generating
-            }
-
-
-            // IF NO SETACTIVITY AT THIS TIME:
-
-            if((activitiesDone & 1) == 0){ // if first activity is available and not a setActivity
-                Activity activityZero = findActivity(0);
-                int newValue = prevSchedule.value + activityZero.getValue();
-                long updatedActivitiesDone = activitiesDone ^ 1;
-                int newTime = prevSchedule.time + activityZero.getDuration();
-                Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, 0, newTime); // Create new Schedule with activity added
-                newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
-                pq.add(newSchedule);
-            }
-            for(int i = 0; i < 63; i++){
-                long activityNumPlace = activitiesDone >> (i+1); // Bit-shift to place of activity we're attempting to add to schedule
-                if((activityNumPlace & 1) == 0) { // available activity
-                    Activity thisActivity = findActivity(i+1);
-                    int newValue = prevSchedule.value + thisActivity.getValue();
-                    long updatedActivitiesDone = activitiesDone ^ (1<<(i+1)); // Mark activity as completed
-                    int newTime = prevSchedule.time + thisActivity.getDuration();
-                    Schedule newSchedule = new Schedule(newValue, updatedActivitiesDone, prevSchedule.thisActivityIndex, i+1, newTime); // Create new Schedule with activity added
-                    newSchedule.setSetActivitiesDone(prevSchedule.getSetActivitiesDone()); // Record how many setActivities have been done
-                    pq.add(newSchedule);
-                }
+        List<Interval> freeIntervals = new ArrayList<>();
+        if(!filledIntervals.isEmpty()){
+            Interval firstInterval = filledIntervals.get(0);
+            if(firstInterval.start > dayStart){ // From start of day til start of first interval
+                freeIntervals.add(new Interval(dayStartStr,firstInterval.getStartStr()));
             }
         }
+        for(int i = 1; i < filledIntervals.size(); i++){
+            // Q: Would it be faster to instead just do an O(n) pass thru all Intervals in filledIntervals,
+                // and create a "Free Interval" between each?
+                //Case: if difference between Intervals == 0, DO NOT create "Free Interval".
+                    // Seems simpler to me...
+
+            // Add dif between start of day and first interval
+            Interval prev = filledIntervals.get(i-1);
+            Interval curr = filledIntervals.get(i);
+            if(curr.start - prev.end != 0){
+                freeIntervals.add(new Interval(prev.getEndStr(),curr.getStartStr()));
+            }
+        }
+
+        if (!filledIntervals.isEmpty()) {
+            Interval lastInterval = filledIntervals.get(filledIntervals.size()-1);
+            if(lastInterval.end < dayEnd){ // From end of last interval til end of day
+                freeIntervals.add(new Interval(lastInterval.getEndStr(), dayEndStr));
+            }
+        }
+
+        for(Interval interval : freeIntervals){
+            System.out.println("Free Interval: "+ interval.getStartStr()+"-"+interval.getEndStr());
+        }
+
+        // STEP 2: DP BUCKET FILL EACH FREE INTERVAL
+            // SMALLEST -> LARGEST INTERVAL ORDER
+
+
 
 
 
