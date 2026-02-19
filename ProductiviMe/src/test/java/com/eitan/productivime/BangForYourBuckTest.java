@@ -358,4 +358,119 @@ public class BangForYourBuckTest {
 
 
     }
+
+
+    @Test
+    void generator2() { // NON-OPTIMAL
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("9:00","12:00");
+        // Free Interval: 9:00-10:30
+        Activity setAct1 = new SetActivity("setAct1", "10:30", "11:00");
+        // Free Interval: 11:00-12:00
+
+        bangForYourBuck.addActivity(setAct1,false);
+
+        FlexibleActivity flexAct1 = new FlexibleActivity("flexAct1","0:30", 8);
+        FlexibleActivity flexAct2 = new FlexibleActivity("flexAct2","0:45", 7);
+        FlexibleActivity flexAct3 = new FlexibleActivity("flexAct3","1:00", 5);
+        FlexibleActivity flexAct4 = new FlexibleActivity("flexAct4","1:15", 6);
+
+        bangForYourBuck.addMultipleActivities(flexAct1,flexAct2,flexAct3,flexAct4);
+        bangForYourBuck.generateSchedule();
+
+    }
+
+    @Test
+    void generator3() { // OPTIMAL
+
+        BangForYourBuck bangForYourBuck = new BangForYourBuck("8:00","11:00");
+        // Free Interval: 8:00-9:00
+        Activity setAct1 = new SetActivity("setAct1", "9:00", "10:00");
+        // Free Interval: 10:00-11:00
+
+        bangForYourBuck.addActivity(setAct1,false);
+
+        FlexibleActivity flexAct1 = new FlexibleActivity("flexAct1","0:15", 6);
+        FlexibleActivity flexAct2 = new FlexibleActivity("flexAct2","0:15", 6);
+        FlexibleActivity flexAct3 = new FlexibleActivity("flexAct3","0:30", 8);
+        FlexibleActivity flexAct4 = new FlexibleActivity("flexAct4","0:30", 2);
+        FlexibleActivity flexAct5 = new FlexibleActivity("flexAct5","1:00", 9);
+
+        bangForYourBuck.addMultipleActivities(flexAct1,flexAct2,flexAct3,flexAct4,flexAct5);
+        bangForYourBuck.generateSchedule();
+
+    }
+
+    // -------------------------------------------------------------------------
+    // Test: A perfect day — all activities completed → 100% effectiveness
+    // -------------------------------------------------------------------------
+    @Test
+    void testPerfectDay() {
+        BangForYourBuck day = new BangForYourBuck("8:00", "18:00");
+
+        day.addActivity(new FlexibleActivity("Read",    "0:30", 6), false);
+        day.addActivity(new FlexibleActivity("Exercise","1:00", 9), false);
+        day.addActivity(new SetActivity("Standup", "9:00", "9:30"), false);
+
+        day.completeActivity("Read");
+        day.completeActivity("Exercise");
+        day.completeActivity("Standup");
+
+        double effectiveness = day.getDayEffectiveness() * 100.0;
+        System.out.println("User was "+effectiveness+"% effective today");
+
+        assertEquals(1.0, day.getDayEffectiveness(), 0.001,
+                "Completing every activity should yield 100% effectiveness");
+    }
+
+    // -------------------------------------------------------------------------
+    // Test: A failed day — nothing completed → 0% effectiveness
+    // -------------------------------------------------------------------------
+    @Test
+    void testFailedDay() {
+        BangForYourBuck day = new BangForYourBuck("8:00", "18:00");
+
+        day.addActivity(new FlexibleActivity("Read",    "0:30", 6), false);
+        day.addActivity(new FlexibleActivity("Exercise","1:00", 9), false);
+
+        double effectiveness = day.getDayEffectiveness() * 100.0;
+        System.out.println("User was "+effectiveness+"% effective today");
+
+        // Don't complete anything
+        assertEquals(0.0, day.getDayEffectiveness(), 0.001,
+                "Completing nothing should yield 0% effectiveness");
+    }
+
+    // -------------------------------------------------------------------------
+    // Test: High-value activities skipped hurt more than low-value ones
+    //
+    // Skipping a high-value activity should produce a lower effectiveness score
+    // than skipping a low-value one, confirming that priorities actually matter
+    // in the final score.
+    // -------------------------------------------------------------------------
+    @Test
+    void testHighValueSkipHurtsMoreThanLowValueSkip() {
+        // Scenario A: complete the high-value task, skip the low-value one
+        BangForYourBuck dayA = new BangForYourBuck("8:00", "18:00");
+        dayA.addActivity(new FlexibleActivity("Important", "1:00", 9), false);
+        dayA.addActivity(new FlexibleActivity("Trivial",   "0:15", 1), false);
+        dayA.completeActivity("Important"); // completed=9, total=10 → 90%
+
+        double effectivenessA = dayA.getDayEffectiveness() * 100.0;
+        System.out.println("User was "+effectivenessA+"% effective on Day A");
+
+        // Scenario B: complete the low-value task, skip the high-value one
+        BangForYourBuck dayB = new BangForYourBuck("8:00", "18:00");
+        dayB.addActivity(new FlexibleActivity("Important", "1:00", 9), false);
+        dayB.addActivity(new FlexibleActivity("Trivial",   "0:15", 1), false);
+        dayB.completeActivity("Trivial");  // completed=1, total=10 → 10%
+
+        double effectivenessB = dayB.getDayEffectiveness() * 100.0;
+        System.out.println("User was "+effectivenessB+"% effective on Day B");
+
+        assertTrue(dayA.getDayEffectiveness() > dayB.getDayEffectiveness(),
+                "Skipping a high-value activity should produce a lower score than skipping a low-value one");
+    }
+
+
 }

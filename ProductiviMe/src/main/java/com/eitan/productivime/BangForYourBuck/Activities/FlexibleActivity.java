@@ -8,6 +8,7 @@ public class FlexibleActivity implements Activity, Comparable<Activity>{
     private int flexValue; // Save most recently set value between 1-10 in case activity is accidentally set to doToday()
     private int value;
     private boolean isDoTodayActivity;
+    private boolean completed;
     public FlexibleActivity(String name, String durationTime, int value) {
 
         this.name = name;
@@ -22,6 +23,7 @@ public class FlexibleActivity implements Activity, Comparable<Activity>{
         this.value = value;
         this.flexValue = value;
         this.isDoTodayActivity = false;
+        this.completed = false;
 
 
     }
@@ -84,5 +86,24 @@ public class FlexibleActivity implements Activity, Comparable<Activity>{
     @Override
     public int compareTo(Activity other) {
         return Integer.compare(this.value, other.getValue());
+    }
+    @Override
+    public void markComplete() {
+        this.completed = true;
+    }
+
+    @Override
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    /**
+     * Returns the real user-assigned priority (1-10), stripping out any doToday()
+     * inflation. This keeps day-effectiveness percentages meaningful: a doToday
+     * activity worth 7 to the user counts as 7, not 3000.
+     */
+    @Override
+    public int getScoringValue() {
+        return flexValue;
     }
 }

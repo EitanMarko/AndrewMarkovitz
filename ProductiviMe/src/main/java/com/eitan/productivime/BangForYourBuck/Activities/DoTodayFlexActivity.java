@@ -13,6 +13,7 @@ public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
     public int endBy;
     public int duration;
     private int latestStartTime;
+    private boolean completed;
     public DoTodayFlexActivity(String name, String startByTime, String endByTime, String durationTime) {
 
         this.name = name;
@@ -20,6 +21,7 @@ public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
         this.endBy = new Time(endByTime).time;
         this.duration = new Time(durationTime).time;
         this.latestStartTime = endBy - duration;
+        this.completed = false;
 
         if(startBy >= endBy){
             throw new IllegalArgumentException("dayEndTime must be later than dayStartTime (24-hr clock)");
@@ -49,5 +51,23 @@ public class DoTodayFlexActivity implements Activity, Comparable<Activity>{
     @Override
     public int compareTo(Activity other) {
         return Integer.compare(11, other.getValue());
+    }
+    @Override
+    public void markComplete() {
+        this.completed = true;
+    }
+
+    @Override
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    /**
+     * DoTodayFlexActivities carry a fixed scheduling priority of 11 and that is
+     * also the value that counts toward day-effectiveness scoring.
+     */
+    @Override
+    public int getScoringValue() {
+        return getValue(); // Always 11
     }
 }

@@ -18,6 +18,8 @@ public class BangForYourBuck {
     private List<Activity> flexActivities;
     private List<Activity> doTodayActivities;
     private Set<String> activityNames;
+    private Map<String, Activity> activityMap; // O(1) lookup by name — used for completion tracking
+
     private List<Interval> filledIntervals;
 
     private String dayStartStr;
@@ -52,6 +54,7 @@ public class BangForYourBuck {
         flexActivities = new ArrayList<>();
         doTodayActivities = new ArrayList<>();
         activityNames = new HashSet<>();
+        activityMap = new HashMap<>();
         filledIntervals = new ArrayList<>();
 
 
@@ -92,6 +95,7 @@ public class BangForYourBuck {
             flexActivities.add(activity); // Valid interval - add to list
         }
         activityNames.add(activity.getName()); // Track activity names so no repeats
+        activityMap.put(activity.getName(), activity); // Register for O(1) completion lookup
         return true;
     }
 
@@ -193,6 +197,126 @@ public class BangForYourBuck {
         // STEP 2: DP BUCKET FILL EACH FREE INTERVAL
             // SMALLEST -> LARGEST INTERVAL ORDER
 
+        freeIntervals.sort(Comparator.comparingInt(interval -> interval.duration));
+
+// Work with FlexibleActivities only
+        List<Activity> allFlexActivities = new ArrayList<>(flexActivities);
+
+// Sort activities by value in descending order for better performance
+        allFlexActivities.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
+
+// Track which activities have been used across all intervals
+        boolean[] usedActivities = new boolean[allFlexActivities.size()];
+
+// Store the optimal schedule for each interval
+        Map<Interval, List<Activity>> intervalSchedules = new HashMap<>();
+
+        // Process each free interval from smallest to largest
+        for (Interval freeInterval : freeIntervals) {
+            int capacity = freeInterval.duration;
+            int n = allFlexActivities.size();
+
+            // Create available activities list (excluding already used ones)
+            List<Activity> availableActivities = new ArrayList<>();
+            List<Integer> originalIndices = new ArrayList<>();
+
+            for (int i = 0; i < allFlexActivities.size(); i++) {
+                if (!usedActivities[i]) {
+                    availableActivities.add(allFlexActivities.get(i)); // add all activities which are available to be allocated at this stage
+                    originalIndices.add(i); // track indices that were available before filling this interval
+                }
+            }
+
+            if (availableActivities.isEmpty()) { // all activities have been allocated - nothing more to do
+                intervalSchedules.put(freeInterval, new ArrayList<>());
+                continue; // BREAK???
+            }
+
+            // 0/1 Knapsack DP table
+            // dp[i][w] = maximum value using first i activities with weight limit w
+            int[][] dp = new int[availableActivities.size() + 1][capacity + 1];
+
+            // Fill the DP table
+            for (int i = 1; i <= availableActivities.size(); i++) { // for all available activities
+                Activity activity = availableActivities.get(i - 1); // get a given activity
+                int weight = activity.getDuration(); // get activity's weight
+                int value = activity.getValue(); // get activity's value (priority)
+
+                for (int w = 0; w <= capacity; w++) {
+                    // Don't include current activity
+                    dp[i][w] = dp[i-1][w];
+
+                    // Include current activity if it fits
+                    if (weight <= w) {
+                        dp[i][w] = Math.max(dp[i][w], dp[i-1][w-weight] + value);
+                    }
+                }
+            }
+
+            // Backtrack to find which activities were selected
+            List<Activity> selectedActivities = new ArrayList<>();
+            int w = capacity;
+
+            for (int i = availableActivities.size(); i > 0 && w > 0; i--) {
+                // If value came from including this activity
+                if (dp[i][w] != dp[i-1][w]) {
+                    Activity selectedActivity = availableActivities.get(i - 1);
+                    selectedActivities.add(selectedActivity);
+                    w -= selectedActivity.getDuration();
+
+                    // Mark this activity as used
+                    int originalIndex = originalIndices.get(i - 1);
+                    usedActivities[originalIndex] = true;
+                }
+            }
+
+            // Store the schedule for this interval
+            intervalSchedules.put(freeInterval, selectedActivities);
+
+            // Print results for this interval
+            System.out.println("\nOptimal schedule for interval " + freeInterval.getStartStr() +
+                    "-" + freeInterval.getEndStr() + " (" + freeInterval.duration + " minutes):");
+            int totalValue = 0;
+            int totalTime = 0;
+            for (Activity activity : selectedActivities) {
+                System.out.println("  - " + activity.getName() + " (Duration: " +
+                        activity.getDuration() + " min, Value: " + activity.getValue() + ")");
+                totalValue += activity.getValue();
+                totalTime += activity.getDuration();
+            }
+            System.out.println("  Total value: " + totalValue + ", Total time used: " + totalTime + "/" + capacity);
+        }
+
+// Print final summary
+        System.out.println("\n=== FINAL OPTIMAL SCHEDULE ===");
+        for (Interval interval : freeIntervals) {
+            System.out.println("\n" + interval.getStartStr() + "-" + interval.getEndStr() + ":");
+            List<Activity> schedule = intervalSchedules.get(interval);
+            for (Activity activity : schedule) {
+                System.out.println("  " + activity.getName());
+            }
+        }
+
+
+
+
+
+
+
+        //POST-PROCESSING STEP: Largest -> Smallest intervals
+            // At a given interval (now filled), see if there's an activity "in use" (which has been assigned to a smaller interval) which fits into this interval
+                // If so, move the largest "in use" activity (among smaller intervals) into this (larger) interval
+                // (do this until impossible (while))
+            // Check if there's an activity that's NOT "in use" (i.e. unassigned) which fits into this interval
+                // If so, place the largest one into this interval
+                // (do this until impossible (while))
+
+
+
+
+
+
+
 
 
 
@@ -291,6 +415,109 @@ public class BangForYourBuck {
         }
         else{ // FlexibleActivity
             return flexActivities.get(index - doTodayActivities.size());
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Completion Tracking
+    // -------------------------------------------------------------------------
+
+    /**
+     * Marks the activity with the given name as completed.
+     * This is the single entry point for recording that a task has been done.
+     *
+     * @param name The exact name of the activity to mark complete.
+     * @throws IllegalArgumentException if no activity with that name exists.
+     */
+    public void completeActivity(String name) {
+        Activity activity = activityMap.get(name);
+        if (activity == null) {
+            throw new IllegalArgumentException("No activity found with name: \"" + name + "\"");
+        }
+        activity.markComplete();
+        System.out.println("✓ \"" + name + "\" marked as completed.");
+    }
+
+    /**
+     * Returns whether the activity with the given name has been completed.
+     *
+     * @param name The exact name of the activity to query.
+     * @throws IllegalArgumentException if no activity with that name exists.
+     */
+    public boolean isActivityCompleted(String name) {
+        Activity activity = activityMap.get(name);
+        if (activity == null) {
+            throw new IllegalArgumentException("No activity found with name: \"" + name + "\"");
+        }
+        return activity.isCompleted();
+    }
+
+    // -------------------------------------------------------------------------
+    // Day Effectiveness
+    // -------------------------------------------------------------------------
+
+    /**
+     * Calculates how effective the day was as a value between 0.0 and 1.0.
+     *
+     * Effectiveness = (sum of scoring values of completed activities)
+     *               / (sum of scoring values of ALL activities)
+     *
+     * Note: FlexibleActivity.getScoringValue() always returns the user-assigned
+     * priority (1-10) even if doToday() has been called, so the percentage
+     * reflects meaningful user-defined priorities rather than scheduling
+     * sentinel values.
+     *
+     * @return A double in [0.0, 1.0], or 0.0 if no activities have been added.
+     */
+    public double getDayEffectiveness() {
+        int totalValue = 0;
+        int completedValue = 0;
+
+        for (Activity activity : activityMap.values()) {
+            int score = activity.getScoringValue();
+            totalValue += score;
+            if (activity.isCompleted()) {
+                completedValue += score;
+            }
+        }
+
+        if (totalValue == 0) {
+            return 0.0;
+        }
+        return (double) completedValue / totalValue;
+    }
+
+    /**
+     * Prints a human-readable summary of the day's effectiveness to stdout.
+     * Shows per-activity status as well as the overall percentage.
+     */
+    public void printDaySummary() {
+        System.out.println("\n=== DAY EFFECTIVENESS SUMMARY ===");
+
+        int totalValue = 0;
+        int completedValue = 0;
+
+        // Print in the natural grouping order: set → doToday → flex
+        printActivityGroupSummary("Set Activities",       setActivities);
+        printActivityGroupSummary("Do-Today Activities",  doTodayActivities);
+        printActivityGroupSummary("Flexible Activities",  flexActivities);
+
+        for (Activity activity : activityMap.values()) {
+            int score = activity.getScoringValue();
+            totalValue += score;
+            if (activity.isCompleted()) completedValue += score;
+        }
+
+        double pct = totalValue == 0 ? 0.0 : (double) completedValue / totalValue * 100;
+        System.out.printf("%nOverall: %d / %d points  →  %.1f%% effective%n", completedValue, totalValue, pct);
+    }
+
+    private void printActivityGroupSummary(String groupLabel, List<Activity> activities) {
+        if (activities.isEmpty()) return;
+        System.out.println("\n" + groupLabel + ":");
+        for (Activity activity : activities) {
+            String status = activity.isCompleted() ? "✓" : "✗";
+            System.out.printf("  %s  %s  (value: %d)%n", status, activity.getName(), activity.getScoringValue());
         }
     }
 

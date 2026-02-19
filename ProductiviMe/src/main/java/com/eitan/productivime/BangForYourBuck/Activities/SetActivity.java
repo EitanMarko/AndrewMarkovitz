@@ -5,11 +5,13 @@ public class SetActivity implements Activity, Comparable<Activity> {
 
     public String name;
     private Interval interval;
+    private boolean completed;
 
 
     public SetActivity(String name, String startTime, String endTime) {
         this.name = name;
         this.interval = new Interval(startTime, endTime);
+        this.completed = false;
     }
 
     @Override
@@ -25,6 +27,21 @@ public class SetActivity implements Activity, Comparable<Activity> {
     @Override
     public int getDuration() {
         return interval.duration;
+    }
+
+    @Override
+    public void markComplete() {
+        this.completed = true;
+    }
+
+    @Override
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    @Override
+    public int getScoringValue() {
+        return getValue();
     }
 
     @Override
