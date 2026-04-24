@@ -1,0 +1,28 @@
+Apr 24, 2026 12:03:20 AM cluster.PeerServerImpl setupHttpServer
+FINE: HTTP server started on port: 8130
+Apr 24, 2026 12:03:21 AM helperFiles.LeaderElection lookForLeader
+FINE: Epoch #1: Looking for leader [73629002128300]
+
+Apr 24, 2026 12:03:21 AM helperFiles.LeaderElection lookForLeader
+FINE: Message Queue HAS MESSAGES
+
+Apr 24, 2026 12:03:21 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73629100851500]
+
+Apr 24, 2026 12:03:21 AM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 1 [Epoch: 1], at time [73629112208500]
+
+Apr 24, 2026 12:03:21 AM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 1(from [1]), and quorum is 1
+
+Apr 24, 2026 12:03:24 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Set peer state to LEADING at time [73632558298800]
+
+Apr 24, 2026 12:03:24 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Setting epoch to 1
+Apr 24, 2026 12:03:24 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Elected Leader: 3
+
+Apr 24, 2026 12:03:24 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: PeerState is LEADING
+

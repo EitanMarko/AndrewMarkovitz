@@ -1,0 +1,586 @@
+Apr 24, 2026 12:05:44 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #1, at (nano)time [73772301318500]:
+
+
+Apr 24, 2026 12:05:44 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 1
+Apr 24, 2026 12:05:44 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #3, at (nano)time [73774121258400]:
+
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 3
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 2
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 1
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #3, at (nano)time [73775647971900]:
+
+
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 6
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 4
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 4
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 3
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #5, at (nano)time [73776387719100]:
+
+
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 6
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 4
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 5
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 2
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #6, at (nano)time [73777235315300]:
+
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 8
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 6
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 5
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 4
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #7, at (nano)time [73778290698800]:
+
+
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 9
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 7
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 6
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 5
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #7, at (nano)time [73779701182000]:
+
+
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 11
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 8
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 7
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 7
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #8, at (nano)time [73780699838300]:
+
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 12
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 9
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 9
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 8
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #10, at (nano)time [73781473981800]:
+
+
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 10
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 9
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 10
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 6
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #10, at (nano)time [73782719416300]:
+
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 13
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 11
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 10
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 10
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #12, at (nano)time [73783521115700]:
+
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 13
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 12
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 12
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 9
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #11, at (nano)time [73783745414000]:
+
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 14
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 11
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 10
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 11
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #12, at (nano)time [73784736045400]:
+
+
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 15
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 13
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 12
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 12
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #14, at (nano)time [73786759961800]:
+
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 17
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 15
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 15
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 14
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #15, at (nano)time [73787781564100]:
+
+
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 18
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 16
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 16
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 15
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #17, at (nano)time [73788572201800]:
+
+
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 19
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 16
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 17
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 15
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #17, at (nano)time [73788689777500]:
+
+
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 17
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 17
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 13
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 12
+Apr 24, 2026 12:06:00 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #18, at (nano)time [73789603169500]:
+
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 19
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 16
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 18
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 16
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #18, at (nano)time [73789712146200]:
+
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 20
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 18
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 17
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 15
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #20, at (nano)time [73791796367900]:
+
+
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 22
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 20
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 20
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 18
+Apr 24, 2026 12:06:03 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #21, at (nano)time [73792629977800]:
+
+
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 23
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 20
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 21
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 19
+Apr 24, 2026 12:06:04 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #25, at (nano)time [73796726828900]:
+
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 27
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 24
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 25
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 23
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #24, at (nano)time [73796907976800]:
+
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 26
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 23
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 24
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 24
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #25, at (nano)time [73796979611100]:
+
+
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 25
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 25
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 23
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 21
+Apr 24, 2026 12:06:08 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #26, at (nano)time [73797742143300]:
+
+
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 28
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 25
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 26
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 24
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #25, at (nano)time [73797926967000]:
+
+
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 26
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 23
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 24
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 25
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #28, at (nano)time [73799775753200]:
+
+
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 30
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 25
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 28
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 25
+Apr 24, 2026 12:06:11 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #28, at (nano)time [73800059685600]:
+
+
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 29
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 28
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 27
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 27
+Apr 24, 2026 12:06:12 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #2, at sequence #31, at (nano)time [73803384872400]:
+
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 32
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 30
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 31
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 29
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #30, at (nano)time [73803389913500]:
+
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 29
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 27
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 27
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 30
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #1, at sequence #32, at (nano)time [73804479227900]:
+
+
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 34
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 32
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 32
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 31
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #32, at (nano)time [73805092797500]:
+
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 34
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 31
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 33
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 32
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: 
+
+Received GOSSIP message from server #3, at sequence #34, at (nano)time [73807305298800]:
+
+
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: Server #0, heartbeat == 37
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: Server #1, heartbeat == 34
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: Server #2, heartbeat == 35
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: Server #3, heartbeat == 34
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: 
+----------------------------------------------------------------------------------
+

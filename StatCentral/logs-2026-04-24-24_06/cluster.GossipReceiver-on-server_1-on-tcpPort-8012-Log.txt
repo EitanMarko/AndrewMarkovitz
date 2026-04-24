@@ -1,0 +1,486 @@
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #5:
+sID= 0, heartbeat= 8, Received at: [73838235989200]
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [null] to [8]
+
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #5:
+sID= 1, heartbeat= 5, Received at: [73838270242700]
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [null] to [5]
+
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #5:
+sID= 2, heartbeat= 5, Received at: [73838275875200]
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [null] to [5]
+
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #5:
+sID= 3, heartbeat= 4, Received at: [73838278061100]
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [null] to [4]
+
+Apr 24, 2026 12:06:50 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #6:
+sID= 0, heartbeat= 8, Received at: [73839287988000]
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: No update to server #0's heartbeat. Old: [8], New: [8]
+
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #6:
+sID= 1, heartbeat= 5, Received at: [73839296647400]
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: No update to server #1's heartbeat. Old: [5], New: [5]
+
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #6:
+sID= 2, heartbeat= 6, Received at: [73839298334300]
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [5] to [6]
+
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #6:
+sID= 3, heartbeat= 4, Received at: [73839300159900]
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: No update to server #3's heartbeat. Old: [4], New: [4]
+
+Apr 24, 2026 12:06:51 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #12:
+sID= 0, heartbeat= 12, Received at: [73842144100600]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [8] to [12]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #12:
+sID= 1, heartbeat= 9, Received at: [73842145566200]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [5] to [9]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #12:
+sID= 2, heartbeat= 8, Received at: [73842147017200]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [6] to [8]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #12:
+sID= 3, heartbeat= 8, Received at: [73842149111800]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [4] to [8]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #9:
+sID= 0, heartbeat= 11, Received at: [73842288663600]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: No update to server #0's heartbeat. Old: [12], New: [11]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #9:
+sID= 1, heartbeat= 8, Received at: [73842290068500]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: No update to server #1's heartbeat. Old: [9], New: [8]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #9:
+sID= 2, heartbeat= 9, Received at: [73842291957400]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [8] to [9]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #9:
+sID= 3, heartbeat= 7, Received at: [73842298971800]
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: No update to server #3's heartbeat. Old: [8], New: [7]
+
+Apr 24, 2026 12:06:54 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #10:
+sID= 0, heartbeat= 13, Received at: [73844191991600]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [12] to [13]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #10:
+sID= 1, heartbeat= 10, Received at: [73844193484600]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [9] to [10]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #10:
+sID= 2, heartbeat= 10, Received at: [73844194946600]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [9] to [10]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #10:
+sID= 3, heartbeat= 10, Received at: [73844196329100]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [8] to [10]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #11:
+sID= 0, heartbeat= 14, Received at: [73844344446700]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [13] to [14]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #11:
+sID= 1, heartbeat= 11, Received at: [73844345847000]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [10] to [11]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #11:
+sID= 2, heartbeat= 11, Received at: [73844347107300]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [10] to [11]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #11:
+sID= 3, heartbeat= 9, Received at: [73844348699200]
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: No update to server #3's heartbeat. Old: [10], New: [9]
+
+Apr 24, 2026 12:06:56 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #14:
+sID= 0, heartbeat= 17, Received at: [73847405902900]
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [14] to [17]
+
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #14:
+sID= 1, heartbeat= 14, Received at: [73847409851200]
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [11] to [14]
+
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #14:
+sID= 2, heartbeat= 14, Received at: [73847411064600]
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [11] to [14]
+
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Server 2 sent GOSSIP sequence #14:
+sID= 3, heartbeat= 13, Received at: [73847412380900]
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [10] to [13]
+
+Apr 24, 2026 12:06:59 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #14:
+sID= 0, heartbeat= 17, Received at: [73848332689700]
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: No update to server #0's heartbeat. Old: [17], New: [17]
+
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #14:
+sID= 1, heartbeat= 15, Received at: [73848333505900]
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [14] to [15]
+
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #14:
+sID= 2, heartbeat= 14, Received at: [73848337664400]
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: No update to server #2's heartbeat. Old: [14], New: [14]
+
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #14:
+sID= 3, heartbeat= 14, Received at: [73848339224600]
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [13] to [14]
+
+Apr 24, 2026 12:07:00 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #19:
+sID= 0, heartbeat= 19, Received at: [73849349312300]
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [17] to [19]
+
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #19:
+sID= 1, heartbeat= 16, Received at: [73849350705500]
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [15] to [16]
+
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #19:
+sID= 2, heartbeat= 15, Received at: [73849351735500]
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [14] to [15]
+
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #19:
+sID= 3, heartbeat= 15, Received at: [73849352501400]
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [14] to [15]
+
+Apr 24, 2026 12:07:01 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #20:
+sID= 0, heartbeat= 20, Received at: [73850364758000]
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [19] to [20]
+
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #20:
+sID= 1, heartbeat= 16, Received at: [73850366362100]
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: No update to server #1's heartbeat. Old: [16], New: [16]
+
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #20:
+sID= 2, heartbeat= 16, Received at: [73850367341300]
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [15] to [16]
+
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #20:
+sID= 3, heartbeat= 16, Received at: [73850368453400]
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [15] to [16]
+
+Apr 24, 2026 12:07:02 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #24:
+sID= 0, heartbeat= 24, Received at: [73854434467200]
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [20] to [24]
+
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #24:
+sID= 1, heartbeat= 21, Received at: [73854435010700]
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [16] to [21]
+
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #24:
+sID= 2, heartbeat= 20, Received at: [73854435518000]
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [16] to [20]
+
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #24:
+sID= 3, heartbeat= 20, Received at: [73854435964000]
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [16] to [20]
+
+Apr 24, 2026 12:07:06 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #22:
+sID= 0, heartbeat= 25, Received at: [73856482997400]
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [24] to [25]
+
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #22:
+sID= 1, heartbeat= 22, Received at: [73856483608600]
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [21] to [22]
+
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #22:
+sID= 2, heartbeat= 22, Received at: [73856484137100]
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [20] to [22]
+
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #22:
+sID= 3, heartbeat= 22, Received at: [73856484647600]
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [20] to [22]
+
+Apr 24, 2026 12:07:08 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #27:
+sID= 0, heartbeat= 27, Received at: [73857551137500]
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [25] to [27]
+
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #27:
+sID= 1, heartbeat= 24, Received at: [73857551799300]
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [22] to [24]
+
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #27:
+sID= 2, heartbeat= 23, Received at: [73857552428200]
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [22] to [23]
+
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #27:
+sID= 3, heartbeat= 23, Received at: [73857553235700]
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [22] to [23]
+
+Apr 24, 2026 12:07:09 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #29:
+sID= 0, heartbeat= 29, Received at: [73859641071600]
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [27] to [29]
+
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #29:
+sID= 1, heartbeat= 26, Received at: [73859642650400]
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [24] to [26]
+
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #29:
+sID= 2, heartbeat= 25, Received at: [73859643548200]
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [23] to [25]
+
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #29:
+sID= 3, heartbeat= 25, Received at: [73859644232300]
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [23] to [25]
+
+Apr 24, 2026 12:07:11 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #31:
+sID= 0, heartbeat= 31, Received at: [73861641984100]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [29] to [31]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #31:
+sID= 1, heartbeat= 27, Received at: [73861642920300]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [26] to [27]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #31:
+sID= 2, heartbeat= 27, Received at: [73861643567000]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [25] to [27]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #31:
+sID= 3, heartbeat= 26, Received at: [73861644349000]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [25] to [26]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #27:
+sID= 0, heartbeat= 30, Received at: [73861681322400]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: No update to server #0's heartbeat. Old: [31], New: [30]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #27:
+sID= 1, heartbeat= 28, Received at: [73861682840500]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [27] to [28]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #27:
+sID= 2, heartbeat= 26, Received at: [73861684436000]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: No update to server #2's heartbeat. Old: [27], New: [26]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #27:
+sID= 3, heartbeat= 27, Received at: [73861684908400]
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [26] to [27]
+
+Apr 24, 2026 12:07:13 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #29:
+sID= 0, heartbeat= 30, Received at: [73864059869500]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: No update to server #0's heartbeat. Old: [31], New: [30]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #29:
+sID= 1, heartbeat= 28, Received at: [73864061204000]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: No update to server #1's heartbeat. Old: [28], New: [28]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #29:
+sID= 2, heartbeat= 26, Received at: [73864062350000]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: No update to server #2's heartbeat. Old: [27], New: [26]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 3 sent GOSSIP sequence #29:
+sID= 3, heartbeat= 29, Received at: [73864063047200]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #3 from [27] to [29]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #33:
+sID= 0, heartbeat= 33, Received at: [73864101761600]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #0 from [31] to [33]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #33:
+sID= 1, heartbeat= 29, Received at: [73864102735300]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #1 from [28] to [29]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #33:
+sID= 2, heartbeat= 29, Received at: [73864103464100]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Updating heartbeat for server #2 from [27] to [29]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: Server 0 sent GOSSIP sequence #33:
+sID= 3, heartbeat= 28, Received at: [73864104234700]
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: No update to server #3's heartbeat. Old: [29], New: [28]
+
+Apr 24, 2026 12:07:16 AM cluster.GossipReceiver readEntries
+FINE: ----------------------------------------------------------------------------------
+

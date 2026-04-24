@@ -1,0 +1,799 @@
+Apr 24, 2026 12:08:02 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 1} -> (2) : [1], 
+Apr 24, 2026 12:08:02 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:02 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:02 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:03 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 2} -> (0) : [5], (1) : [2], (2) : [2], (3) : [1], 
+Apr 24, 2026 12:08:04 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 3} -> (0) : [5], (1) : [2], (2) : [3], (3) : [1], 
+Apr 24, 2026 12:08:05 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 4} -> (0) : [6], (1) : [4], (2) : [4], (3) : [3], 
+Apr 24, 2026 12:08:06 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:06 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:06 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:08:06 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 5} -> (0) : [8], (1) : [4], (2) : [5], (3) : [4], 
+Apr 24, 2026 12:08:07 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 6} -> (0) : [8], (1) : [4], (2) : [6], (3) : [4], 
+Apr 24, 2026 12:08:08 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 7} -> (0) : [9], (1) : [6], (2) : [7], (3) : [6], 
+Apr 24, 2026 12:08:09 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 8} -> (0) : [11], (1) : [7], (2) : [8], (3) : [7], 
+Apr 24, 2026 12:08:10 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 9} -> (0) : [11], (1) : [7], (2) : [9], (3) : [8], 
+Apr 24, 2026 12:08:11 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 10} -> (0) : [11], (1) : [7], (2) : [10], (3) : [8], 
+Apr 24, 2026 12:08:12 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 11} -> (0) : [11], (1) : [7], (2) : [11], (3) : [8], 
+Apr 24, 2026 12:08:13 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 12} -> (0) : [15], (1) : [12], (2) : [12], (3) : [11], 
+Apr 24, 2026 12:08:14 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 13} -> (0) : [16], (1) : [13], (2) : [13], (3) : [12], 
+Apr 24, 2026 12:08:15 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 14} -> (0) : [17], (1) : [13], (2) : [14], (3) : [12], 
+Apr 24, 2026 12:08:16 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 15} -> (0) : [17], (1) : [14], (2) : [15], (3) : [14], 
+Apr 24, 2026 12:08:17 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 16} -> (0) : [17], (1) : [14], (2) : [16], (3) : [14], 
+Apr 24, 2026 12:08:18 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 17} -> (0) : [19], (1) : [16], (2) : [17], (3) : [16], 
+Apr 24, 2026 12:08:19 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 18} -> (0) : [21], (1) : [18], (2) : [18], (3) : [17], 
+Apr 24, 2026 12:08:20 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 19} -> (0) : [21], (1) : [18], (2) : [19], (3) : [18], 
+Apr 24, 2026 12:08:21 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 20} -> (0) : [21], (1) : [18], (2) : [20], (3) : [19], 
+Apr 24, 2026 12:08:22 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 21} -> (0) : [21], (1) : [18], (2) : [21], (3) : [19], 
+Apr 24, 2026 12:08:23 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 22} -> (0) : [25], (1) : [22], (2) : [22], (3) : [21], 
+Apr 24, 2026 12:08:24 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 23} -> (0) : [25], (1) : [22], (2) : [23], (3) : [21], 
+Apr 24, 2026 12:08:25 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 24} -> (0) : [27], (1) : [23], (2) : [24], (3) : [23], 
+Apr 24, 2026 12:08:26 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 25} -> (0) : [27], (1) : [24], (2) : [25], (3) : [24], 
+Apr 24, 2026 12:08:27 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 26} -> (0) : [28], (1) : [24], (2) : [26], (3) : [25], 
+Apr 24, 2026 12:08:28 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 27} -> (0) : [29], (1) : [26], (2) : [27], (3) : [26], 
+Apr 24, 2026 12:08:29 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 28} -> (0) : [29], (1) : [26], (2) : [28], (3) : [27], 
+Apr 24, 2026 12:08:30 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 29} -> (0) : [32], (1) : [28], (2) : [29], (3) : [27], 
+Apr 24, 2026 12:08:31 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 30} -> (0) : [32], (1) : [30], (2) : [30], (3) : [29], 
+Apr 24, 2026 12:08:32 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 31} -> (0) : [34], (1) : [31], (2) : [31], (3) : [30], 
+Apr 24, 2026 12:08:33 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 32} -> (0) : [34], (1) : [31], (2) : [32], (3) : [30], 
+Apr 24, 2026 12:08:34 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 33} -> (0) : [35], (1) : [32], (2) : [33], (3) : [32], 
+Apr 24, 2026 12:08:35 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 34} -> (0) : [35], (1) : [32], (2) : [34], (3) : [32], 
+Apr 24, 2026 12:08:36 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 35} -> (0) : [38], (1) : [35], (2) : [35], (3) : [34], 
+Apr 24, 2026 12:08:37 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 36} -> (0) : [39], (1) : [35], (2) : [36], (3) : [34], 
+Apr 24, 2026 12:08:38 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 37} -> (0) : [39], (1) : [36], (2) : [37], (3) : [36], 
+Apr 24, 2026 12:08:39 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 38} -> (0) : [41], (1) : [37], (2) : [38], (3) : [37], 
+Apr 24, 2026 12:08:40 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 39} -> (0) : [42], (1) : [37], (2) : [39], (3) : [37], 
+Apr 24, 2026 12:08:41 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 40} -> (0) : [42], (1) : [39], (2) : [40], (3) : [39], 
+Apr 24, 2026 12:08:42 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 41} -> (0) : [43], (1) : [39], (2) : [41], (3) : [39], 
+Apr 24, 2026 12:08:43 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 42} -> (0) : [45], (1) : [42], (2) : [42], (3) : [41], 
+Apr 24, 2026 12:08:44 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 43} -> (0) : [45], (1) : [42], (2) : [43], (3) : [42], 
+Apr 24, 2026 12:08:45 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 44} -> (0) : [47], (1) : [44], (2) : [44], (3) : [43], 
+Apr 24, 2026 12:08:46 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 45} -> (0) : [47], (1) : [44], (2) : [45], (3) : [43], 
+Apr 24, 2026 12:08:47 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 46} -> (0) : [47], (1) : [44], (2) : [46], (3) : [43], 
+Apr 24, 2026 12:08:48 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 47} -> (0) : [47], (1) : [44], (2) : [47], (3) : [43], 
+Apr 24, 2026 12:08:49 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 48} -> (0) : [50], (1) : [47], (2) : [48], (3) : [47], 
+Apr 24, 2026 12:08:50 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 49} -> (0) : [52], (1) : [48], (2) : [49], (3) : [47], 
+Apr 24, 2026 12:08:51 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 50} -> (0) : [53], (1) : [50], (2) : [50], (3) : [49], 
+Apr 24, 2026 12:08:52 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 51} -> (0) : [54], (1) : [50], (2) : [51], (3) : [49], 
+Apr 24, 2026 12:08:53 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 52} -> (0) : [54], (1) : [50], (2) : [52], (3) : [49], 
+Apr 24, 2026 12:08:54 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 53} -> (0) : [56], (1) : [53], (2) : [53], (3) : [52], 
+Apr 24, 2026 12:08:55 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 54} -> (0) : [56], (1) : [53], (2) : [54], (3) : [52], 
+Apr 24, 2026 12:08:56 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 55} -> (0) : [56], (1) : [53], (2) : [55], (3) : [52], 
+Apr 24, 2026 12:08:57 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 56} -> (0) : [58], (1) : [56], (2) : [56], (3) : [55], 
+Apr 24, 2026 12:08:58 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 57} -> (0) : [60], (1) : [57], (2) : [57], (3) : [56], 
+Apr 24, 2026 12:08:59 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 58} -> (0) : [60], (1) : [57], (2) : [58], (3) : [56], 
+Apr 24, 2026 12:09:00 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 59} -> (0) : [62], (1) : [58], (2) : [59], (3) : [58], 
+Apr 24, 2026 12:09:01 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 60} -> (0) : [62], (1) : [60], (2) : [60], (3) : [58], 
+Apr 24, 2026 12:09:02 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 61} -> (0) : [64], (1) : [61], (2) : [61], (3) : [60], 
+Apr 24, 2026 12:09:03 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8010
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 62} -> (0) : [65], (1) : [61], (2) : [62], (3) : [60], 
+Apr 24, 2026 12:09:04 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 63} -> (0) : [65], (1) : [61], (2) : [63], (3) : [60], 
+Apr 24, 2026 12:09:05 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 64} -> (0) : [67], (1) : [64], (2) : [64], (3) : [63], 
+Apr 24, 2026 12:09:06 AM helperFiles.UDPMessageSender run
+FINE: Message sent:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8030
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 65} -> (0) : [67], (1) : [64], (2) : [65], (3) : [63], 

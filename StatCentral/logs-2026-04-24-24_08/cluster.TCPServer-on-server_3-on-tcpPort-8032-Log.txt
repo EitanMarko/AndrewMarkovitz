@@ -1,0 +1,312 @@
+Apr 24, 2026 12:08:06 AM cluster.TCPServer run
+FINE: Starting run() on TCPServer
+
+Apr 24, 2026 12:08:18 AM cluster.TCPServer run
+FINE: First connection accepted on TCPServer.run()
+
+Apr 24, 2026 12:08:18 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:18 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:22 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:23 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:24 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:25 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:26 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:27 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:28 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:29 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:30 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:30 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:30 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:08:30 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Apr 24, 2026 12:08:40 AM cluster.TCPServer run
+FINE: Before, would've exited. Now continuing until shutdown
+Apr 24, 2026 12:08:50 AM cluster.TCPServer run
+FINE: Before, would've exited. Now continuing until shutdown
+Apr 24, 2026 12:09:00 AM cluster.TCPServer run
+FINE: Before, would've exited. Now continuing until shutdown
+Apr 24, 2026 12:09:06 AM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Apr 24, 2026 12:09:06 AM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+

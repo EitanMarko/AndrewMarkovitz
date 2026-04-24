@@ -1,0 +1,63 @@
+Apr 24, 2026 12:05:41 AM cluster.PeerServerImpl setupHttpServer
+FINE: HTTP server started on port: 8100
+Apr 24, 2026 12:05:41 AM cluster.PeerServerImpl run
+FINE: 
+
+
+-------------------------------------------------
+TRACKING - GATEWAYSERVER [OBSERVER]  (0)
+-------------------------------------------------
+
+Apr 24, 2026 12:05:41 AM helperFiles.LeaderElection lookForLeader
+FINE: Epoch #1: Looking for leader [73769201562900]
+
+Apr 24, 2026 12:05:41 AM helperFiles.LeaderElection lookForLeader
+FINE: Message Queue is EMPTY
+
+Apr 24, 2026 12:05:41 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing MYSELF as leader: 0), time [73769288036800]
+
+Apr 24, 2026 12:05:44 AM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 1 [Epoch: 1], at time [73772528617900]
+
+Apr 24, 2026 12:05:44 AM helperFiles.LeaderElection lookForLeader
+FINE: Server 0 changed its leader to 1
+
+Apr 24, 2026 12:05:44 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 1), time [73772559339300]
+
+Apr 24, 2026 12:05:44 AM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 1(from [1]), and quorum is 1
+
+Apr 24, 2026 12:05:47 AM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 2 with leader 2 [Epoch: 1], at time [73775821265400]
+
+Apr 24, 2026 12:05:47 AM helperFiles.LeaderElection lookForLeader
+FINE: Server 0 changed its leader to 2
+
+Apr 24, 2026 12:05:47 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 2), time [73775822748600]
+
+Apr 24, 2026 12:05:47 AM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 2(from [2]), and quorum is 1
+
+Apr 24, 2026 12:05:51 AM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 3 with leader 3 [Epoch: 1], at time [73779077086000]
+
+Apr 24, 2026 12:05:51 AM helperFiles.LeaderElection lookForLeader
+FINE: Server 0 changed its leader to 3
+
+Apr 24, 2026 12:05:51 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73779078750400]
+
+Apr 24, 2026 12:05:51 AM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 3(from [3]), and quorum is 1
+
+Apr 24, 2026 12:05:54 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Setting epoch to 1
+Apr 24, 2026 12:05:54 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Elected Leader: 3
+
+Apr 24, 2026 12:05:54 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: PeerState is OBSERVER
+

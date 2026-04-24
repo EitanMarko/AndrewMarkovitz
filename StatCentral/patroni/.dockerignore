@@ -1,0 +1,5 @@
+# Limit build context to only what the patroni image needs
+**
+!Dockerfile
+!patroni.yml
+!init_db.sh

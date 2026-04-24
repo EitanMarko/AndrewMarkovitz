@@ -1,0 +1,811 @@
+Apr 24, 2026 12:06:50 AM cluster.WorkerServer run
+FINE: 
+
+
+-------------------------------------------------
+WORK AHEAD - FOLLOWER (1, TCP Port: 8012)
+-------------------------------------------------
+
+Apr 24, 2026 12:06:55 AM cluster.WorkerServer run
+FINE: First connection accepted on WorkerServer.run() on server 1
+
+Apr 24, 2026 12:06:55 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:55 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createConference'
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Dispatched request #1, operationType=createConference
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73845332224800]
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createDivision'
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Dispatched request #2, operationType=createDivision
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73845810150100]
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:57 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createTeam'
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Dispatched request #3, operationType=createTeam
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73846161609100]
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createTeam'
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Dispatched request #4, operationType=createTeam
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73846516492000]
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createTeam'
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Dispatched request #5, operationType=createTeam
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73846812003600]
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:58 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Dispatched request #6, operationType=createPlayer
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73847265942000]
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Dispatched request #7, operationType=createPlayer
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73847640364200]
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Dispatched request #8, operationType=createPlayer
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73847918924500]
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Dispatched request #9, operationType=createPlayer
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73848034384400]
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:06:59 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Dispatched request #10, operationType=createPlayer
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73848250139300]
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Dispatched request #11, operationType=createPlayer
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73848532023800]
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Dispatched request #12, operationType=createPlayer
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73848856338700]
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:00 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Dispatched request #13, operationType=createPlayer
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73849228425000]
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Dispatched request #14, operationType=createPlayer
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73849441068900]
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createPlayer'
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Dispatched request #15, operationType=createPlayer
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73849666285100]
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Dispatched request #16, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73849800417000]
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Dispatched request #17, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73849926902300]
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:01 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #18, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850105421400]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #19, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850252035000]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #20, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850405151300]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #21, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850574260000]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #22, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850678423900]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #23, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850833838000]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Dispatched request #24, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73850944780400]
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:02 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #25, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851134759400]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #26, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851262747700]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #27, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851479683500]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #28, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851601076700]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #29, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851714823100]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #30, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851839928200]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #31, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73851923371400]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Dispatched request #32, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852049747000]
+
+Apr 24, 2026 12:07:03 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #33, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852120324700]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #34, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852276070300]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #35, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852417184400]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #36, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852567365600]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #37, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852709807500]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #38, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852861729400]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Dispatched request #39, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73852961858200]
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:04 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Dispatched request #40, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73853120927900]
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Dispatched request #41, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73853733046900]
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Dispatched request #42, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73853861923400]
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:05 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Dispatched request #43, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73854057442200]
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Dispatched request #44, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73854247394300]
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Dispatched request #45, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73854418072000]
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='updatePlayerStat'
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Dispatched request #46, operationType=updatePlayerStat
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73854539002900]
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='getPlayerStats'
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Dispatched request #47, operationType=getPlayerStats
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73855054784500]
+
+Apr 24, 2026 12:07:06 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='getPlayerStat'
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Dispatched request #48, operationType=getPlayerStat
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73855133190100]
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='queryTopPlayersByStat'
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Dispatched request #49, operationType=queryTopPlayersByStat
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73855237078600]
+
+Apr 24, 2026 12:07:07 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+
+Apr 24, 2026 12:07:13 AM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Apr 24, 2026 12:07:13 AM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='deleteConference'
+
+Apr 24, 2026 12:07:14 AM cluster.WorkerServer run
+FINE: Dispatched request #50, operationType=deleteConference
+
+Apr 24, 2026 12:07:14 AM cluster.WorkerServer run
+FINE: Attempting to write response back to leader at [73862519322100]
+
+Apr 24, 2026 12:07:14 AM cluster.WorkerServer run
+FINE: Sent response back to leader and closed socket
+--------------------------------------------------------
+

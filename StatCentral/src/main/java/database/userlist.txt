@@ -1,0 +1,37 @@
+; =============================================================================
+; userlist.txt — PgBouncer Authentication File
+; =============================================================================
+;
+; This file defines which users are allowed to connect TO PgBouncer (i.e.,
+; the credentials your Java microservices use in their JDBC connection strings).
+;
+; FORMAT:
+;   "username" "password"
+;
+; Passwords should be stored as MD5 hashes in production. The format for an
+; MD5 hash entry is: "md5" followed by the MD5 of (password + username).
+;
+; To generate a hashed password, run this in a terminal:
+;   echo -n "yourpasswordyourusername" | md5sum
+; Then prefix the result with "md5":
+;   "appuser" "md5<hash_result_here>"
+;
+; For local development, plaintext passwords are acceptable (shown below).
+; NEVER use plaintext passwords in production.
+;
+; Note: These are the credentials for the APPLICATION layer connecting to
+; PgBouncer. PgBouncer itself connects to PostgreSQL using its own separate
+; credentials configured in the [databases] section of pgbouncer.ini —
+; those credentials must exist as actual PostgreSQL roles.
+; =============================================================================
+
+; Application user — used by all microservices in their JDBC URLs.
+; This user must also exist in PostgreSQL with appropriate privileges.
+"appuser" "apppassword"
+
+; Admin user — for connecting to PgBouncer's admin console.
+; Used to run SHOW POOLS, SHOW STATS, RELOAD, etc.
+"pgbouncer_admin" "adminpassword"
+
+; Stats-only user — read-only access to PgBouncer stats console.
+"pgbouncer_stats" "statspassword"

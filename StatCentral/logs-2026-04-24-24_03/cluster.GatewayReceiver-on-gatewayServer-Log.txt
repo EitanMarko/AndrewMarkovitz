@@ -1,0 +1,1295 @@
+Apr 24, 2026 12:03:17 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:17 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #1}Success: conference 'American League' has been created.]
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #1}Success: conference 'American League' has been created.
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: requestID is: 1--------------------
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #1 is: Success: conference 'American League' has been created.
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:36 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #2}Success: division 'AL East' created in conference 'American League'.]
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #2}Success: division 'AL East' created in conference 'American League'.
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: requestID is: 2--------------------
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #2 is: Success: division 'AL East' created in conference 'American League'.
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #3}Error: a team named 'New York Yankees' already exists in the system.]
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #3}Error: a team named 'New York Yankees' already exists in the system.
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: requestID is: 3--------------------
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #3 is: Error: a team named 'New York Yankees' already exists in the system.
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:37 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #4}Error: a team named 'Boston Red Sox' already exists in the system.]
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #4}Error: a team named 'Boston Red Sox' already exists in the system.
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: requestID is: 4--------------------
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #4 is: Error: a team named 'Boston Red Sox' already exists in the system.
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #5}Success: team 'Baltimore Orioles' created in division 'AL East'.]
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #5}Success: team 'Baltimore Orioles' created in division 'AL East'.
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: requestID is: 5--------------------
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #5 is: Success: team 'Baltimore Orioles' created in division 'AL East'.
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:38 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #6}Error: a player named 'Aaron Judge' already exists in the system.]
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #6}Error: a player named 'Aaron Judge' already exists in the system.
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: requestID is: 6--------------------
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #6 is: Error: a player named 'Aaron Judge' already exists in the system.
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #7}Success: player 'Gerrit Cole' created successfully on team 'New York Yankees'.]
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #7}Success: player 'Gerrit Cole' created successfully on team 'New York Yankees'.
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: requestID is: 7--------------------
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #7 is: Success: player 'Gerrit Cole' created successfully on team 'New York Yankees'.
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:39 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #8}Success: player 'Jazz Chisholm Jr.' created successfully on team 'New York Yankees'.]
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #8}Success: player 'Jazz Chisholm Jr.' created successfully on team 'New York Yankees'.
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: requestID is: 8--------------------
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #8 is: Success: player 'Jazz Chisholm Jr.' created successfully on team 'New York Yankees'.
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #9}Success: player 'Rafael Devers' created successfully on team 'Boston Red Sox'.]
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #9}Success: player 'Rafael Devers' created successfully on team 'Boston Red Sox'.
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: requestID is: 9--------------------
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #9 is: Success: player 'Rafael Devers' created successfully on team 'Boston Red Sox'.
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:40 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #10}Success: player 'Jarren Duran' created successfully on team 'Boston Red Sox'.]
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #10}Success: player 'Jarren Duran' created successfully on team 'Boston Red Sox'.
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: requestID is: 10--------------------
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #10 is: Success: player 'Jarren Duran' created successfully on team 'Boston Red Sox'.
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #11}Success: player 'Triston Casas' created successfully on team 'Boston Red Sox'.]
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #11}Success: player 'Triston Casas' created successfully on team 'Boston Red Sox'.
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: requestID is: 11--------------------
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #11 is: Success: player 'Triston Casas' created successfully on team 'Boston Red Sox'.
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:41 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #12}Success: player 'Garrett Crochet' created successfully on team 'Boston Red Sox'.]
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #12}Success: player 'Garrett Crochet' created successfully on team 'Boston Red Sox'.
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: requestID is: 12--------------------
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #12 is: Success: player 'Garrett Crochet' created successfully on team 'Boston Red Sox'.
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #13}Success: player 'Gunnar Henderson' created successfully on team 'Baltimore Orioles'.]
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #13}Success: player 'Gunnar Henderson' created successfully on team 'Baltimore Orioles'.
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: requestID is: 13--------------------
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #13 is: Success: player 'Gunnar Henderson' created successfully on team 'Baltimore Orioles'.
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:42 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #14}Success: player 'Adley Rutschman' created successfully on team 'Baltimore Orioles'.]
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #14}Success: player 'Adley Rutschman' created successfully on team 'Baltimore Orioles'.
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: requestID is: 14--------------------
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #14 is: Success: player 'Adley Rutschman' created successfully on team 'Baltimore Orioles'.
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #15}Success: player 'Corbin Burnes' created successfully on team 'Baltimore Orioles'.]
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #15}Success: player 'Corbin Burnes' created successfully on team 'Baltimore Orioles'.
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: requestID is: 15--------------------
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #15 is: Success: player 'Corbin Burnes' created successfully on team 'Baltimore Orioles'.
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:43 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #16}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.]
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #16}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: requestID is: 16--------------------
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #16 is: Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #17}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.]
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #17}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: requestID is: 17--------------------
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #17 is: Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:44 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #18}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.]
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #18}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: requestID is: 18--------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #18 is: Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #19}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.]
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #19}Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: requestID is: 19--------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #19 is: Error: player 'Aaron Judge' does not exist or has no stats row for year 2026.
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #20}Success: 'strikeouts' set to 188 for player 'Gerrit Cole'.]
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #20}Success: 'strikeouts' set to 188 for player 'Gerrit Cole'.
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: requestID is: 20--------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #20 is: Success: 'strikeouts' set to 188 for player 'Gerrit Cole'.
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #21}Success: 'atBats' set to 419 for player 'Jazz Chisholm Jr.' (batting average recomputed).]
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #21}Success: 'atBats' set to 419 for player 'Jazz Chisholm Jr.' (batting average recomputed).
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: requestID is: 21--------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #21 is: Success: 'atBats' set to 419 for player 'Jazz Chisholm Jr.' (batting average recomputed).
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:45 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #22}Success: 'hits' set to 108 for player 'Jazz Chisholm Jr.' (batting average recomputed).]
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #22}Success: 'hits' set to 108 for player 'Jazz Chisholm Jr.' (batting average recomputed).
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: requestID is: 22--------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #22 is: Success: 'hits' set to 108 for player 'Jazz Chisholm Jr.' (batting average recomputed).
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #23}Success: 'homeRuns' set to 22 for player 'Jazz Chisholm Jr.'.]
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #23}Success: 'homeRuns' set to 22 for player 'Jazz Chisholm Jr.'.
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: requestID is: 23--------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #23 is: Success: 'homeRuns' set to 22 for player 'Jazz Chisholm Jr.'.
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #24}Success: 'strikeouts' set to 110 for player 'Jazz Chisholm Jr.'.]
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #24}Success: 'strikeouts' set to 110 for player 'Jazz Chisholm Jr.'.
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: requestID is: 24--------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #24 is: Success: 'strikeouts' set to 110 for player 'Jazz Chisholm Jr.'.
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #25}Success: 'atBats' set to 528 for player 'Rafael Devers' (batting average recomputed).]
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #25}Success: 'atBats' set to 528 for player 'Rafael Devers' (batting average recomputed).
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: requestID is: 25--------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #25 is: Success: 'atBats' set to 528 for player 'Rafael Devers' (batting average recomputed).
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:46 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #26}Success: 'hits' set to 135 for player 'Rafael Devers' (batting average recomputed).]
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #26}Success: 'hits' set to 135 for player 'Rafael Devers' (batting average recomputed).
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: requestID is: 26--------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #26 is: Success: 'hits' set to 135 for player 'Rafael Devers' (batting average recomputed).
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #27}Success: 'homeRuns' set to 22 for player 'Rafael Devers'.]
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #27}Success: 'homeRuns' set to 22 for player 'Rafael Devers'.
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: requestID is: 27--------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #27 is: Success: 'homeRuns' set to 22 for player 'Rafael Devers'.
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #28}Success: 'strikeouts' set to 110 for player 'Rafael Devers'.]
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #28}Success: 'strikeouts' set to 110 for player 'Rafael Devers'.
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: requestID is: 28--------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #28 is: Success: 'strikeouts' set to 110 for player 'Rafael Devers'.
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #29}Success: 'atBats' set to 524 for player 'Jarren Duran' (batting average recomputed).]
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #29}Success: 'atBats' set to 524 for player 'Jarren Duran' (batting average recomputed).
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: requestID is: 29--------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #29 is: Success: 'atBats' set to 524 for player 'Jarren Duran' (batting average recomputed).
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:47 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #30}Success: 'hits' set to 149 for player 'Jarren Duran' (batting average recomputed).]
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #30}Success: 'hits' set to 149 for player 'Jarren Duran' (batting average recomputed).
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: requestID is: 30--------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #30 is: Success: 'hits' set to 149 for player 'Jarren Duran' (batting average recomputed).
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #31}Success: 'homeRuns' set to 14 for player 'Jarren Duran'.]
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #31}Success: 'homeRuns' set to 14 for player 'Jarren Duran'.
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: requestID is: 31--------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #31 is: Success: 'homeRuns' set to 14 for player 'Jarren Duran'.
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #32}Success: 'strikeouts' set to 116 for player 'Jarren Duran'.]
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #32}Success: 'strikeouts' set to 116 for player 'Jarren Duran'.
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: requestID is: 32--------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #32 is: Success: 'strikeouts' set to 116 for player 'Jarren Duran'.
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #33}Success: 'atBats' set to 130 for player 'Triston Casas' (batting average recomputed).]
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #33}Success: 'atBats' set to 130 for player 'Triston Casas' (batting average recomputed).
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: requestID is: 33--------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #33 is: Success: 'atBats' set to 130 for player 'Triston Casas' (batting average recomputed).
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #34}Success: 'hits' set to 30 for player 'Triston Casas' (batting average recomputed).]
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #34}Success: 'hits' set to 30 for player 'Triston Casas' (batting average recomputed).
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: requestID is: 34--------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #34 is: Success: 'hits' set to 30 for player 'Triston Casas' (batting average recomputed).
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:48 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #35}Success: 'homeRuns' set to 4 for player 'Triston Casas'.]
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #35}Success: 'homeRuns' set to 4 for player 'Triston Casas'.
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: requestID is: 35--------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #35 is: Success: 'homeRuns' set to 4 for player 'Triston Casas'.
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #36}Success: 'strikeouts' set to 38 for player 'Triston Casas'.]
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #36}Success: 'strikeouts' set to 38 for player 'Triston Casas'.
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: requestID is: 36--------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #36 is: Success: 'strikeouts' set to 38 for player 'Triston Casas'.
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #37}Success: 'strikeouts' set to 209 for player 'Garrett Crochet'.]
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #37}Success: 'strikeouts' set to 209 for player 'Garrett Crochet'.
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: requestID is: 37--------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #37 is: Success: 'strikeouts' set to 209 for player 'Garrett Crochet'.
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #38}Success: 'atBats' set to 560 for player 'Gunnar Henderson' (batting average recomputed).]
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #38}Success: 'atBats' set to 560 for player 'Gunnar Henderson' (batting average recomputed).
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: requestID is: 38--------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #38 is: Success: 'atBats' set to 560 for player 'Gunnar Henderson' (batting average recomputed).
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #39}Success: 'hits' set to 155 for player 'Gunnar Henderson' (batting average recomputed).]
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #39}Success: 'hits' set to 155 for player 'Gunnar Henderson' (batting average recomputed).
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: requestID is: 39--------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #39 is: Success: 'hits' set to 155 for player 'Gunnar Henderson' (batting average recomputed).
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:49 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #40}Success: 'homeRuns' set to 37 for player 'Gunnar Henderson'.]
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #40}Success: 'homeRuns' set to 37 for player 'Gunnar Henderson'.
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: requestID is: 40--------------------
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #40 is: Success: 'homeRuns' set to 37 for player 'Gunnar Henderson'.
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #41}Success: 'strikeouts' set to 131 for player 'Gunnar Henderson'.]
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #41}Success: 'strikeouts' set to 131 for player 'Gunnar Henderson'.
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: requestID is: 41--------------------
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #41 is: Success: 'strikeouts' set to 131 for player 'Gunnar Henderson'.
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:50 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #42}Success: 'atBats' set to 425 for player 'Adley Rutschman' (batting average recomputed).]
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #42}Success: 'atBats' set to 425 for player 'Adley Rutschman' (batting average recomputed).
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: requestID is: 42--------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #42 is: Success: 'atBats' set to 425 for player 'Adley Rutschman' (batting average recomputed).
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #43}Success: 'hits' set to 108 for player 'Adley Rutschman' (batting average recomputed).]
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #43}Success: 'hits' set to 108 for player 'Adley Rutschman' (batting average recomputed).
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: requestID is: 43--------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #43 is: Success: 'hits' set to 108 for player 'Adley Rutschman' (batting average recomputed).
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #44}Success: 'homeRuns' set to 11 for player 'Adley Rutschman'.]
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #44}Success: 'homeRuns' set to 11 for player 'Adley Rutschman'.
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: requestID is: 44--------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #44 is: Success: 'homeRuns' set to 11 for player 'Adley Rutschman'.
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #45}Success: 'strikeouts' set to 81 for player 'Adley Rutschman'.]
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #45}Success: 'strikeouts' set to 81 for player 'Adley Rutschman'.
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: requestID is: 45--------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #45 is: Success: 'strikeouts' set to 81 for player 'Adley Rutschman'.
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #46}Success: 'strikeouts' set to 171 for player 'Corbin Burnes'.]
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #46}Success: 'strikeouts' set to 171 for player 'Corbin Burnes'.
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: requestID is: 46--------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #46 is: Success: 'strikeouts' set to 171 for player 'Corbin Burnes'.
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:51 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #47}=== Stats for Aaron Judge (RF) ===
+  Year: 2024 | atBats=531, battingAverage=0.322, hits=158, homeRuns=58, runsBattedIn=144, stolenBases=10, strikeouts=130, walks=133]
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #47}=== Stats for Aaron Judge (RF) ===
+  Year: 2024 | atBats=531, battingAverage=0.322, hits=158, homeRuns=58, runsBattedIn=144, stolenBases=10, strikeouts=130, walks=133
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: requestID is: 47--------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #47 is: === Stats for Aaron Judge (RF) ===
+  Year: 2024 | atBats=531, battingAverage=0.322, hits=158, homeRuns=58, runsBattedIn=144, stolenBases=10, strikeouts=130, walks=133
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #48}Player: Aaron Judge | Stat: homeRuns | Value: 58 | Year: 2024]
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #48}Player: Aaron Judge | Stat: homeRuns | Value: 58 | Year: 2024
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: requestID is: 48--------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #48 is: Player: Aaron Judge | Stat: homeRuns | Value: 58 | Year: 2024
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Got a future from the CompletionService
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Getting result from the Future
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Response is: [{requestID: #49}=== Top 5 players by 'homeRuns' in division 'AL East' (2026) ===
+  #1  Gunnar Henderson           homeRuns: 37  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #2  Adley Rutschman            homeRuns: 11  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #3  Corbin Burnes              homeRuns: 0  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  (Note: only 3 player(s) found — fewer than the requested top 5)]
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: ----------------------------
+ResponseStr is {requestID: #49}=== Top 5 players by 'homeRuns' in division 'AL East' (2026) ===
+  #1  Gunnar Henderson           homeRuns: 37  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #2  Adley Rutschman            homeRuns: 11  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #3  Corbin Burnes              homeRuns: 0  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  (Note: only 3 player(s) found — fewer than the requested top 5)
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: requestID is: 49--------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Proper response to requestId #49 is: === Top 5 players by 'homeRuns' in division 'AL East' (2026) ===
+  #1  Gunnar Henderson           homeRuns: 37  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #2  Adley Rutschman            homeRuns: 11  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  #3  Corbin Burnes              homeRuns: 0  (Team: Baltimore Orioles, Division: AL East, Conference: American League)
+  (Note: only 3 player(s) found — fewer than the requested top 5)
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: Completed the future
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: -----------------------------------------------------------------------------------
+
+Apr 24, 2026 12:03:53 AM cluster.GatewayReceiver run
+FINE: take()ing response from the CompletionService
+

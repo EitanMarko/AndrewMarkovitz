@@ -1,0 +1,1563 @@
+Apr 24, 2026 12:03:17 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 1} -> (1) : [1], 
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 1
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 1
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 1
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 1
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 1
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 3
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 2
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:22 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 1
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:22 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:22 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: ELECTION
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+	Leader voted for: 3
+	Sender server state: O
+	Sender server ID: 2
+	Sender peer epoch: 1
+Apr 24, 2026 12:03:22 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:23 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 3} -> (0) : [6], (1) : [4], (2) : [3], (3) : [3], 
+Apr 24, 2026 12:03:23 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:24 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 4} -> (0) : [7], (1) : [4], (2) : [4], (3) : [3], 
+Apr 24, 2026 12:03:24 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:26 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 6} -> (0) : [6], (1) : [6], (2) : [2], (3) : [4], 
+Apr 24, 2026 12:03:26 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:26 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 6} -> (0) : [9], (1) : [7], (2) : [6], (3) : [6], 
+Apr 24, 2026 12:03:26 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 7} -> (0) : [7], (1) : [5], (2) : [5], (3) : [7], 
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 8} -> (0) : [10], (1) : [8], (2) : [6], (3) : [6], 
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 7} -> (0) : [9], (1) : [7], (2) : [7], (3) : [6], 
+Apr 24, 2026 12:03:27 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:29 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 10} -> (0) : [12], (1) : [10], (2) : [7], (3) : [7], 
+Apr 24, 2026 12:03:29 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:31 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 10} -> (0) : [11], (1) : [9], (2) : [10], (3) : [9], 
+Apr 24, 2026 12:03:31 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:32 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 12} -> (0) : [15], (1) : [12], (2) : [11], (3) : [12], 
+Apr 24, 2026 12:03:32 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:33 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 12} -> (0) : [14], (1) : [12], (2) : [12], (3) : [11], 
+Apr 24, 2026 12:03:33 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:33 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 13} -> (0) : [13], (1) : [13], (2) : [9], (3) : [10], 
+Apr 24, 2026 12:03:33 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:35 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 15} -> (0) : [13], (1) : [15], (2) : [9], (3) : [10], 
+Apr 24, 2026 12:03:35 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:35 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 14} -> (0) : [16], (1) : [13], (2) : [13], (3) : [14], 
+Apr 24, 2026 12:03:35 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:36 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 15} -> (0) : [17], (1) : [13], (2) : [13], (3) : [15], 
+Apr 24, 2026 12:03:36 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:37 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 16} -> (0) : [18], (1) : [15], (2) : [16], (3) : [14], 
+Apr 24, 2026 12:03:37 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:38 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 17} -> (0) : [19], (1) : [16], (2) : [17], (3) : [16], 
+Apr 24, 2026 12:03:38 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:39 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 18} -> (0) : [20], (1) : [18], (2) : [18], (3) : [17], 
+Apr 24, 2026 12:03:39 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:39 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 19} -> (0) : [15], (1) : [19], (2) : [15], (3) : [13], 
+Apr 24, 2026 12:03:39 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:40 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 19} -> (0) : [20], (1) : [18], (2) : [19], (3) : [17], 
+Apr 24, 2026 12:03:40 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 21} -> (0) : [21], (1) : [21], (2) : [18], (3) : [19], 
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 20} -> (0) : [22], (1) : [19], (2) : [20], (3) : [17], 
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 20} -> (0) : [21], (1) : [20], (2) : [18], (3) : [20], 
+Apr 24, 2026 12:03:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:42 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 21} -> (0) : [23], (1) : [19], (2) : [21], (3) : [17], 
+Apr 24, 2026 12:03:42 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:43 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 22} -> (0) : [24], (1) : [22], (2) : [22], (3) : [21], 
+Apr 24, 2026 12:03:43 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:44 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 22} -> (0) : [21], (1) : [20], (2) : [18], (3) : [22], 
+Apr 24, 2026 12:03:44 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:45 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 23} -> (0) : [26], (1) : [22], (2) : [22], (3) : [23], 
+Apr 24, 2026 12:03:45 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:45 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 24} -> (0) : [25], (1) : [24], (2) : [24], (3) : [21], 
+Apr 24, 2026 12:03:45 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:46 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 24} -> (0) : [27], (1) : [22], (2) : [22], (3) : [24], 
+Apr 24, 2026 12:03:46 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:48 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 27} -> (0) : [28], (1) : [27], (2) : [25], (3) : [25], 
+Apr 24, 2026 12:03:48 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:48 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 26} -> (0) : [29], (1) : [26], (2) : [26], (3) : [26], 
+Apr 24, 2026 12:03:48 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:50 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 28} -> (0) : [31], (1) : [28], (2) : [28], (3) : [28], 
+Apr 24, 2026 12:03:50 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:52 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 30} -> (0) : [31], (1) : [29], (2) : [30], (3) : [29], 
+Apr 24, 2026 12:03:52 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:53 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 32} -> (0) : [33], (1) : [32], (2) : [29], (3) : [30], 
+Apr 24, 2026 12:03:53 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:53 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 31} -> (0) : [34], (1) : [31], (2) : [31], (3) : [31], 
+Apr 24, 2026 12:03:53 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 33} -> (0) : [35], (1) : [33], (2) : [33], (3) : [32], 
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 34} -> (0) : [34], (1) : [34], (2) : [32], (3) : [30], 
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 33} -> (0) : [34], (1) : [31], (2) : [31], (3) : [33], 
+Apr 24, 2026 12:03:55 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:57 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 36} -> (0) : [36], (1) : [36], (2) : [34], (3) : [32], 
+Apr 24, 2026 12:03:57 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:57 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 35} -> (0) : [38], (1) : [34], (2) : [33], (3) : [35], 
+Apr 24, 2026 12:03:57 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:03:58 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 36} -> (0) : [37], (1) : [35], (2) : [36], (3) : [34], 
+Apr 24, 2026 12:03:58 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:00 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 37} -> (0) : [39], (1) : [37], (2) : [35], (3) : [37], 
+Apr 24, 2026 12:04:00 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:01 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 38} -> (0) : [40], (1) : [39], (2) : [38], (3) : [38], 
+Apr 24, 2026 12:04:01 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:02 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 40} -> (0) : [41], (1) : [40], (2) : [40], (3) : [36], 
+Apr 24, 2026 12:04:02 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:04 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 43} -> (0) : [43], (1) : [43], (2) : [41], (3) : [41], 
+Apr 24, 2026 12:04:04 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:05 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 44} -> (0) : [43], (1) : [44], (2) : [41], (3) : [41], 
+Apr 24, 2026 12:04:05 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:07 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 45} -> (0) : [46], (1) : [45], (2) : [45], (3) : [43], 
+Apr 24, 2026 12:04:07 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:09 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 46} -> (0) : [47], (1) : [47], (2) : [46], (3) : [46], 
+Apr 24, 2026 12:04:09 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:10 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 48} -> (0) : [49], (1) : [48], (2) : [46], (3) : [46], 
+Apr 24, 2026 12:04:10 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:10 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 48} -> (0) : [48], (1) : [45], (2) : [48], (3) : [44], 
+Apr 24, 2026 12:04:10 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:11 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 49} -> (0) : [49], (1) : [49], (2) : [47], (3) : [47], 
+Apr 24, 2026 12:04:11 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:12 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 50} -> (0) : [51], (1) : [50], (2) : [49], (3) : [48], 
+Apr 24, 2026 12:04:12 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:12 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 50} -> (0) : [50], (1) : [48], (2) : [50], (3) : [48], 
+Apr 24, 2026 12:04:12 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:13 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 50} -> (0) : [50], (1) : [48], (2) : [47], (3) : [50], 
+Apr 24, 2026 12:04:13 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:14 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 51} -> (0) : [53], (1) : [52], (2) : [51], (3) : [51], 
+Apr 24, 2026 12:04:14 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:15 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 53} -> (0) : [54], (1) : [52], (2) : [53], (3) : [51], 
+Apr 24, 2026 12:04:15 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:16 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 53} -> (0) : [53], (1) : [54], (2) : [52], (3) : [53], 
+Apr 24, 2026 12:04:16 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:16 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 54} -> (0) : [55], (1) : [52], (2) : [54], (3) : [51], 
+Apr 24, 2026 12:04:16 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:17 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 55} -> (0) : [53], (1) : [55], (2) : [52], (3) : [52], 
+Apr 24, 2026 12:04:17 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:17 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 55} -> (0) : [56], (1) : [54], (2) : [55], (3) : [53], 
+Apr 24, 2026 12:04:17 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:18 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 56} -> (0) : [56], (1) : [56], (2) : [56], (3) : [54], 
+Apr 24, 2026 12:04:18 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:19 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 57} -> (0) : [57], (1) : [57], (2) : [54], (3) : [55], 
+Apr 24, 2026 12:04:19 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:19 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 57} -> (0) : [58], (1) : [56], (2) : [57], (3) : [54], 
+Apr 24, 2026 12:04:19 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 57} -> (0) : [57], (1) : [58], (2) : [54], (3) : [57], 
+Apr 24, 2026 12:04:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:20 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 58} -> (0) : [59], (1) : [57], (2) : [58], (3) : [56], 
+Apr 24, 2026 12:04:20 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:21 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 59} -> (0) : [57], (1) : [59], (2) : [54], (3) : [55], 
+Apr 24, 2026 12:04:21 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:24 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:26 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 63} -> (0) : [65], (1) : [64], (2) : [63], (3) : [63], 
+Apr 24, 2026 12:04:26 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:26 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 64} -> (0) : [64], (1) : [63], (2) : [64], (3) : [62], 
+Apr 24, 2026 12:04:26 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:27 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 65} -> (0) : [66], (1) : [65], (2) : [63], (3) : [63], 
+Apr 24, 2026 12:04:27 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:27 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 65} -> (0) : [67], (1) : [65], (2) : [65], (3) : [63], 
+Apr 24, 2026 12:04:27 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:29 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 66} -> (0) : [68], (1) : [67], (2) : [66], (3) : [66], 
+Apr 24, 2026 12:04:29 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:30 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 68} -> (0) : [68], (1) : [68], (2) : [67], (3) : [65], 
+Apr 24, 2026 12:04:30 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:31 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 69} -> (0) : [70], (1) : [69], (2) : [67], (3) : [66], 
+Apr 24, 2026 12:04:31 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:31 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 68} -> (0) : [69], (1) : [67], (2) : [68], (3) : [68], 
+Apr 24, 2026 12:04:31 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:33 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 69} -> (0) : [69], (1) : [67], (2) : [68], (3) : [69], 
+Apr 24, 2026 12:04:33 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:33 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 70} -> (0) : [71], (1) : [70], (2) : [70], (3) : [67], 
+Apr 24, 2026 12:04:33 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:36 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:37 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 73} -> (0) : [74], (1) : [73], (2) : [73], (3) : [72], 
+Apr 24, 2026 12:04:37 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:39 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 75} -> (0) : [76], (1) : [75], (2) : [73], (3) : [72], 
+Apr 24, 2026 12:04:39 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:40 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 75} -> (0) : [77], (1) : [74], (2) : [75], (3) : [75], 
+Apr 24, 2026 12:04:40 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 77} -> (0) : [78], (1) : [76], (2) : [77], (3) : [74], 
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 76} -> (0) : [77], (1) : [74], (2) : [75], (3) : [76], 
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 77} -> (0) : [79], (1) : [77], (2) : [77], (3) : [75], 
+Apr 24, 2026 12:04:41 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:43 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 78} -> (0) : [80], (1) : [78], (2) : [78], (3) : [78], 
+Apr 24, 2026 12:04:43 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:44 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 80} -> (0) : [78], (1) : [76], (2) : [80], (3) : [74], 
+Apr 24, 2026 12:04:44 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:44 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 79} -> (0) : [81], (1) : [79], (2) : [79], (3) : [79], 
+Apr 24, 2026 12:04:44 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:45 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 81} -> (0) : [82], (1) : [80], (2) : [81], (3) : [79], 
+Apr 24, 2026 12:04:45 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:47 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 82} -> (0) : [84], (1) : [82], (2) : [83], (3) : [82], 
+Apr 24, 2026 12:04:47 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:49 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 85} -> (0) : [85], (1) : [85], (2) : [85], (3) : [83], 
+Apr 24, 2026 12:04:49 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:51 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 87} -> (0) : [89], (1) : [87], (2) : [87], (3) : [86], 
+Apr 24, 2026 12:04:51 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:52 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 87} -> (0) : [88], (1) : [86], (2) : [88], (3) : [87], 
+Apr 24, 2026 12:04:52 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:52 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 88} -> (0) : [89], (1) : [88], (2) : [87], (3) : [86], 
+Apr 24, 2026 12:04:52 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:54 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 90} -> (0) : [90], (1) : [87], (2) : [90], (3) : [88], 
+Apr 24, 2026 12:04:54 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:55 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 90} -> (0) : [92], (1) : [90], (2) : [90], (3) : [90], 
+Apr 24, 2026 12:04:55 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:56 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 92} -> (0) : [90], (1) : [87], (2) : [92], (3) : [88], 
+Apr 24, 2026 12:04:56 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:56 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 92} -> (0) : [93], (1) : [92], (2) : [91], (3) : [89], 
+Apr 24, 2026 12:04:56 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:58 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 92} -> (0) : [94], (1) : [91], (2) : [93], (3) : [92], 
+Apr 24, 2026 12:04:58 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:58 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 94} -> (0) : [93], (1) : [91], (2) : [94], (3) : [91], 
+Apr 24, 2026 12:04:58 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 93} -> (0) : [94], (1) : [93], (2) : [93], (3) : [93], 
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 94} -> (0) : [95], (1) : [94], (2) : [92], (3) : [90], 
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 95} -> (0) : [96], (1) : [92], (2) : [95], (3) : [92], 
+Apr 24, 2026 12:04:59 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:05:00 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8030
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 3, seqNum: 94} -> (0) : [94], (1) : [93], (2) : [93], (3) : [94], 
+Apr 24, 2026 12:05:00 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:05:00 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8020
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 2, seqNum: 96} -> (0) : [96], (1) : [92], (2) : [96], (3) : [92], 
+Apr 24, 2026 12:05:00 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:05:02 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 97} -> (0) : [98], (1) : [97], (2) : [96], (3) : [94], 
+Apr 24, 2026 12:05:02 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet
+Apr 24, 2026 12:05:03 AM helperFiles.UDPMessageReceiver run
+FINE: UDP packet received:
+Message Type: GOSSIP
+Sender Host: localhost
+Sender port: 8010
+Receiver Host: localhost
+Receiver port: 8000
+Request ID: -1
+Error Occurred: false
+Message Contents: 
+{From server 1, seqNum: 98} -> (0) : [98], (1) : [98], (2) : [96], (3) : [94], 
+Apr 24, 2026 12:05:03 AM helperFiles.UDPMessageReceiver run
+FINE: Waiting for packet

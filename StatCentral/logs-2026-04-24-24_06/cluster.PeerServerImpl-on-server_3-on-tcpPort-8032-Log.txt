@@ -1,0 +1,37 @@
+Apr 24, 2026 12:06:46 AM cluster.PeerServerImpl setupHttpServer
+FINE: HTTP server started on port: 8130
+Apr 24, 2026 12:06:46 AM helperFiles.LeaderElection lookForLeader
+FINE: Epoch #1: Looking for leader [73834918895600]
+
+Apr 24, 2026 12:06:46 AM helperFiles.LeaderElection lookForLeader
+FINE: Message Queue is EMPTY
+
+Apr 24, 2026 12:06:46 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73834928182200]
+
+Apr 24, 2026 12:06:46 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73834952617200]
+
+Apr 24, 2026 12:06:47 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73835089072500]
+
+Apr 24, 2026 12:06:47 AM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [73835309074000]
+
+Apr 24, 2026 12:06:47 AM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 3 [Epoch: 1], at time [73835738279800]
+
+Apr 24, 2026 12:06:47 AM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 3(from [1]), and quorum is 1
+
+Apr 24, 2026 12:06:50 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Set peer state to LEADING at time [73839003023200]
+
+Apr 24, 2026 12:06:50 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Setting epoch to 1
+Apr 24, 2026 12:06:50 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: Elected Leader: 3
+
+Apr 24, 2026 12:06:50 AM helperFiles.LeaderElection acceptElectionWinner
+FINE: PeerState is LEADING
+

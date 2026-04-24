@@ -1,0 +1,240 @@
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [2] based on message from [2] at node time [73774494140900]
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [3] based on message from [2] at node time [73774555078700]
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [6] based on message from [0] at node time [73774562598800]
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [3] based on message from [0] at node time [73774567074700]
+
+Apr 24, 2026 12:05:46 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [1] based on message from [0] at node time [73774685242100]
+
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [4] based on message from [2] at node time [73775383603200]
+
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [4] based on message from [2] at node time [73775385766300]
+
+Apr 24, 2026 12:05:47 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [2] based on message from [2] at node time [73775389611400]
+
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [7] based on message from [1] at node time [73776202525600]
+
+Apr 24, 2026 12:05:48 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [5] based on message from [1] at node time [73776205426800]
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [9] based on message from [0] at node time [73777568895900]
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [6] based on message from [0] at node time [73777570592800]
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [5] based on message from [0] at node time [73777572022600]
+
+Apr 24, 2026 12:05:49 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [4] based on message from [0] at node time [73777573728100]
+
+Apr 24, 2026 12:05:50 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [7] based on message from [2] at node time [73778428147800]
+
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [8] based on message from [1] at node time [73779358187900]
+
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [6] based on message from [1] at node time [73779361419500]
+
+Apr 24, 2026 12:05:51 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [11] based on message from [0] at node time [73779658827800]
+
+Apr 24, 2026 12:05:52 AM cluster.PeerServerImpl setPeerState
+FINE: [3]: switching from [LOOKING] to [LEADING]
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [9] based on message from [2] at node time [73780475158400]
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [9] based on message from [2] at node time [73780476690200]
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [12] based on message from [0] at node time [73780683628200]
+
+Apr 24, 2026 12:05:52 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [7] based on message from [0] at node time [73780688062600]
+
+Apr 24, 2026 12:05:53 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [10] based on message from [1] at node time [73781414597200]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [13] based on message from [1] at node time [73782435727900]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [11] based on message from [1] at node time [73782437128000]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [10] based on message from [1] at node time [73782438843900]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [8] based on message from [1] at node time [73782440077200]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [14] based on message from [0] at node time [73782779713200]
+
+Apr 24, 2026 12:05:54 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [10] based on message from [0] at node time [73782785932900]
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [15] based on message from [0] at node time [73783794410500]
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [12] based on message from [0] at node time [73783796708000]
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [12] based on message from [0] at node time [73783797847400]
+
+Apr 24, 2026 12:05:55 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [11] based on message from [0] at node time [73783799051600]
+
+Apr 24, 2026 12:05:56 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [13] based on message from [1] at node time [73784503615600]
+
+Apr 24, 2026 12:05:57 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [16] based on message from [2] at node time [73785507056600]
+
+Apr 24, 2026 12:05:57 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [14] based on message from [2] at node time [73785511522200]
+
+Apr 24, 2026 12:05:57 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [12] based on message from [2] at node time [73785513008000]
+
+Apr 24, 2026 12:05:57 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [14] based on message from [1] at node time [73785575047900]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [15] based on message from [2] at node time [73786529084600]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [13] based on message from [2] at node time [73786530154400]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [17] based on message from [1] at node time [73786670522600]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [15] based on message from [1] at node time [73786671632000]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [18] based on message from [0] at node time [73786901069500]
+
+Apr 24, 2026 12:05:58 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [14] based on message from [0] at node time [73786903068100]
+
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [16] based on message from [2] at node time [73787527788800]
+
+Apr 24, 2026 12:05:59 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [16] based on message from [1] at node time [73787649967800]
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [21] based on message from [0] at node time [73789980182500]
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [18] based on message from [0] at node time [73789980895000]
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [18] based on message from [0] at node time [73789981805400]
+
+Apr 24, 2026 12:06:01 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [16] based on message from [0] at node time [73789982607400]
+
+Apr 24, 2026 12:06:02 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [19] based on message from [2] at node time [73790612499100]
+
+Apr 24, 2026 12:06:07 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [26] based on message from [2] at node time [73795683288100]
+
+Apr 24, 2026 12:06:07 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [23] based on message from [2] at node time [73795683693700]
+
+Apr 24, 2026 12:06:07 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [24] based on message from [2] at node time [73795684048400]
+
+Apr 24, 2026 12:06:07 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [22] based on message from [2] at node time [73795684891200]
+
+Apr 24, 2026 12:06:09 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [26] based on message from [1] at node time [73798013303200]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [29] based on message from [0] at node time [73798356862300]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [26] based on message from [0] at node time [73798358173100]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [25] based on message from [0] at node time [73798358556900]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [27] based on message from [2] at node time [73798771769900]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [27] based on message from [1] at node time [73799037877500]
+
+Apr 24, 2026 12:06:10 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [26] based on message from [1] at node time [73799039064100]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [33] based on message from [1] at node time [73803439541900]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [31] based on message from [1] at node time [73803440040400]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [30] based on message from [1] at node time [73803440474600]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [28] based on message from [1] at node time [73803441418900]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [34] based on message from [0] at node time [73803444599900]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [31] based on message from [0] at node time [73803445212600]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [30] based on message from [0] at node time [73803445534000]
+
+Apr 24, 2026 12:06:15 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [32] based on message from [2] at node time [73803987414700]
+
+Apr 24, 2026 12:06:16 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [33] based on message from [2] at node time [73805001466300]
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [36] based on message from [2] at node time [73806022789200]
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [33] based on message from [2] at node time [73806025319100]
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [34] based on message from [2] at node time [73806027673300]
+
+Apr 24, 2026 12:06:17 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [32] based on message from [2] at node time [73806028486600]
+
+Apr 24, 2026 12:06:18 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [0]'s heartbeat sequence to [37] based on message from [0] at node time [73806547094300]
+
+Apr 24, 2026 12:06:18 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [1]'s heartbeat sequence to [34] based on message from [1] at node time [73806581737600]
+
+Apr 24, 2026 12:06:18 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [3]'s heartbeat sequence to [33] based on message from [1] at node time [73806582699000]
+
+Apr 24, 2026 12:06:19 AM cluster.GossipReceiver readEntries
+FINE: [3]: updated [2]'s heartbeat sequence to [35] based on message from [2] at node time [73807221716300]
+
