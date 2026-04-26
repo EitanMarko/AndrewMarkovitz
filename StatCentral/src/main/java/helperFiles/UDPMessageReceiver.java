@@ -2,6 +2,7 @@ package helperFiles;
 
 import java.io.IOException;
 import java.net.*;
+import java.util.Arrays;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,7 +48,27 @@ public class UDPMessageReceiver extends Thread implements LoggingServer {
                 this.logger.fine("Waiting for packet");
                 DatagramPacket packet = new DatagramPacket(new byte[MAXLENGTH], MAXLENGTH);
                 socket.receive(packet); // Receive packet from a client
-                Message received = new Message(packet.getData());
+
+                // Trim to the actual received bytes; packet.getData() always returns the
+                // full 4096-byte backing buffer regardless of how many bytes arrived.
+                byte[] msgBytes = Arrays.copyOf(packet.getData(), packet.getLength());
+
+                // Pre-validate before constructing Message.
+                // Every valid Message serialises its type as a big-endian Java char
+                // ('E','W','C','G','L'), so the first byte is always 0x00 (high byte
+                // of an ASCII char < 256).  Stray UDP packets from WSL2 networking,
+                // Docker, mDNS, etc. almost never start with 0x00, so this one-byte
+                // check silently discards them and stops BufferUnderflowException spam.
+                if (msgBytes.length < 19 || msgBytes[0] != 0x00) {
+                    this.logger.fine("Discarding non-Message UDP packet (length=" + msgBytes.length + ")");
+                    continue;
+                }
+
+                Message received = new Message(msgBytes);
+                if (received.getMessageType() == null) {
+                    this.logger.fine("Discarding UDP packet with unknown message type");
+                    continue;
+                }
                 InetSocketAddress sender = new InetSocketAddress(received.getSenderHost(), received.getSenderPort());
                 //ignore messages from peers marked as dead
                 if (this.peerServer != null && this.peerServer.isPeerDead(sender)) {

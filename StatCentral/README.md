@@ -17,6 +17,9 @@ This repository contains the assignment files for COM3810.
 - [Step 2 — Start the cluster](#step-2--start-the-cluster)
 - [Step 3 — Run the demo](#step-3--run-the-demo)
 - [Step 4 — Run the tests](#step-4--run-the-tests)
+  - [Full cluster walkthrough (second demo)](#full-cluster-walkthrough-second-demo)
+  - [Cluster-resilience tests](#cluster-resilience-tests-no-docker-stack-required)
+  - [Database/failover tests](#databasefailover-tests-docker-stack-must-be-running)
 - [Stopping and resetting](#stopping-and-resetting)
 - [Useful commands](#useful-commands)
 
@@ -75,9 +78,13 @@ sudo service docker start
 sudo apt-get install -y openjdk-21-jdk maven
 ```
 
-**4. Navigate to the project** (your Windows drive is mounted at `/mnt/c/`)
+**4. Copy the project to the native Linux filesystem**
+
+> **Important:** Do not run the project from `/mnt/c/`. The WSL2 filesystem bridge makes file I/O slow enough that Java's class-loading on first startup exceeds request timeouts, causing the demo and all tests to fail. Always work from the native Linux filesystem.
+
 ```bash
-cd /mnt/c/Users/<your-username>/path/to/com3810/StatCentral
+cp -r /mnt/c/Users/<your-username>/path/to/com3810/StatCentral ~/statcentral
+cd ~/statcentral
 ```
 
 Now skip to [Step 2](#step-2--start-the-cluster).
@@ -164,23 +171,25 @@ The demo starts a 4-node Java cluster, populates the database, then pauses for i
 
 > **Note:** `mvn test` must be run from inside the same environment where Docker is running (e.g. the WSL2 shell on Windows), because some tests invoke `docker exec`/`docker stop`/`docker start` as subprocesses.
 
-**Cluster-resilience tests** (no Docker stack required):
+### Full cluster walkthrough (second demo)
+
+Exercises every API method end-to-end across a live cluster.
+
+```bash
+mvn test -Dtest=FullInterfaceTest#testAllMethods
+```
+
+### Cluster-resilience tests 
 ```bash
 mvn test -Dtest=FullInterfaceTest#killMultipleFollowers
 mvn test -Dtest=FullInterfaceTest#killOneLeader5Peers
 mvn test -Dtest=FullInterfaceTest#killGateway
-mvn test -Dtest=FullInterfaceTest#testAllMethods
 ```
 
-**Database/failover tests** (Docker stack must be running):
+### Database/failover tests 
 ```bash
 mvn test -Dtest=FullInterfaceTest#testPrimaryFailover
 mvn test -Dtest=FullInterfaceTest#testWipeDatabase
-```
-
-By default Maven forks the test JVM, so the database-inspection pause is skipped automatically. To get the interactive pause, add `-DforkCount=0`:
-```bash
-mvn test -Dtest=FullInterfaceTest#testPrimaryFailover -DforkCount=0
 ```
 
 ---

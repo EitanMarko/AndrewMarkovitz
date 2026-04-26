@@ -342,7 +342,7 @@ public class FullInterfaceTest {
         // ── Inspection pause ─────────────────────────────────────────────────────
         // All data is now in the database. Show a dialog so you can inspect it
         // via pgAdmin or psql before cleanup runs.
-        System.out.println("Database populated. Inspect it now, then click OK to clean up.");
+        //System.out.println("Database populated. Inspect it now, then click OK to clean up.");
 
         // ── Phase 7: Cleanup ─────────────────────────────────────────────────────
         System.out.println("\n=== Phase 7: Cleanup (Delete) ===");
@@ -758,10 +758,10 @@ public class FullInterfaceTest {
 
         // Wait for the remaining nodes to detect the failure and elect a new leader.
         // This takes longer than a follower crash because a full re-election must complete.
-        System.out.println("  Waiting " + RE_ELECTION_SLEEP_MS + " ms for re-election...");
+        System.out.println("  Waiting " + (RE_ELECTION_SLEEP_MS/1000) + " seconds for re-election...");
         for(int i = 0; i < RE_ELECTION_SLEEP_MS/1000; i++){
             Thread.sleep(1000);
-            System.out.println((i+1)+"s");
+            System.out.println((i+1)+"/"+(RE_ELECTION_SLEEP_MS/1000)+"s");
         }
         //Thread.sleep(RE_ELECTION_SLEEP_MS);
 
@@ -872,6 +872,7 @@ public class FullInterfaceTest {
                         leader.getProposedLeaderID(), s.getPeerState());
             }
         }
+
         System.out.println();
 
         // Build GatewayConfig from the cluster parameters we just used.

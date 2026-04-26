@@ -296,8 +296,8 @@ public class MultiProcessDemo {
         // environment) we fall back to a simple "press Enter" console prompt so
         // the demo never crashes silently and skips the inspection window.
         System.out.println();
-        System.out.println("[demo] Database populated. Inspect it now, then click OK in the dialog to clean up.");
-        pauseForInspection();
+        //System.out.println("[demo] Database populated. Inspect it now, then click OK in the dialog to clean up.");
+        //pauseForInspection();
 
         // ── Step 8: Clean up demo data ────────────────────────────────────────
         // Deletes the top-level conference, which cascades through the database
