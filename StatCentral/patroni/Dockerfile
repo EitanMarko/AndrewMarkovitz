@@ -15,7 +15,7 @@ COPY patroni.yml /etc/patroni.yml
 # Post-bootstrap script: runs once on the primary after the cluster is first
 # initialized. Creates the statcentral database, appuser role, and applies the schema.
 COPY init_db.sh /scripts/init_db.sh
-RUN chmod +x /scripts/init_db.sh
+RUN sed -i 's/\r//' /scripts/init_db.sh && chmod +x /scripts/init_db.sh
 
 # 5432 = PostgreSQL, 8008 = Patroni REST API (used by HAProxy health checks)
 EXPOSE 5432 8008
