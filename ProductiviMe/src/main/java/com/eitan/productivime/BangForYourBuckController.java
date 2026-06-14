@@ -1,5 +1,6 @@
 package com.eitan.productivime;
 
+import com.eitan.productivime.BangForYourBuck.ScheduleResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -100,6 +101,24 @@ public class BangForYourBuckController {
             request.name(), request.startBy(), request.endBy(), request.duration()
         );
         return ResponseEntity.ok("Do-today activity added: " + request.name());
+    }
+
+    // ------------------------------------------------------------------
+    // Schedule generation
+    // ------------------------------------------------------------------
+
+    /**
+     * Generate the optimal schedule for today.
+     *
+     * POST /schedule/generate
+     * Response: { "intervals": [ { "start": "8:00", "end": "9:10",
+     *                               "durationMinutes": 70,
+     *                               "activities": [ { "name": "...", "durationMinutes": 70, "value": 10 } ] } ],
+     *             "totalValue": 25 }
+     */
+    @PostMapping("/schedule/generate")
+    public ResponseEntity<ScheduleResult> generateSchedule() {
+        return ResponseEntity.ok(service.generateSchedule());
     }
 
     // ------------------------------------------------------------------

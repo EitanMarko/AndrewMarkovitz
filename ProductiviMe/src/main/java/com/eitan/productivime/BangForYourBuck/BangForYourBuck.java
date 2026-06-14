@@ -72,7 +72,7 @@ public class BangForYourBuck {
 
         if(activity instanceof SetActivity){
             if (!addMultipleActivities) { // If addActivity() called by addMultipleActivities(), below checks already done
-                
+
                 // Invalid interval - starts before day begins || finishes after day ends
                 validIntervalCheck((SetActivity) activity); // Ensure activity's interval is within defined "day"
                 overlapCheck((SetActivity) activity); // Ensure new SetActivity doesn't overlap previously added SetActivities
@@ -112,7 +112,7 @@ public class BangForYourBuck {
             }
         }
     }
-    
+
 
     public boolean addMultipleActivities(Activity... activities){
 
@@ -156,255 +156,245 @@ public class BangForYourBuck {
         }
     }
 
-    public void generateSchedule(){
+    public ScheduleResult generateSchedule() {
 
-        // STEP 1: GET ALL FREE INTERVALS
-
-        // SORT filledIntervals HERE????????????????????????????
+        // Step 1: Sort filled intervals by start time, then build the free intervals between them.
+        // Sorting is required because addActivity() accepts SetActivities in any order.
+        filledIntervals.sort(Comparator.comparingInt(i -> i.start));
 
         List<Interval> freeIntervals = new ArrayList<>();
-        if(!filledIntervals.isEmpty()){
-            Interval firstInterval = filledIntervals.get(0);
-            if(firstInterval.start > dayStart){ // From start of day til start of first interval
-                freeIntervals.add(new Interval(dayStartStr,firstInterval.getStartStr()));
+        if (filledIntervals.isEmpty()) {
+            // No set activities — the entire day is free
+            freeIntervals.add(new Interval(dayStartStr, dayEndStr));
+        } else {
+            Interval first = filledIntervals.get(0);
+            if (first.start > dayStart) {
+                freeIntervals.add(new Interval(dayStartStr, first.getStartStr()));
             }
-        }
-        for(int i = 1; i < filledIntervals.size(); i++){
-            // Q: Would it be faster to instead just do an O(n) pass thru all Intervals in filledIntervals,
-                // and create a "Free Interval" between each?
-                //Case: if difference between Intervals == 0, DO NOT create "Free Interval".
-                    // Seems simpler to me...
-
-            // Add dif between start of day and first interval
-            Interval prev = filledIntervals.get(i-1);
-            Interval curr = filledIntervals.get(i);
-            if(curr.start - prev.end != 0){
-                freeIntervals.add(new Interval(prev.getEndStr(),curr.getStartStr()));
-            }
-        }
-
-        if (!filledIntervals.isEmpty()) {
-            Interval lastInterval = filledIntervals.get(filledIntervals.size()-1);
-            if(lastInterval.end < dayEnd){ // From end of last interval til end of day
-                freeIntervals.add(new Interval(lastInterval.getEndStr(), dayEndStr));
-            }
-        }
-
-        for(Interval interval : freeIntervals){
-            System.out.println("Free Interval: "+ interval.getStartStr()+"-"+interval.getEndStr());
-        }
-
-        // STEP 2: DP BUCKET FILL EACH FREE INTERVAL
-            // SMALLEST -> LARGEST INTERVAL ORDER
-
-        freeIntervals.sort(Comparator.comparingInt(interval -> interval.duration));
-
-// Work with FlexibleActivities only
-        List<Activity> allFlexActivities = new ArrayList<>(flexActivities);
-
-// Sort activities by value in descending order for better performance
-        allFlexActivities.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
-
-// Track which activities have been used across all intervals
-        boolean[] usedActivities = new boolean[allFlexActivities.size()];
-
-// Store the optimal schedule for each interval
-        Map<Interval, List<Activity>> intervalSchedules = new HashMap<>();
-
-        // Process each free interval from smallest to largest
-        for (Interval freeInterval : freeIntervals) {
-            int capacity = freeInterval.duration;
-            int n = allFlexActivities.size();
-
-            // Create available activities list (excluding already used ones)
-            List<Activity> availableActivities = new ArrayList<>();
-            List<Integer> originalIndices = new ArrayList<>();
-
-            for (int i = 0; i < allFlexActivities.size(); i++) {
-                if (!usedActivities[i]) {
-                    availableActivities.add(allFlexActivities.get(i)); // add all activities which are available to be allocated at this stage
-                    originalIndices.add(i); // track indices that were available before filling this interval
+            for (int i = 1; i < filledIntervals.size(); i++) {
+                Interval prev = filledIntervals.get(i - 1);
+                Interval curr = filledIntervals.get(i);
+                if (curr.start > prev.end) {
+                    freeIntervals.add(new Interval(prev.getEndStr(), curr.getStartStr()));
                 }
             }
-
-            if (availableActivities.isEmpty()) { // all activities have been allocated - nothing more to do
-                intervalSchedules.put(freeInterval, new ArrayList<>());
-                continue; // BREAK???
+            Interval last = filledIntervals.get(filledIntervals.size() - 1);
+            if (last.end < dayEnd) {
+                freeIntervals.add(new Interval(last.getEndStr(), dayEndStr));
             }
+        }
 
-            // 0/1 Knapsack DP table
-            // dp[i][w] = maximum value using first i activities with weight limit w
-            int[][] dp = new int[availableActivities.size() + 1][capacity + 1];
+        for (Interval interval : freeIntervals) {
+            System.out.println("Free interval: " + interval.getStartStr() + "-" + interval.getEndStr()
+                    + " (" + interval.duration + " min)");
+        }
 
-            // Fill the DP table
-            for (int i = 1; i <= availableActivities.size(); i++) { // for all available activities
-                Activity activity = availableActivities.get(i - 1); // get a given activity
-                int weight = activity.getDuration(); // get activity's weight
-                int value = activity.getValue(); // get activity's value (priority)
+        if (flexActivities.isEmpty()) {
+            System.out.println("No flexible activities to schedule.");
+            List<ScheduleResult.ScheduledInterval> empty = new ArrayList<>();
+            for (Interval interval : freeIntervals) {
+                empty.add(new ScheduleResult.ScheduledInterval(
+                        interval.getStartStr(), interval.getEndStr(), interval.duration, List.of()));
+            }
+            return new ScheduleResult(empty, 0);
+        }
 
-                for (int w = 0; w <= capacity; w++) {
-                    // Don't include current activity
-                    dp[i][w] = dp[i-1][w];
+        int N = flexActivities.size();
+        int K = freeIntervals.size();
 
-                    // Include current activity if it fits
-                    if (weight <= w) {
-                        dp[i][w] = Math.max(dp[i][w], dp[i-1][w-weight] + value);
+        // Bitmask DP is exact but exponential in N. For N > 20 the memory and runtime
+        // cost becomes impractical, so we fall back to a per-interval greedy approximation.
+        if (N > 20) {
+            System.out.println("Note: more than 20 flexible activities — using greedy approximation.");
+            return generateScheduleGreedy(freeIntervals);
+        }
+
+        // Step 2: Precompute the total duration and total value of every possible subset
+        // of flexible activities so that inner-loop lookups are O(1).
+        // Both arrays are built bottom-up: strip the lowest set bit, look up the rest.
+        int[] totalDur = new int[1 << N];
+        int[] totalVal = new int[1 << N];
+        for (int mask = 1; mask < (1 << N); mask++) {
+            int lsb  = Integer.numberOfTrailingZeros(mask);
+            int rest = mask ^ (1 << lsb);
+            totalDur[mask] = totalDur[rest] + flexActivities.get(lsb).getDuration();
+            totalVal[mask] = totalVal[rest] + flexActivities.get(lsb).getValue();
+        }
+
+        // Step 3: Bitmask DP over all free intervals.
+        //
+        // dp[mask] = maximum total value achievable by scheduling exactly the activities
+        //            indicated by 'mask', distributed across the intervals processed so far.
+        //            -1 means this combination cannot be feasibly scheduled.
+        //
+        // For each interval we try assigning every possible subset of the still-unused
+        // activities to it, keeping the assignment that maximises cumulative value.
+        // Complexity: O(K * 3^N)  — the subset-enumeration identity gives 3^N total
+        // inner iterations per interval pass.
+        int[] dp = new int[1 << N];
+        Arrays.fill(dp, -1);
+        dp[0] = 0;
+
+        // prevMask[j][newMask] = the DP state *before* interval j contributed to newMask.
+        // Used during backtracking to recover which activities were assigned to which interval.
+        // -1 means interval j contributed no new activities on the path to newMask.
+        int[][] prevMask = new int[K][1 << N];
+        for (int[] row : prevMask) Arrays.fill(row, -1);
+
+        for (int j = 0; j < K; j++) {
+            int capacity = freeIntervals.get(j).duration;
+            int[] newDp = dp.clone(); // carry forward all states reachable without using this interval
+
+            for (int used = 0; used < (1 << N); used++) {
+                if (dp[used] < 0) continue; // state not yet reachable — skip
+
+                // Enumerate every non-empty subset of the activities not yet scheduled
+                int available = ((1 << N) - 1) & ~used;
+                for (int sub = available; sub > 0; sub = (sub - 1) & available) {
+                    if (totalDur[sub] <= capacity) {
+                        int newMask = used | sub;
+                        int newVal  = dp[used] + totalVal[sub];
+                        if (newVal > newDp[newMask]) {
+                            newDp[newMask] = newVal;
+                            prevMask[j][newMask] = used; // record how we got here
+                        }
                     }
                 }
             }
+            dp = newDp;
+        }
 
-            // Backtrack to find which activities were selected
-            List<Activity> selectedActivities = new ArrayList<>();
-            int w = capacity;
+        // Step 4: Find the globally optimal mask — the highest-value feasible assignment.
+        int bestMask = 0;
+        for (int mask = 1; mask < (1 << N); mask++) {
+            if (dp[mask] > dp[bestMask]) bestMask = mask;
+        }
 
-            for (int i = availableActivities.size(); i > 0 && w > 0; i--) {
-                // If value came from including this activity
-                if (dp[i][w] != dp[i-1][w]) {
-                    Activity selectedActivity = availableActivities.get(i - 1);
-                    selectedActivities.add(selectedActivity);
-                    w -= selectedActivity.getDuration();
+        // Step 5: Backtrack through prevMask to recover which activities go in which interval.
+        // We walk backwards from the last interval to the first; at each step, the subset
+        // assigned to interval j is (currentMask XOR the state before j ran).
+        Map<Interval, List<Activity>> scheduleByInterval = new HashMap<>();
+        int currentMask = bestMask;
+        for (int j = K - 1; j >= 0; j--) {
+            List<Activity> assigned = new ArrayList<>();
+            int before = prevMask[j][currentMask];
+            if (before >= 0) {
+                // Interval j contributed some activities — extract which ones
+                int subset = currentMask ^ before;
+                for (int i = 0; i < N; i++) {
+                    if ((subset & (1 << i)) != 0) {
+                        assigned.add(flexActivities.get(i));
+                    }
+                }
+                currentMask = before;
+            }
+            scheduleByInterval.put(freeIntervals.get(j), assigned);
+        }
 
-                    // Mark this activity as used
-                    int originalIndex = originalIndices.get(i - 1);
-                    usedActivities[originalIndex] = true;
+        // Step 6: Build the result and print the optimal schedule in chronological order
+        System.out.println("\n=== OPTIMAL SCHEDULE ===");
+        int totalValue = 0;
+        List<ScheduleResult.ScheduledInterval> resultIntervals = new ArrayList<>();
+        for (Interval interval : freeIntervals) {
+            List<Activity> assigned = scheduleByInterval.get(interval);
+            System.out.println("\n" + interval.getStartStr() + "-" + interval.getEndStr()
+                    + " (" + interval.duration + " min):");
+            List<ScheduleResult.ScheduledActivity> resultActivities = new ArrayList<>();
+            if (assigned == null || assigned.isEmpty()) {
+                System.out.println("  (no activities scheduled)");
+            } else {
+                int timeUsed = 0;
+                for (Activity a : assigned) {
+                    System.out.println("  - " + a.getName()
+                            + " (" + a.getDuration() + " min, value " + a.getValue() + ")");
+                    totalValue += a.getValue();
+                    timeUsed  += a.getDuration();
+                    resultActivities.add(new ScheduleResult.ScheduledActivity(
+                            a.getName(), a.getDuration(), a.getValue()));
+                }
+                System.out.println("  Time used: " + timeUsed + "/" + interval.duration + " min");
+            }
+            resultIntervals.add(new ScheduleResult.ScheduledInterval(
+                    interval.getStartStr(), interval.getEndStr(), interval.duration, resultActivities));
+        }
+        System.out.println("\nTotal schedule value: " + totalValue);
+        return new ScheduleResult(resultIntervals, totalValue);
+    }
+
+    // Greedy fallback used when N > 20. Processes intervals smallest-to-largest and
+    // runs a standard 0/1 knapsack per interval. Correct within each interval but
+    // not guaranteed globally optimal across multiple intervals.
+    private ScheduleResult generateScheduleGreedy(List<Interval> freeIntervals) {
+        List<Interval> sorted = new ArrayList<>(freeIntervals);
+        sorted.sort(Comparator.comparingInt(i -> i.duration));
+
+        List<Activity> allFlex = new ArrayList<>(flexActivities);
+        allFlex.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
+        boolean[] used = new boolean[allFlex.size()];
+        Map<Interval, List<Activity>> scheduleByInterval = new HashMap<>();
+
+        for (Interval interval : sorted) {
+            int capacity = interval.duration;
+            List<Activity> available = new ArrayList<>();
+            List<Integer> indices   = new ArrayList<>();
+            for (int i = 0; i < allFlex.size(); i++) {
+                if (!used[i]) { available.add(allFlex.get(i)); indices.add(i); }
+            }
+            if (available.isEmpty()) {
+                scheduleByInterval.put(interval, new ArrayList<>());
+                continue;
+            }
+
+            int m = available.size();
+            int[][] dpTable = new int[m + 1][capacity + 1];
+            for (int i = 1; i <= m; i++) {
+                int w = available.get(i - 1).getDuration();
+                int v = available.get(i - 1).getValue();
+                for (int c = 0; c <= capacity; c++) {
+                    dpTable[i][c] = dpTable[i - 1][c];
+                    if (w <= c) dpTable[i][c] = Math.max(dpTable[i][c], dpTable[i - 1][c - w] + v);
                 }
             }
 
-            // Store the schedule for this interval
-            intervalSchedules.put(freeInterval, selectedActivities);
-
-            // Print results for this interval
-            System.out.println("\nOptimal schedule for interval " + freeInterval.getStartStr() +
-                    "-" + freeInterval.getEndStr() + " (" + freeInterval.duration + " minutes):");
-            int totalValue = 0;
-            int totalTime = 0;
-            for (Activity activity : selectedActivities) {
-                System.out.println("  - " + activity.getName() + " (Duration: " +
-                        activity.getDuration() + " min, Value: " + activity.getValue() + ")");
-                totalValue += activity.getValue();
-                totalTime += activity.getDuration();
+            List<Activity> selected = new ArrayList<>();
+            int c = capacity;
+            for (int i = m; i > 0 && c > 0; i--) {
+                if (dpTable[i][c] != dpTable[i - 1][c]) {
+                    selected.add(available.get(i - 1));
+                    used[indices.get(i - 1)] = true;
+                    c -= available.get(i - 1).getDuration();
+                }
             }
-            System.out.println("  Total value: " + totalValue + ", Total time used: " + totalTime + "/" + capacity);
+            scheduleByInterval.put(interval, selected);
         }
 
-// Print final summary
-        System.out.println("\n=== FINAL OPTIMAL SCHEDULE ===");
+        System.out.println("\n=== OPTIMAL SCHEDULE (greedy approximation) ===");
+        int totalValue = 0;
+        List<ScheduleResult.ScheduledInterval> resultIntervals = new ArrayList<>();
         for (Interval interval : freeIntervals) {
-            System.out.println("\n" + interval.getStartStr() + "-" + interval.getEndStr() + ":");
-            List<Activity> schedule = intervalSchedules.get(interval);
-            for (Activity activity : schedule) {
-                System.out.println("  " + activity.getName());
+            List<Activity> assigned = scheduleByInterval.get(interval);
+            System.out.println("\n" + interval.getStartStr() + "-" + interval.getEndStr()
+                    + " (" + interval.duration + " min):");
+            List<ScheduleResult.ScheduledActivity> resultActivities = new ArrayList<>();
+            if (assigned == null || assigned.isEmpty()) {
+                System.out.println("  (no activities scheduled)");
+            } else {
+                int timeUsed = 0;
+                for (Activity a : assigned) {
+                    System.out.println("  - " + a.getName()
+                            + " (" + a.getDuration() + " min, value " + a.getValue() + ")");
+                    totalValue += a.getValue();
+                    timeUsed  += a.getDuration();
+                    resultActivities.add(new ScheduleResult.ScheduledActivity(
+                            a.getName(), a.getDuration(), a.getValue()));
+                }
+                System.out.println("  Time used: " + timeUsed + "/" + interval.duration + " min");
             }
+            resultIntervals.add(new ScheduleResult.ScheduledInterval(
+                    interval.getStartStr(), interval.getEndStr(), interval.duration, resultActivities));
         }
-
-
-
-
-
-
-
-        //POST-PROCESSING STEP: Largest -> Smallest intervals
-            // At a given interval (now filled), see if there's an activity "in use" (which has been assigned to a smaller interval) which fits into this interval
-                // If so, move the largest "in use" activity (among smaller intervals) into this (larger) interval
-                // (do this until impossible (while))
-            // Check if there's an activity that's NOT "in use" (i.e. unassigned) which fits into this interval
-                // If so, place the largest one into this interval
-                // (do this until impossible (while))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Create a two dimensional array -> [time][activity]
-
-        //Let's say that an activity has to be done at a time which is a multiple of 5
-            // Create a Time instance, divide the value by 5
-                // Ex: instead of 0:30 being 30, it's 6 because:
-                    // 0, 5, 10, 15, 20, 25, 30 (6th term in the sequence)
-            // Index:  0, 1,  2,  3,  4,  5    INDEX 6
-        // PROGRAM CAN BE MADE MORE EFFICIENT WITH LONGER INTERVALS (e.g. 15 mins), BUT THEN USER LOSES FLEXIBILTY
-            // More efficient because much smaller array
-
-        //In the array slot we store an object which holds two things:
-            // Current value
-            // Double to indicate completed activities ("activitiesDone")
-
-        //There will be a List to store these activities in set indices - SEE "ACTIVITIES LIST" BELOW
-
-        //To generate the next activity in your day (among possibilities):
-            // Check - Is there is a setActivity slated for that time (e.g. we're at 12:00 and setActivity "lunch" set for 12:00)?
-                // IF YES - Do that setActivity
-                //If NO:
-                    // take the activitiesDone (long) and bitwise '&' with position of activity (for all activities)
-                        // If bit is not set, activity has not yet been done, and you can move forward in adding this to a schedule
-                // Why: Because if we don't do a setActivity, the Schedule we're creating will be thrown out anyway (non-viable Schedule)
-                    // Elminiates unnecessary work (efficient)
-                //I THINK THIS DOUBLE ENABLES AT MOST 64 ACTIVITIES TO BE INPUT. IF THIS IS THE CASE,
-                        // MAKE A CHECK IN addActivity() which caps the number of activities being added
-
-        // ACTIVITIES LIST - 2 options:
-            // 1) Don't make another list of activities, just keep the 3 lists, and consider them as one
-                // Ex: if there are 2 setActivities but we look for index 2 among ALL activities,
-                //      that will end up in index 0 of the doTodayActivities list
-                // ORDER OF VIRTUAL CONTIGUOUS LIST: setActivities, doTodayActivities, flexActivities
-            // 2) Make another list of activities, and when an activity is added to the specific list, add it also to the general list
-                // Ex: Adding a setActivity "eat"
-                    // Add "eat" to setActivities list
-                    // Add "eat" to allActivities list
-
-
-
-        //Generate possibilities by BFS
-
-        //If a given possibility is impossible because it would take you beyond the end of the day, don't generate it
-
-        //If a Schedule can't generate any further activities
-        // (e.g. day ends at 6:00, it's 5:45, and no activities take <=15 mins),
-        //Make a check on that Schedule
-
-        //What the check includes:
-            // 1) Is the value of the Node greater than "int greatestValue"?
-                // greatestValue is instantiated at 0
-                // If Schedule.value > greatestValue, it's a candidate
-                // If Schedule.value == greatestValue, we will do a TIEBREAKER (COME BACK TO THIS) - What makes a schedule more valuable than another?
-            // 2) Are all setActivities completed in this schedule?
-            // 3) Are all doTodayFlexActivities completed in this schedule?
-                // To check #2,3, bitwise '&' Node.activitiesDone with positions of all setActivities and doTodayFlexActivities
-        //IF THESE CONDITIONS PASS, SAVE THE NODE AS THE CURRENT BEST SCHEDULE
-        //WHEN BFS ENDS, WHATEVER IS SAVED IS THE FINAL SCHEDULE
-
-
-        // FOR LATER - Create a checks in addActivity() which don't allow:
-        //      a setActivity to be added if it overlaps with another setActivity
-        //      a doTodayFlexActivity to be added if there is no available space for this activity to occur based on
-        //          previously input setActivities and doTodayFlexActivities
-            // Reasoning: because then no schedule will be viable
-
-        // Ex: Day is 10:00-12:00
-            // Adding setActivity 10:00-11:00 - ACCEPTED
-            // Adding setActivity 10:30-10:45 - REJECTED
-            // Adding setActivity 11:30-12:00 - ACCEPTED
-            // Adding doTodayFlexActivity 15 mins - ACCEPTED
-            // Adding doTodayFlexActivity 45 mins - REJECTED
-        //THIS MAY BE VERY HARD TO DO BECAUSE OF CERTAIN SCENARIOS (e.g. Adding a setActivity after many doTodayFlexActivities have been added)
-            // SO MAYBE JUST DO THIS FOR setActivities
-
-        //TO GET ACTUAL SCHEDULE - BACKTRACKING
-            // A 'Schedule' object holds an 'int lastActivityIndex' which indicates the index
-            //   in the list of activities (virtually or actually contiguous) of the previous activity
-            // 'int lastActivityTime' = find the duration of the last activity, subtract that from the current time
-            // To backtrack traverse back to dp[lastActivityTime][lastActivityIndex]
-                //If lastActivityIndex == -1, this indicates first activity in schedule (end of backtracking)
-
+        System.out.println("\nTotal schedule value: " + totalValue);
+        return new ScheduleResult(resultIntervals, totalValue);
     }
 
 

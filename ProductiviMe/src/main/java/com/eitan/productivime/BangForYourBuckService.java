@@ -1,6 +1,7 @@
 package com.eitan.productivime;
 
 import com.eitan.productivime.BangForYourBuck.BangForYourBuck;
+import com.eitan.productivime.BangForYourBuck.ScheduleResult;
 import com.eitan.productivime.BangForYourBuck.Activities.*;
 import org.springframework.stereotype.Service;
 
@@ -59,6 +60,15 @@ public class BangForYourBuckService {
     public void addDoTodayFlexActivity(String name, String startBy, String endBy, String duration) {
         requireDay();
         day.addActivity(new DoTodayFlexActivity(name, startBy, endBy, duration), false);
+    }
+
+    // ------------------------------------------------------------------
+    // Schedule generation
+    // ------------------------------------------------------------------
+
+    public ScheduleResult generateSchedule() {
+        requireDay();
+        return day.generateSchedule();
     }
 
     // ------------------------------------------------------------------

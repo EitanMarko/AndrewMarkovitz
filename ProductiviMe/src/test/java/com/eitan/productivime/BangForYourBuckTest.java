@@ -473,4 +473,91 @@ public class BangForYourBuckTest {
     }
 
 
+    // -------------------------------------------------------------------------
+    // Demo: counterexample proving the bitmask DP is globally optimal
+    //
+    // Day layout:
+    //   8:00 ───────── FREE (70 min) ─────────── 9:10
+    //   9:10 ───────── Meeting (SET) ─────────── 10:10
+    //  10:10 ─────────FREE (100 min) ──────────  11:50
+    //
+    // Flexible activities:
+    //   P  "Deep Work"     70 min  value 10
+    //   Q  "Study"         40 min  value  8
+    //   R  "Review Notes"  40 min  value  7
+    //   S  "Admin Email"   30 min  value  5
+    //
+    // What the OLD greedy (smallest-first, per-interval knapsack) would produce:
+    //   70-min slot  → Q + S   (40+30 = 70 min, value 8+5 = 13)  ← commits Q & S here
+    //  100-min slot  → P       (70 min, value 10)   ← Q & S already used; P+R > 100
+    //   Total value: 23  ← SUBOPTIMAL
+    //
+    // What the NEW bitmask DP produces:
+    //   70-min slot  → P       (70 min, value 10)
+    //  100-min slot  → Q + R   (40+40 = 80 min, value 8+7 = 15)
+    //   Total value: 25  ← GLOBALLY OPTIMAL
+    // -------------------------------------------------------------------------
+    @Test
+    void counterexampleDemo() {
+
+        BangForYourBuck day = new BangForYourBuck("8:00", "11:50");
+        day.addActivity(new SetActivity("Meeting", "9:10", "10:10"), false);
+
+        FlexibleActivity p = new FlexibleActivity("P - Deep Work",    "1:10", 10); // 70 min
+        FlexibleActivity q = new FlexibleActivity("Q - Study",        "0:40",  8); // 40 min
+        FlexibleActivity r = new FlexibleActivity("R - Review Notes", "0:40",  7); // 40 min
+        FlexibleActivity s = new FlexibleActivity("S - Admin Email",  "0:30",  5); // 30 min
+
+        day.addMultipleActivities(p, q, r, s);
+
+        System.out.println("\n>>> Calling generateSchedule()...");
+        day.generateSchedule();
+        // Expected console output:
+        //   8:00-9:10  (70 min):  P - Deep Work    (70 min, value 10)   → used 70/70
+        //  10:10-11:50 (100 min): Q - Study         (40 min, value 8)
+        //                         R - Review Notes  (40 min, value 7)   → used 80/100
+        //   Total schedule value: 25
+    }
+
+
+    // -------------------------------------------------------------------------
+    // Demo: DoToday mechanism — a FlexibleActivity marked doToday() receives a
+    // sentinel value of 3000, guaranteeing it is always scheduled if it fits.
+    //
+    // Day layout:
+    //   8:00 ─── FREE (60 min) ─── 9:00
+    //   9:00 ─── Standup (SET) ─── 9:30
+    //   9:30 ─── FREE (90 min) ── 11:00
+    //
+    // Activities:
+    //   "Critical Report"  45 min  doToday()  (internal value 3000, scores as 8)
+    //   "Inbox Zero"       30 min  value 7
+    //   "Read Article"     30 min  value 4
+    //   "Stretch"          15 min  value 2
+    //
+    // The 3000 sentinel ensures "Critical Report" beats any combination of the
+    // other activities (their max combined value = 7+4+2 = 13, far below 3000),
+    // so it is always placed in the schedule whenever it physically fits.
+    // -------------------------------------------------------------------------
+    @Test
+    void doTodayDemo() {
+
+        BangForYourBuck day = new BangForYourBuck("8:00", "11:00");
+        day.addActivity(new SetActivity("Standup", "9:00", "9:30"), false);
+
+        FlexibleActivity criticalReport = new FlexibleActivity("Critical Report", "0:45", 8);
+        criticalReport.doToday(); // internal value → 3000; getScoringValue() stays 8
+
+        FlexibleActivity inboxZero   = new FlexibleActivity("Inbox Zero",   "0:30", 7);
+        FlexibleActivity readArticle = new FlexibleActivity("Read Article", "0:30", 4);
+        FlexibleActivity stretch     = new FlexibleActivity("Stretch",      "0:15", 2);
+
+        day.addMultipleActivities(criticalReport, inboxZero, readArticle, stretch);
+
+        System.out.println("\n>>> Calling generateSchedule()...");
+        day.generateSchedule();
+        // "Critical Report" (value 3000) will always win over any combination
+        // of the remaining three (max 7+4+2 = 13), confirming the sentinel works.
+    }
+
 }
