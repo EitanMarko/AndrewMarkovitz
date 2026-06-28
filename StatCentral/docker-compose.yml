@@ -1,0 +1,166 @@
+name: statcentral
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # etcd — Patroni's Distributed Configuration Store (DCS)
+  #
+  # Patroni requires a consensus store to hold cluster state and elect a
+  # primary. etcd is the most common choice. A single etcd node is fine for
+  # development; production would use 3+ for quorum-based fault tolerance.
+  # ---------------------------------------------------------------------------
+  etcd:
+    image: gcr.io/etcd-development/etcd:v3.5.16
+    environment:
+      ETCD_NAME: etcd
+      ETCD_INITIAL_ADVERTISE_PEER_URLS: http://etcd:2380
+      ETCD_LISTEN_PEER_URLS: http://0.0.0.0:2380
+      ETCD_ADVERTISE_CLIENT_URLS: http://etcd:2379
+      ETCD_LISTEN_CLIENT_URLS: http://0.0.0.0:2379
+      ETCD_INITIAL_CLUSTER: etcd=http://etcd:2380
+      ETCD_INITIAL_CLUSTER_STATE: new
+      ETCD_INITIAL_CLUSTER_TOKEN: statcentral-patroni
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/etcdctl", "--endpoints=http://localhost:2379", "endpoint", "health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # ---------------------------------------------------------------------------
+  # patroni1 — first Patroni node (wins the initial primary election)
+  #
+  # Patroni reads PATRONI_* environment variables automatically and uses them
+  # to fill in the node-specific fields of patroni.yml (name, connect_address).
+  # Both nodes run identical images; the one that registers with etcd first
+  # becomes the primary. patroni1 always starts first thanks to depends_on.
+  #
+  # post_bootstrap (init_db.sh) runs once on this node after the cluster is
+  # first initialized, creating the statcentral database and applying schema.sql.
+  # ---------------------------------------------------------------------------
+  patroni1:
+    build: ./patroni
+    environment:
+      PATRONI_NAME: patroni1
+      PATRONI_RESTAPI_CONNECT_ADDRESS: patroni1:8008
+      PATRONI_POSTGRESQL_CONNECT_ADDRESS: patroni1:5432
+      PATRONI_SUPERUSER_USERNAME: postgres
+      PATRONI_SUPERUSER_PASSWORD: postgres
+      PATRONI_REPLICATION_USERNAME: replicator
+      PATRONI_REPLICATION_PASSWORD: replicator
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/patroni
+    volumes:
+      - patroni1_data:/var/lib/postgresql/data
+      - ./src/main/java/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    depends_on:
+      etcd:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8008/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+  # ---------------------------------------------------------------------------
+  # patroni2 — second Patroni node (starts as replica, eligible for promotion)
+  #
+  # Streams WAL from the primary and stays in sync. If patroni1 crashes,
+  # Patroni promotes one of the replicas automatically (within ~10-30 seconds).
+  # After patroni1 recovers, it rejoins as a replica.
+  # ---------------------------------------------------------------------------
+  patroni2:
+    build: ./patroni
+    environment:
+      PATRONI_NAME: patroni2
+      PATRONI_RESTAPI_CONNECT_ADDRESS: patroni2:8008
+      PATRONI_POSTGRESQL_CONNECT_ADDRESS: patroni2:5432
+      PATRONI_SUPERUSER_USERNAME: postgres
+      PATRONI_SUPERUSER_PASSWORD: postgres
+      PATRONI_REPLICATION_USERNAME: replicator
+      PATRONI_REPLICATION_PASSWORD: replicator
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/patroni
+    volumes:
+      - patroni2_data:/var/lib/postgresql/data
+      - ./src/main/java/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    depends_on:
+      etcd:
+        condition: service_healthy
+      patroni1:
+        condition: service_started
+
+  # ---------------------------------------------------------------------------
+  # patroni3 — third Patroni node (replica, provides safe majority quorum)
+  #
+  # With three nodes, one can fail and the remaining two still form a majority,
+  # allowing Patroni to safely elect a new primary without split-brain risk.
+  # Two nodes (patroni1 + patroni2) was the minimum but not safely fault-tolerant;
+  # three is the recommended minimum for a production Patroni cluster.
+  # ---------------------------------------------------------------------------
+  patroni3:
+    build: ./patroni
+    environment:
+      PATRONI_NAME: patroni3
+      PATRONI_RESTAPI_CONNECT_ADDRESS: patroni3:8008
+      PATRONI_POSTGRESQL_CONNECT_ADDRESS: patroni3:5432
+      PATRONI_SUPERUSER_USERNAME: postgres
+      PATRONI_SUPERUSER_PASSWORD: postgres
+      PATRONI_REPLICATION_USERNAME: replicator
+      PATRONI_REPLICATION_PASSWORD: replicator
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/patroni
+    volumes:
+      - patroni3_data:/var/lib/postgresql/data
+      - ./src/main/java/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    depends_on:
+      etcd:
+        condition: service_healthy
+      patroni1:
+        condition: service_started
+
+  # ---------------------------------------------------------------------------
+  # HAProxy — primary/replica router
+  #
+  # Polls Patroni's REST API every 3 seconds on each node:
+  #   GET /primary → 200 on primary, 503 on replica
+  #   GET /replica → 200 on replica, 503 on primary
+  #
+  # Routes port 5000 (writes) exclusively to the current primary.
+  # Routes port 5001 (reads)  exclusively to current replicas.
+  # Stats dashboard available at http://localhost:7000.
+  # ---------------------------------------------------------------------------
+  haproxy:
+    image: haproxy:2.8
+    ports:
+      - "5000:5000"   # write endpoint
+      - "5001:5001"   # read  endpoint
+      - "7000:7000"   # stats dashboard
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      patroni1:
+        condition: service_healthy
+
+  # ---------------------------------------------------------------------------
+  # PgBouncer — connection pooler
+  #
+  # The Java microservices connect here (port 6432) — never directly to
+  # PostgreSQL. PgBouncer forwards to HAProxy, which forwards to the correct
+  # Patroni node. Two database aliases are defined in pgbouncer.ini:
+  #   statcentral_write → HAProxy:5000 → current primary
+  #   statcentral_read  → HAProxy:5001 → current replica(s)
+  # ---------------------------------------------------------------------------
+  pgbouncer:
+    image: edoburu/pgbouncer
+    ports:
+      - "6432:6432"
+    volumes:
+      - ./src/main/java/database/pgbouncer.ini:/etc/pgbouncer/pgbouncer.ini:ro
+      - ./src/main/java/database/userlist.txt:/etc/pgbouncer/userlist.txt:ro
+    depends_on:
+      haproxy:
+        condition: service_started
+
+volumes:
+  patroni1_data:
+  patroni2_data:
+  patroni3_data:

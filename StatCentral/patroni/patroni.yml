@@ -1,0 +1,93 @@
+# =============================================================================
+# patroni.yml — Shared Patroni configuration for StatCentral
+#
+# This file is baked into the Docker image and shared by both nodes.
+# Node-specific fields are overridden at runtime by PATRONI_* environment
+# variables set in docker-compose.yml (Patroni reads these automatically):
+#
+#   PATRONI_NAME                      → scope name for this node
+#   PATRONI_RESTAPI_CONNECT_ADDRESS   → host:port HAProxy uses for health checks
+#   PATRONI_POSTGRESQL_CONNECT_ADDRESS → host:port replicas stream WAL from
+#   PATRONI_SUPERUSER_USERNAME/PASSWORD → postgres superuser credentials
+#   PATRONI_REPLICATION_USERNAME/PASSWORD → streaming replication credentials
+# =============================================================================
+
+scope: statcentral
+namespace: /db/
+
+restapi:
+  listen: 0.0.0.0:8008
+  # connect_address is set per-node via PATRONI_RESTAPI_CONNECT_ADDRESS
+
+etcd3:
+  hosts: etcd:2379
+
+# ---------------------------------------------------------------------------
+# bootstrap: runs only the very first time the cluster is initialized.
+# After that, this section is ignored — the DCS (etcd) holds the live config.
+# ---------------------------------------------------------------------------
+bootstrap:
+  dcs:
+    ttl: 30               # seconds etcd lease lives without a heartbeat
+    loop_wait: 10         # how often Patroni checks cluster state
+    retry_timeout: 10     # timeout for etcd operations
+    maximum_lag_on_failover: 1048576  # 1 MB — replicas lagging more are skipped
+    postgresql:
+      use_pg_rewind: true  # allows old primary to re-join as replica after failover
+      parameters:
+        wal_level: replica
+        hot_standby: "on"
+        max_wal_senders: 10
+        max_replication_slots: 10
+
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+    - wal-segsize: "1"   # 1 MB WAL segments instead of the 16 MB default —
+                       # pg_basebackup must copy at least one full segment per
+                       # replica clone, so smaller segments = faster replica boot
+
+  # pg_hba rules written to pg_hba.conf on the primary after initdb.
+  # 'replicator' connects for streaming replication; all others use md5.
+  pg_hba:
+    - host replication replicator 0.0.0.0/0 md5
+    - host all             all       0.0.0.0/0 md5
+
+  # Runs once on the primary immediately after the cluster is first bootstrapped.
+  # Creates the application database, user, and schema.
+  post_bootstrap: /scripts/init_db.sh
+
+  # Users Patroni creates during bootstrap (in addition to the default postgres role).
+  users:
+    replicator:
+      password: replicator
+      options:
+        - replication
+
+postgresql:
+  listen: 0.0.0.0:5432
+  # connect_address is set per-node via PATRONI_POSTGRESQL_CONNECT_ADDRESS
+  data_dir: /var/lib/postgresql/data/patroni
+  pgpass: /tmp/pgpass
+  # Force an immediate checkpoint before basebackup starts instead of waiting
+  # for the next scheduled one — significantly reduces replica clone time.
+  basebackup:
+    - checkpoint: fast
+  authentication:
+    replication:
+      username: replicator
+      password: replicator
+    superuser:
+      username: postgres
+      password: postgres
+    rewind:    # allows pg_rewind to work after failover
+      username: postgres
+      password: postgres
+  parameters:
+    unix_socket_directories: '/var/run/postgresql'
+
+tags:
+  nofailover: false
+  noloadbalance: false
+  clonefrom: false
+  nosync: false
