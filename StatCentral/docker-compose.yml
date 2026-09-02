@@ -160,6 +160,46 @@ services:
       haproxy:
         condition: service_started
 
+  # ---------------------------------------------------------------------------
+  # statcentral-app — the StatCentral application tier
+  #
+  # Runs cluster.ClusterApp (see Dockerfile), which starts one GatewayServer
+  # plus three worker PeerServerImpl nodes inside a single JVM and keeps the
+  # cluster running indefinitely. This is the same cluster bring-up sequence
+  # used by MultiProcessDemo/FullInterfaceTest, just persistent instead of a
+  # one-shot demo. Exposes the GatewayServer's HTTP API (used by
+  # FanInterfaceImpl/LeagueInterfaceImpl and the front end) on port 8080.
+  # ---------------------------------------------------------------------------
+  statcentral-app:
+    build: .
+    environment:
+      PGBOUNCER_HOST: pgbouncer
+      PGBOUNCER_PORT: "6432"
+      HTTP_PORT: "8080"
+      BASE_UDP_PORT: "8000"
+    ports:
+      - "8080:8080"
+    depends_on:
+      pgbouncer:
+        condition: service_started
+
+  # ---------------------------------------------------------------------------
+  # frontend — static web UI for fans and league administrators
+  #
+  # Plain HTML/CSS/JS served by nginx. nginx also proxies /request and
+  # /status to statcentral-app server-side, so the browser sees everything as
+  # same-origin (no CORS configuration needed on the Java side).
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./frontend/html:/usr/share/nginx/html:ro
+      - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "3000:80"
+    depends_on:
+      - statcentral-app
+
 volumes:
   patroni1_data:
   patroni2_data:
