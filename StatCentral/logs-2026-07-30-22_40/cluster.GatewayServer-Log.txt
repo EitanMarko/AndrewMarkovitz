@@ -1,0 +1,18 @@
+Jul 30, 2026 10:40:22 PM cluster.GatewayServer$MyHandler handle
+FINE: Cache MISS [Request #1]
+
+Jul 30, 2026 10:40:22 PM cluster.GatewayServer$MyHandler handle
+FINE: Just offer()ed code on the queue (to GatewaySender): [1]{"operationType": "createConference","leagueId": "MLB","conferenceName": "RConf2"}
+
+Jul 30, 2026 10:40:40 PM cluster.GatewayServer$MyHandler handle
+FINE: Cache MISS [Request #2]
+
+Jul 30, 2026 10:40:40 PM cluster.GatewayServer$MyHandler handle
+FINE: Just offer()ed code on the queue (to GatewaySender): [2]{"operationType": "createDivision","leagueId": "MLB","divisionName": "RDiv2","conferenceName": "RConf2"}
+
+Jul 30, 2026 10:40:58 PM cluster.GatewayServer$MyHandler handle
+FINE: Cache MISS [Request #3]
+
+Jul 30, 2026 10:40:58 PM cluster.GatewayServer$MyHandler handle
+FINE: Just offer()ed code on the queue (to GatewaySender): [3]{"operationType": "createTeam","leagueId": "MLB","teamName": "RTeam2A","divisionName": "RDiv2"}
+

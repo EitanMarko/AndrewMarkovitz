@@ -1,0 +1,17 @@
+Jul 30, 2026 10:40:19 PM cluster.WorkerServer run
+FINE: 
+
+
+-------------------------------------------------
+WORK AHEAD - FOLLOWER (1, TCP Port: 9722)
+-------------------------------------------------
+
+Jul 30, 2026 10:40:22 PM cluster.WorkerServer run
+FINE: First connection accepted on WorkerServer.run() on server 1
+
+Jul 30, 2026 10:40:22 PM cluster.WorkerServer run
+FINE: Accepted leader socket connection
+
+Jul 30, 2026 10:40:22 PM cluster.WorkerServer dispatchRequest
+FINE: Dispatching operationType='createConference'
+

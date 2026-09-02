@@ -21,6 +21,7 @@ build/
 
 # Local config and environment files
 *.ini
+!**/pgbouncer.ini
 .env
 
 # ====================================

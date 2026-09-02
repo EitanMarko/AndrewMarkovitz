@@ -1,0 +1,106 @@
+Jul 30, 2026 10:40:16 PM cluster.PeerServerImpl setupHttpServer
+FINE: HTTP server started on port: 9830
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Epoch #1: Looking for leader [26086437945041]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Message Queue is EMPTY
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 2), time [26086441972500]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 2), time [26086446133250]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 0 with leader 0 [Epoch: 1], at time [26086551505791]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 0(from [0]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 0 with leader 0 [Epoch: 1], at time [26086551939208]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 0(from [0]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 1 [Epoch: 1], at time [26086552236791]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 1(from [1]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 2 [Epoch: 1], at time [26086552504500]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 2(from [1]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 2 [Epoch: 1], at time [26086552803125]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 2(from [1]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 4 (OBSERVER)
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 4 (OBSERVER)
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 3 with leader 3 [Epoch: 1], at time [26086553220583]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Server 2 changed its leader to 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [26086553473833]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 3(from [3]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 3 with leader 3 [Epoch: 1], at time [26086553766791]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 1 votes for 3(from [3]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection sendNotifications
+FINE: Sending notifications (proposing leader: 3), time [26086553967625]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 0 with leader 2 [Epoch: 1], at time [26086759934333]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 2 votes for 2(from [1, 0]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 0 with leader 3 [Epoch: 1], at time [26086760138333]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 2 votes for 3(from [3, 0]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 0 with leader 3 [Epoch: 1], at time [26086760281625]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 2 votes for 3(from [3, 0]), and quorum is 3
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection lookForLeader
+FINE: Received message from 1 with leader 3 [Epoch: 1], at time [26086760407750]
+
+Jul 30, 2026 10:40:16 PM helperFiles.LeaderElection haveEnoughVotes
+FINE: Server only received 3 votes for 3(from [3, 0, 1]), and quorum is 3
+
+Jul 30, 2026 10:40:19 PM helperFiles.LeaderElection acceptElectionWinner
+FINE: Set peer state to FOLLOWING at time [26089966995208]
+
+Jul 30, 2026 10:40:19 PM helperFiles.LeaderElection acceptElectionWinner
+FINE: Setting epoch to 1
+Jul 30, 2026 10:40:19 PM helperFiles.LeaderElection acceptElectionWinner
+FINE: Elected Leader: 3
+
+Jul 30, 2026 10:40:19 PM helperFiles.LeaderElection acceptElectionWinner
+FINE: PeerState is FOLLOWING
+

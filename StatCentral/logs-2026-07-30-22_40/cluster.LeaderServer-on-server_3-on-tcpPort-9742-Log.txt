@@ -1,0 +1,228 @@
+Jul 30, 2026 10:40:19 PM cluster.LeaderServer run
+FINE: 
+
+
+-------------------------------------------------
+WORK AHEAD - LEADER (3, TCP Port 9742)
+-------------------------------------------------
+
+Jul 30, 2026 10:40:19 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:19 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:22 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:40:22 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:22 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:40:22 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+
+Jul 30, 2026 10:40:23 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #1
+
+Jul 30, 2026 10:40:23 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #0
+Jul 30, 2026 10:40:23 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:23 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9732
+
+Jul 30, 2026 10:40:23 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 2
+
+Jul 30, 2026 10:40:24 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #2
+
+Jul 30, 2026 10:40:24 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:24 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:24 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9712
+
+Jul 30, 2026 10:40:24 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 0
+
+Jul 30, 2026 10:40:26 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #0
+
+Jul 30, 2026 10:40:26 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:40:26 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:26 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:40:26 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+
+Jul 30, 2026 10:40:31 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #1
+
+Jul 30, 2026 10:40:31 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #0
+Jul 30, 2026 10:40:31 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:31 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9732
+
+Jul 30, 2026 10:40:31 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 2
+
+Jul 30, 2026 10:40:36 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #2
+
+Jul 30, 2026 10:40:36 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:36 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:36 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9712
+
+Jul 30, 2026 10:40:36 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 0
+
+Jul 30, 2026 10:40:40 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:40:40 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:40 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:40:40 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+
+Jul 30, 2026 10:40:41 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #0
+
+Jul 30, 2026 10:40:41 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #0
+Jul 30, 2026 10:40:41 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:41 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9732
+
+Jul 30, 2026 10:40:41 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 2
+
+Jul 30, 2026 10:40:45 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #1
+
+Jul 30, 2026 10:40:45 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:45 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:45 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9712
+
+Jul 30, 2026 10:40:45 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 0
+
+Jul 30, 2026 10:40:46 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #2
+
+Jul 30, 2026 10:40:46 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:40:46 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:46 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:40:46 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+
+Jul 30, 2026 10:40:50 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #0
+
+Jul 30, 2026 10:40:50 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #0
+Jul 30, 2026 10:40:50 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:50 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9732
+
+Jul 30, 2026 10:40:50 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 2
+
+Jul 30, 2026 10:40:51 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #1
+
+Jul 30, 2026 10:40:51 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:51 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:51 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9712
+
+Jul 30, 2026 10:40:51 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 0
+
+Jul 30, 2026 10:40:55 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #2
+
+Jul 30, 2026 10:40:55 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:40:55 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:55 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:40:55 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+
+Jul 30, 2026 10:40:56 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #0
+
+Jul 30, 2026 10:40:56 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #0
+Jul 30, 2026 10:40:56 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:56 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9732
+
+Jul 30, 2026 10:40:56 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 2
+
+Jul 30, 2026 10:40:58 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #1
+Jul 30, 2026 10:40:58 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:40:58 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9712
+
+Jul 30, 2026 10:40:58 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 0
+
+Jul 30, 2026 10:41:00 PM cluster.LeaderServer lambda$run$1
+FINE: Reallocated work that failed to send to peer #1
+
+Jul 30, 2026 10:41:00 PM cluster.LeaderServer run
+FINE: Sending Runnable work for server #2
+Jul 30, 2026 10:41:00 PM cluster.LeaderServer run
+FINE: Take()ing off queue
+
+Jul 30, 2026 10:41:00 PM cluster.LeaderServer lambda$run$1
+FINE: About to send work to worker TCP port: 9722
+
+Jul 30, 2026 10:41:00 PM cluster.LeaderServer lambda$run$1
+FINE: Assigned work to server 1
+

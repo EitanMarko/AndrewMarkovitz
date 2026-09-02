@@ -1,0 +1,78 @@
+Jul 30, 2026 10:40:16 PM cluster.GatewaySender run
+FINE: -----------------------------------------------------------------------------------
+
+Jul 30, 2026 10:40:16 PM cluster.GatewaySender run
+FINE: take()ing request from the requestQueue
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: Got the byte[] request from the requestQueue
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: Request's code is:[1]{"operationType": "createConference","leagueId": "MLB","conferenceName": "RConf2"}
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: About to submit() Callable to CompletionService
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: Submit()ted Callable to CompletionService
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: -----------------------------------------------------------------------------------
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender run
+FINE: take()ing request from the requestQueue
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender lambda$run$0
+FINE: About to send work to leader TCP port: 9742
+
+Jul 30, 2026 10:40:22 PM cluster.GatewaySender lambda$run$0
+FINE: Waiting to read bytes
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: Got the byte[] request from the requestQueue
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: Request's code is:[2]{"operationType": "createDivision","leagueId": "MLB","divisionName": "RDiv2","conferenceName": "RConf2"}
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: About to submit() Callable to CompletionService
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: Submit()ted Callable to CompletionService
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: -----------------------------------------------------------------------------------
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender run
+FINE: take()ing request from the requestQueue
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender lambda$run$0
+FINE: About to send work to leader TCP port: 9742
+
+Jul 30, 2026 10:40:40 PM cluster.GatewaySender lambda$run$0
+FINE: Waiting to read bytes
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: Got the byte[] request from the requestQueue
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: Request's code is:[3]{"operationType": "createTeam","leagueId": "MLB","teamName": "RTeam2A","divisionName": "RDiv2"}
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: About to submit() Callable to CompletionService
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: Submit()ted Callable to CompletionService
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: -----------------------------------------------------------------------------------
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender run
+FINE: take()ing request from the requestQueue
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender lambda$run$0
+FINE: About to send work to leader TCP port: 9742
+
+Jul 30, 2026 10:40:58 PM cluster.GatewaySender lambda$run$0
+FINE: Waiting to read bytes
+

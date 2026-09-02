@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatCentral</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>StatCentral</h1>
+  <div class="league-picker">
+    <label for="leagueId">League</label>
+    <select id="leagueId">
+      <option value="MLB" selected>MLB</option>
+      <option value="NBA">NBA</option>
+    </select>
+  </div>
+</header>
+
+<section id="clusterStatus" class="status-bar">
+  <button id="refreshStatus" type="button">Check cluster status</button>
+  <pre id="statusOutput">Not checked yet.</pre>
+</section>
+
+<nav class="mode-switch">
+  <button class="mode-btn active" data-mode="fan">Fan</button>
+  <button class="mode-btn" data-mode="league">League</button>
+</nav>
+
+<main>
+
+  <!-- ============================ FAN MODE ============================ -->
+  <section id="fan-mode" class="mode-panel active">
+
+    <form class="card" data-op="getPlayerStats">
+      <h2>Get all stats for a player</h2>
+      <label>Player name <input type="text" name="playerId" required placeholder="Aaron Judge"></label>
+      <button type="submit">Get stats</button>
+    </form>
+
+    <form class="card" data-op="getPlayerStat">
+      <h2>Get one stat for a player</h2>
+      <label>Player name <input type="text" name="playerId" required placeholder="Aaron Judge"></label>
+      <label>Stat name <input type="text" name="statName" required placeholder="homeRuns"></label>
+      <button type="submit">Get stat</button>
+    </form>
+
+    <form class="card" data-op="queryTopPlayersByStat">
+      <h2>Top players by stat</h2>
+      <label>Stat name <input type="text" name="statName" required placeholder="homeRuns"></label>
+      <label>League level
+        <select name="leagueLevel">
+          <option value="conference">conference</option>
+          <option value="division">division</option>
+          <option value="team">team</option>
+        </select>
+      </label>
+      <label>Level value <input type="text" name="leagueLevelValue" required placeholder="AL"></label>
+      <label>Top N <input type="number" name="topN" value="10" min="1" required></label>
+      <label>Year <input type="number" name="year" value="2024" required></label>
+      <button type="submit">Get ranking</button>
+    </form>
+
+  </section>
+
+  <!-- ============================ LEAGUE MODE ============================ -->
+  <section id="league-mode" class="mode-panel">
+
+    <h2 class="section-heading">League structure</h2>
+
+    <form class="card" data-op="createConference">
+      <h3>Create conference</h3>
+      <label>Conference name <input type="text" name="conferenceName" required></label>
+      <button type="submit">Create</button>
+    </form>
+
+    <form class="card" data-op="createDivision">
+      <h3>Create division</h3>
+      <label>Division name <input type="text" name="divisionName" required></label>
+      <label>Conference name <input type="text" name="conferenceName" required></label>
+      <button type="submit">Create</button>
+    </form>
+
+    <form class="card" data-op="createTeam">
+      <h3>Create team</h3>
+      <label>Team name <input type="text" name="teamName" required></label>
+      <label>Division name <input type="text" name="divisionName" required></label>
+      <button type="submit">Create</button>
+    </form>
+
+    <form class="card" data-op="deleteConference">
+      <h3>Delete conference</h3>
+      <label>Conference name <input type="text" name="conferenceName" required></label>
+      <button type="submit" class="danger">Delete (cascades)</button>
+    </form>
+
+    <form class="card" data-op="deleteDivision">
+      <h3>Delete division</h3>
+      <label>Division name <input type="text" name="divisionName" required></label>
+      <button type="submit" class="danger">Delete (cascades)</button>
+    </form>
+
+    <form class="card" data-op="deleteTeam">
+      <h3>Delete team</h3>
+      <label>Team name <input type="text" name="teamName" required></label>
+      <button type="submit" class="danger">Delete (cascades)</button>
+    </form>
+
+    <form class="card" data-op="movePlayerToTeam">
+      <h3>Move player to team</h3>
+      <label>Player name <input type="text" name="playerId" required></label>
+      <label>New team <input type="text" name="newTeam" required></label>
+      <button type="submit">Move</button>
+    </form>
+
+    <form class="card" data-op="moveTeamToDivision">
+      <h3>Move team to division</h3>
+      <label>Team name <input type="text" name="teamName" required></label>
+      <label>New division <input type="text" name="newDivision" required></label>
+      <button type="submit">Move</button>
+    </form>
+
+    <form class="card" data-op="moveDivisionToConference">
+      <h3>Move division to conference</h3>
+      <label>Division name <input type="text" name="divisionName" required></label>
+      <label>New conference <input type="text" name="newConference" required></label>
+      <button type="submit">Move</button>
+    </form>
+
+    <h2 class="section-heading">Players</h2>
+
+    <form class="card wide" data-op="createPlayer">
+      <h3>Create player</h3>
+      <label>Name <input type="text" name="name" required placeholder="Aaron Judge"></label>
+      <label>Position <input type="text" name="position" required placeholder="RF"></label>
+      <label>Team name <input type="text" name="teamName" required placeholder="New York Yankees"></label>
+      <label>Year <input type="number" name="year" placeholder="2024"></label>
+
+      <fieldset class="mlb-stats">
+        <legend>Initial stats (optional — defaults to 0, fields not used by the selected league are ignored)</legend>
+        <label>Home runs <input type="number" name="homeRuns" value="0"></label>
+        <label>Hits <input type="number" name="hits" value="0"></label>
+        <label>At bats <input type="number" name="atBats" value="0"></label>
+        <label>Batting average <input type="number" step="0.001" name="battingAverage" value="0"></label>
+        <label>Strikeouts <input type="number" name="strikeouts" value="0"></label>
+        <label>Walks <input type="number" name="walks" value="0"></label>
+        <label>Stolen bases <input type="number" name="stolenBases" value="0"></label>
+        <label>RBIs <input type="number" name="runsBattedIn" value="0"></label>
+      </fieldset>
+
+      <button type="submit">Create player</button>
+    </form>
+
+    <form class="card" data-op="deletePlayer">
+      <h3>Delete player</h3>
+      <label>Player name <input type="text" name="playerId" required></label>
+      <button type="submit" class="danger">Delete</button>
+    </form>
+
+    <form class="card" data-op="updatePlayerStat">
+      <h3>Update player stat</h3>
+      <label>Player name <input type="text" name="playerId" required></label>
+      <label>Stat name <input type="text" name="statName" required placeholder="homeRuns"></label>
+      <label class="radio-row">
+        <input type="radio" name="updateMode" value="increment" checked> Increment by 1
+        <input type="radio" name="updateMode" value="set"> Set to value
+      </label>
+      <label>Value (only used when "Set to value" is selected — must be &gt; 0)
+        <input type="number" name="value" value="1" min="1">
+      </label>
+      <button type="submit">Update stat</button>
+    </form>
+
+  </section>
+
+</main>
+
+<section class="result-wrap">
+  <h2>Result</h2>
+  <pre id="result">Submit a request above to see the response here.</pre>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

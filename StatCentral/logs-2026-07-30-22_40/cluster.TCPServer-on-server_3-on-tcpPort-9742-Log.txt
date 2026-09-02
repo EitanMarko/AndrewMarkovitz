@@ -1,0 +1,28 @@
+Jul 30, 2026 10:40:19 PM cluster.TCPServer run
+FINE: Starting run() on TCPServer
+
+Jul 30, 2026 10:40:22 PM cluster.TCPServer run
+FINE: First connection accepted on TCPServer.run()
+
+Jul 30, 2026 10:40:22 PM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Jul 30, 2026 10:40:22 PM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Jul 30, 2026 10:40:32 PM cluster.TCPServer run
+FINE: Before, would've exited. Now continuing until shutdown
+Jul 30, 2026 10:40:40 PM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Jul 30, 2026 10:40:40 PM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
+Jul 30, 2026 10:40:50 PM cluster.TCPServer run
+FINE: Before, would've exited. Now continuing until shutdown
+Jul 30, 2026 10:40:58 PM cluster.TCPServer run
+FINE: Received work to parse for leader
+
+Jul 30, 2026 10:40:58 PM cluster.TCPServer run
+FINE: Parsed work and sent back to leader
+
