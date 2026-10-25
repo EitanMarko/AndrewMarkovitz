@@ -599,6 +599,66 @@ class LogMgrTest {
     assertEquals("a", tagOf(all.get(1)));
   }
 
+  /**
+   * When a page fills, append writes it out before starting a new block,
+   * but NOT if flush already put every record on that page on disk: the
+   * block on disk is already identical to the page.  So append-then-flush,
+   * repeated across many blocks, costs exactly one write per record and no
+   * extra write per block.  (The buffer manager flushes the log before every
+   * dirty page write, so this pattern is common.)
+   */
+  @Test
+  void append_doesNotRewritePageAlreadyFlushed() {
+    CountingFileMgr fm = newFileMgr(true);
+    LogMgr lm = new LogMgr(fm, LOG);
+    fm.resetCounts();
+    final int records = 1000;
+    for (int i = 0; i < records; i++) {
+      lm.flush(lm.append(bytes(30, i)));
+    }
+    int blocks = fm.length(LOG);
+    assertTrue(blocks > 50, "test setup: expected many blocks, got " + blocks);
+    assertEquals(records, fm.writes.get(),
+        "one write per flush and none when a fully-flushed page fills (" + blocks + " blocks)");
+    assertEquals(blocks - 1, fm.appends.get(), "one append per block after the first");
+    // Nothing is left in memory, so the iterator writes nothing and sees everything.
+    List<byte[]> all = drain(lm.iterator());
+    assertEquals(records, fm.writes.get(), "iterator must not write when all records are on disk");
+    assertEquals(records, all.size());
+    for (int i = 0; i < records; i++) {
+      assertArrayEquals(bytes(30, records - 1 - i), all.get(i), "record at position " + i);
+    }
+  }
+
+  // ----------------------------------------------------------- latestLsn
+
+  /**
+   * latestLsn() (not in LogMgrBase; added for Buffer.setModified) is the LSN
+   * of the most recent successful append: -1 on an empty log, unchanged by a
+   * rejected append, and restored on restart.
+   */
+  @Test
+  void latestLsn_tracksAppendsAndSurvivesRestart() {
+    CountingFileMgr fm = newFileMgr(true);
+    LogMgr lm = new LogMgr(fm, LOG);
+    assertEquals(-1, lm.latestLsn(), "empty log");
+    assertEquals(0, lm.append(record(0, "a")));
+    assertEquals(0, lm.latestLsn());
+    assertThrows(IllegalArgumentException.class, () -> lm.append(new byte[BLOCK + 1]));
+    assertEquals(0, lm.latestLsn(), "a rejected append issues no LSN");
+    for (int i = 1; i < 25; i++) {
+      lm.append(record(i, "r" + i));
+    }
+    assertEquals(24, lm.latestLsn());
+    assertEquals(24, lm.latestLsn(), "a getter has no side effects");
+    lm.flush(24);
+
+    LogMgr reopened = new LogMgr(newFileMgr(false), LOG);
+    assertEquals(24, reopened.latestLsn(), "restart continues from the persisted log");
+    assertEquals(25, reopened.append(record(25, "z")));
+    assertEquals(25, reopened.latestLsn());
+  }
+
   // ------------------------------------------------------------ iterator
 
   /** Empty log: hasNext is false, next throws (standard Iterator contract). */
