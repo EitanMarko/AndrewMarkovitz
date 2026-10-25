@@ -70,7 +70,8 @@ import edu.yu.dbimpl.file.Page;
  * last block becomes the in-memory page.
  *
  * Disk access per operation: append costs 0 normally, 2 when a page fills
- * (write the full page, append a fresh block); flush costs 1 or 0; the
+ * (write the full page, append a fresh block; 1 if flush already wrote that
+ * page); flush costs 1 or 0; the
  * constructor on an existing log costs one read per block.
  */
 public class LogMgr extends LogMgrBase {
@@ -188,7 +189,11 @@ public class LogMgr extends LogMgrBase {
         if (boundary - needed < HEADER) {
             // No room below the newest record without overlapping the header:
             // persist this page and start a new block (lecture, algorithm 3).
-            writePage();
+            // Skip the write if flush already put every record on this page
+            // on disk: the block there is identical to the page.
+            if (lastFlushedLsn < nextLsn - 1) {
+                writePage();
+            }
             currentBlk = fm.append(logfile);
             boundary = blockSize;
             setBoundary(boundary);
@@ -236,6 +241,17 @@ public class LogMgr extends LogMgrBase {
             writePage(); // only if something is still in memory
         }
         return new LogIterator(currentBlk);
+    }
+
+    /**
+     * The highest LSN issued so far, or -1 if nothing has been appended.
+     *
+     * Not part of LogMgrBase: the buffer module needs it so that
+     * Buffer.setModified can reject an LSN that names no log record, and
+     * flush() can't be used to ask because it may write to disk.
+     */
+    public synchronized int latestLsn() {
+        return nextLsn - 1;
     }
 
     // ------------------------------------------------------------ helpers
