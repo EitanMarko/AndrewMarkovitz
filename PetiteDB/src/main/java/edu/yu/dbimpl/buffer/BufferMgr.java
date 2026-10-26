@@ -3,6 +3,8 @@ package edu.yu.dbimpl.buffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,8 +37,19 @@ import edu.yu.dbimpl.log.LogMgrBase;
  * - The constructor must access the DBConfiguration singleton.  The pool
  *   holds no persistent state, so there is nothing to (re)initialize, but
  *   a missing setting surfaces as DBConfiguration's IllegalStateException.
- * - Thread-safe: every public method synchronizes on the manager, and the
- *   waiting is the consumer/producer pattern (wait/notifyAll) of slide 45.
+ * - Thread-safe: every public method runs under one lock, and waiting is
+ *   the consumer/producer pattern of slide 45 (await on a Condition,
+ *   signalAll on unpin).
+ *
+ * Why a FAIR ReentrantLock rather than synchronized/wait/notifyAll: with
+ * the milestone's load (50 clients, 20 buffers, each pin held 2 ms,
+ * maxWaitTime 500 ms) a plain monitor starved waiters.  A client that has
+ * just unpinned calls pin() again microseconds later and, with an unfair
+ * monitor, takes the lock (and the buffer it just freed) ahead of the
+ * thirty clients that were woken by its unpin.  The same twenty clients
+ * cycle forever and a waiter hits the 500 ms timeout, although a buffer
+ * frees every 0.1 ms.  A fair lock hands the lock out in arrival order, so
+ * the oldest waiter gets the next freed buffer.
  *
  * Eviction policies (both only ever consider UNPINNED buffers):
  * - NAIVE (slide 28): scan the pool from buffer 0, take the first unpinned.
@@ -80,6 +93,12 @@ public class BufferMgr extends BufferMgrBase {
 
     /** CLOCK: the buffer where the next sweep starts. */
     private int hand;
+
+    /** Guards everything above; fair, so waiters are served in order (see class comment). */
+    private final ReentrantLock lock = new ReentrantLock(true);
+
+    /** Signalled by unpin whenever a buffer's pin count reaches zero. */
+    private final Condition bufferFreed = lock.newCondition();
 
     /** A block's identity: file name and block number. */
     private record Key(String file, int number) {
@@ -137,8 +156,13 @@ public class BufferMgr extends BufferMgrBase {
     // ---------------------------------------------------------------- API
 
     @Override
-    public synchronized int available() {
-        return available;
+    public int available() {
+        lock.lock();
+        try {
+            return available;
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
@@ -148,14 +172,19 @@ public class BufferMgr extends BufferMgrBase {
      * @throws IllegalArgumentException if txnum is negative
      */
     @Override
-    public synchronized void flushAll(int txnum) {
+    public void flushAll(int txnum) {
         if (txnum < 0) {
             throw new IllegalArgumentException("Transaction number cannot be negative: " + txnum);
         }
-        for (Buffer buf : pool) {
-            if (buf.modifyingTx() == txnum) {
-                buf.flush();
+        lock.lock();
+        try {
+            for (Buffer buf : pool) {
+                if (buf.modifyingTx() == txnum) {
+                    buf.flush();
+                }
             }
+        } finally {
+            lock.unlock();
         }
     }
 
@@ -166,18 +195,23 @@ public class BufferMgr extends BufferMgrBase {
      * @throws IllegalArgumentException if buffer is null or not pinned
      */
     @Override
-    public synchronized void unpin(BufferBase buffer) {
+    public void unpin(BufferBase buffer) {
         if (buffer == null) {
             throw new IllegalArgumentException("Buffer cannot be null");
         }
-        if (!buffer.isPinned()) {
-            throw new IllegalArgumentException("Buffer is not pinned: " + buffer);
-        }
-        final Buffer buf = (Buffer) buffer;
-        buf.unpin();
-        if (!buf.isPinned()) {
-            available++;
-            notifyAll(); // "inform all clients currently blocked invoking pin()"
+        lock.lock();
+        try {
+            if (!buffer.isPinned()) {
+                throw new IllegalArgumentException("Buffer is not pinned: " + buffer);
+            }
+            final Buffer buf = (Buffer) buffer;
+            buf.unpin();
+            if (!buf.isPinned()) {
+                available++;
+                bufferFreed.signalAll(); // "inform all clients currently blocked invoking pin()"
+            }
+        } finally {
+            lock.unlock();
         }
     }
 
@@ -189,30 +223,35 @@ public class BufferMgr extends BufferMgrBase {
      * @throws BufferAbortException if no buffer became available in time
      */
     @Override
-    public synchronized BufferBase pin(BlockIdBase blk) {
+    public BufferBase pin(BlockIdBase blk) {
         if (blk == null) {
             throw new IllegalArgumentException("BlockId cannot be null");
         }
         final long deadline = System.nanoTime() + maxWaitNanos;
-        while (true) {
-            final Buffer buf = tryToPin(blk);
-            if (buf != null) {
-                return buf;
+        lock.lock();
+        try {
+            while (true) {
+                final Buffer buf = tryToPin(blk);
+                if (buf != null) {
+                    return buf;
+                }
+                // Scenario IV: everything is pinned.  Wait for an unpin, then
+                // start over (the block may have been read by someone else
+                // meanwhile, or another waiter may have taken the freed buffer).
+                final long remaining = deadline - System.nanoTime();
+                if (remaining <= 0) {
+                    throw new BufferAbortException("No buffer became available for " + blk
+                        + " within " + TimeUnit.NANOSECONDS.toMillis(maxWaitNanos) + " ms");
+                }
+                try {
+                    bufferFreed.awaitNanos(remaining);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // leave the flag for the caller
+                    throw new BufferAbortException("Interrupted while waiting for a buffer for " + blk);
+                }
             }
-            // Scenario IV: everything is pinned.  Wait for an unpin, then
-            // start over (the block may have been read by someone else
-            // meanwhile, or another waiter may have taken the freed buffer).
-            final long remaining = deadline - System.nanoTime();
-            if (remaining <= 0) {
-                throw new BufferAbortException("No buffer became available for " + blk
-                    + " within " + TimeUnit.NANOSECONDS.toMillis(maxWaitNanos) + " ms");
-            }
-            try {
-                wait(Math.max(1, TimeUnit.NANOSECONDS.toMillis(remaining)));
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // leave the flag for the caller
-                throw new BufferAbortException("Interrupted while waiting for a buffer for " + blk);
-            }
+        } finally {
+            lock.unlock();
         }
     }
 
@@ -226,6 +265,7 @@ public class BufferMgr extends BufferMgrBase {
     /**
      * Scenarios I-III: return the buffer now pinned to {@code blk}, or null
      * if the block isn't resident and nothing is unpinned (scenario IV).
+     * Caller holds the lock.
      */
     private Buffer tryToPin(BlockIdBase blk) {
         final Key key = Key.of(blk);
